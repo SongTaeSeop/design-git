@@ -28,21 +28,44 @@ strong{
 }
 
 /* 스타일링 시작 */
-h2{
+/* 강조 컬러(파랑): 003b83 */
+.blue h2{
     font-size: 40px;
     font-weight: 700;
     color: #1d1d1d;
     margin: 133px 0 25px 0;
 }
 
-.sub_tit{
+.blue .sub_tit{
     font-size: 24px;
     font-weight: 700;
     color: #1d1d1d;
     margin: 0 0 12px 0;
 }
 
-/* 강조 컬러: 003b83 */
-strong{
+.blue .sub_tit strong{
     color: #003b83;
+}
+
+/* 강조 컬러(빨강): db0032 */
+.red{
+    text-align: center;
+}
+
+.red h2{
+    font-size: 45px;
+    font-weight: 800;
+    color: #db0032;
+    margin: 133px 0 25px 0;
+}
+
+.red .sub_tit{
+    font-size: 22px;
+    color: #1d1d1d;
+    margin: 0 0 12px 0;
+}
+
+.red .sub_tit strong{
+    font-weight: 800;
+    color: #db0032;
 }
