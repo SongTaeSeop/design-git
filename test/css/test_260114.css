@@ -5,7 +5,6 @@
     
     - inherit: 브라우저 스타일 대신, 내가 제공하는 스타일 상속 받음
 
-
 ***/
 h1, h2, h3, h4, h5, h6 {
     font-weight: inherit;
@@ -115,5 +114,56 @@ body {
 /*** 끝 - 기본 스타일 ***/
 
 .visual {
-    
+    background: url(../images/lh_visual2.jpg) no-repeat center center / cover;
+    height: 460px;
+    color: #fff;
+    margin: 193px 0 0 0;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    padding: 136px 0 0 0;
+}
+
+.work .tit {
+    text-align: center;
+}
+.work .tit h2 {
+    font-weight: 700;
+    color: #0067db;
+    margin: 164px 0 0 0;
+}
+.work .tit .sub_tit {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 19px 0 21px 0;
+}
+.work h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 110px 0 14px 0;
+}
+.work .photo {
+    margin: 28px 0 0 0;
+}
+
+.esg {
+    background: #f4f4f4;
+    margin: 121px 0 150px 0;
+    height: 522px;
+    text-align: center;
+}
+.esg h2 {
+    font-weight: 700;
+    color: #0067db;
+    padding: 171px 0 0 0;
+}
+.esg .sub_tit {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 17px 0 23px 0;
 }
