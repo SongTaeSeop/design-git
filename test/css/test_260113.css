@@ -7,7 +7,6 @@ body{
     color: #3d3d3d;
     line-height: 1.5;
 }
-
 .wrapper{
     width: 1260px;
     margin: 0 auto; /* 위아래 여백 0, 좌우 여백 자동(가운데 정렬) */
@@ -17,55 +16,66 @@ body{
 *{ /* *은 와일드카드로 모든 태그를 지정함 */
     margin: 0;
 }
-
 h1, h2, h3, h4, h5, h6{
     font-size: inherit; /* inherit: 브라우저의 스타일 대신, body의 속성값을 상속받음, 이 경우 17px을 상속받음*/
     font-weight: inherit;
 }
-
 strong{
     font-weight: inherit;
 }
 
 /* 스타일링 시작 */
-/* 강조 컬러(파랑): 003b83 */
+
 .blue h2{
     font-size: 40px;
     font-weight: 700;
     color: #1d1d1d;
     margin: 133px 0 25px 0;
 }
-
 .blue .sub_tit{
     font-size: 24px;
     font-weight: 700;
     color: #1d1d1d;
     margin: 0 0 12px 0;
 }
-
 .blue .sub_tit strong{
     color: #003b83;
 }
 
-/* 강조 컬러(빨강): db0032 */
+
 .red{
     text-align: center;
 }
-
 .red h2{
     font-size: 45px;
     font-weight: 800;
     color: #db0032;
     margin: 133px 0 25px 0;
 }
-
 .red .sub_tit{
     font-size: 22px;
     color: #1d1d1d;
     margin: 0 0 12px 0;
 }
-
 .red .sub_tit strong{
     font-weight: 800;
     color: #db0032;
+}
+
+
+.esg h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 133px 0 0 0;
+}
+.esg h3{
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 32px 0 8px 0;
+}
+.esg h3 strong{
+    font-weight: 400;
+    color: #003b83;
 }
