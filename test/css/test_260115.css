@@ -7,10 +7,14 @@ h1, h2, h3, h4, h5, h6 {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 a {
     color: inherit;
     text-decoration: none;
+}
+ul, ol, li {
+    list-style: none;
 }
 /***   끝 태그 초기화 */
 
@@ -43,6 +47,124 @@ body {
     background-color: #00664f;
     color: #fff;
     font-weight: 700;
-    width: 137px;
-    height: 34px;
+    padding: 5px 20px;
+    display: inline-block;
+    margin: 22px 0 0 0;
+}
+
+
+.first {
+    background: url(../images/eh_first.jpg) no-repeat center center / cover;
+    color: #fff;
+    text-align: center;
+    margin: 79px 0 0 0;
+    height: 370px;
+}
+
+.first h2 {
+    font-size: 40px;
+    font-weight: 700;
+    padding: 120px 0 8px 0;
+}
+
+.first a {
+    background-color: #fff;
+    color: #00664f;
+    font-weight: 700;
+    padding: 5px 20px;
+    display: inline-block;
+    margin: 21px 0 0 0;
+    border-radius: 50px;
+}
+
+
+.history {
+    background-color: #00664f;
+    color: #fff;
+    height: 536px;
+}
+
+.history h2 {
+    font-size: 40px;
+    font-weight: 700;
+    padding: 150px 0 21px 0;
+}
+
+.history a {
+    margin: 32px 0 0 0;
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 4px 22px;
+    border-radius: 50px;
+}
+
+
+.project h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 99px 0 33px 0;
+}
+
+.project ul {
+    display: flex; /* li들을 가로로 배치함 */
+    justify-content: space-between; /* li들을 양끝 정렬함 */
+}
+
+.project ul li {
+    width: 297px;
+}
+/* li와 a의 사이즈를 동일하게 할 때,
+    반드시 li에 너비(width), a에 높이(height)를 줘야 함*/
+.project ul li a {
+    display: block;
+    height: 205px;
+    background: url(../images/eh_pro1.jpg) no-repeat center center / cover;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 146px 0 0 30px;
+}
+.project ul li.bg2 a { /* li.bg2: li 태그들 중, bg2 클래스인 요소만 선택 */
+    background-image: url(../images/eh_pro2.jpg);
+}
+.project ul li.bg3 a {
+    background-image: url(../images/eh_pro3.jpg);
+}
+.project ul li.bg4 a {
+    background-image: url(../images/eh_pro4.jpg);
+}
+
+
+.emp {
+    margin: 105px 0 0 0;
+}
+
+.emp .wrapper {
+    background-color: #00664f;
+    color: #fff;
+    height: 286px;
+    display: flex; /* .tit 클래스와 a 태그를 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.emp .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 9px 0;
+}
+
+.emp a {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 4px 22px;
+    border-radius: 50px;
+}
+
+
+/* 나중에 지움 */
+body {
+    margin: 0 0 300px 0;
 }
