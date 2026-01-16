@@ -1,0 +1,24 @@
+body {
+    font-variant-emoji: text;
+    max-width: 140vh;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 1.333em 0 1em 0;
+}
+
+ul, ol, li {
+    margin: 0.5em 0;
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+        filter: hue-rotate(180deg) invert(1);
+    }
+}

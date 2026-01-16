@@ -1,0 +1,94 @@
+@import url(pretendard.css);
+/*** 시작 태그 초기화 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+ul, ol, li {
+    list-style: none;
+}
+/***   끝 태그 초기화 */
+
+/*** 시작 기본 스타일 */
+body {
+    font-family: 'pretendard';
+    font-size: 17px;
+    font-weight: 400;
+    color: #3d3d3d;
+    line-height: 1.5;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+/***   끝 기본 스타일 */
+
+.recruit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    text-align: center;
+    margin: 82px 0 29px 0;
+}
+
+.recruit .tit {
+    background: url(../images/ss_tit.jpg) no-repeat center center / cover;
+    color: #fff;
+    height: 379px;
+    text-align: center;
+}
+
+.recruit .tit h3 {
+    font-size: 32px;
+    font-weight: 700;
+    padding: 124px 0 27px 0;
+}
+
+.recruit .tit a {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 7px 25px;
+    border-radius: 50px;
+}
+
+
+.recruit .list {
+    margin: 63px 0 0 0;
+}
+
+.recruit .list ul {
+    display: flex;
+}
+
+.recruit .list ul li {
+    width: 50%; /* 감싸는 ul 태그의 너비의 절반 */
+}
+
+.recruit .list ul li a {
+    display: block;
+    height: 196px;
+    background-color: #63aadb;
+    color: #fff;
+}
+
+.recruit .list ul li.bg2 a {
+    background-color: #0e3058;
+}
+
+.recruit .list ul li a {
+    padding: 56px 0 0 60px;
+}
+.recruit .list ul li a h3 {
+    font-size: 32px;
+    font-weight: 700;
+    padding: 0 0 2px 0;
+}
