@@ -34,3 +34,7 @@ a:hover {
     transition: 0.1s;
 }
 
+a:active {
+    transform: scale(1);
+    transition: 0.05s;
+}
