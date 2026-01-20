@@ -88,7 +88,7 @@
 .biz .list ul li .txt a {
     display: block;
     border: 1px solid #ccc;
-    padding: 9px 8px; /* 블록이라 그럼 */
+    padding: 9px 8px; /* 블록이라 그럼 원래는 12px 69px임 */
     margin: 18px 0 0 0;
 }
 
