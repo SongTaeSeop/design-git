@@ -1,0 +1,97 @@
+@import url(fonts.css);
+@import url(common.css);
+
+.header {
+    height: 100px;
+}
+
+.header .wrapper {
+    display: flex; /* .logo와 .gnb 좌우 배치 */
+    justify-content: space-between; /* 가로 양끝 정렬 */
+    align-items: center; /* 세로 가운데 정렬 */
+}
+
+.header .gnb ul {
+    display: flex; /* .gnb에 속하는 ul 내 li들을 좌우 배치 */
+}
+
+.header .gnb ul li a {
+    display: block;
+    padding: 0 25px;
+    line-height: 100px; /* .header에 주어진 height와 같은 값으로 정의하면, 글자 높이가 100px이 되고 가운데 정렬함 */
+    font-size: 21px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    height: 800px;
+}
+
+.visual h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 562px 0 6px 0;
+}
+
+
+.biz {
+    margin: 147px 0 0 0;
+}
+
+.biz .tit {
+    text-align: left; /* 필요 없음 */
+}
+
+.biz .tit h2 {
+    font-weight: 700;
+    color: #0F488F;
+}
+
+.biz .tit p {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 3px 0 0 0;
+}
+
+.biz .list {
+    margin: 59px 0 0 0;
+}
+
+.biz .list ul {
+    display: flex; /* .list에 속하는 ul 내 li들을 좌우 배치 */
+    justify-content: space-between;
+}
+
+.biz .list ul li {
+    width: 297px;
+}
+
+.biz .list ul li .txt {
+    text-align: center;
+    margin: 0 40px;
+}
+
+.biz .list ul li .txt h3 {
+    font-size: 32px;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 24px 0 13px 0; /* 상단 margin: 30px - 6px(img의 line-height)  */
+}
+
+.biz .list ul li .txt a {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 9px 8px; /* 블록이라 그럼 */
+    margin: 18px 0 0 0;
+}
+
+.footer {
+    margin: 200px 0 0 0;
+}
