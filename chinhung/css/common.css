@@ -13,6 +13,14 @@ ul, ol, li {
     list-style: none;
 }
 
+strong {
+    font-weight: inherit;
+}
+
+em, address {
+    font-style: normal; /* em, address는 기본 기울임체임 */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,6 +34,11 @@ body {
     font-size: 17px;
     color: #3d3d3d;
     line-height: 1.5;
+}
+
+#wrap {
+    /* 좌우 margin이 30px이 항상 남게하기 위해, min-width를 1260 + 30 + 30 = 1320으로 제한 */
+    min-width: 1320px;
 }
 
 .wrapper {
