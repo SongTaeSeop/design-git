@@ -1,0 +1,61 @@
+/* 태그의 스타일 초기화 */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+strong {
+    font-weight: inherit;
+}
+
+em, address {
+    font-style: normal; /* em, address는 기본 기울임체임 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 공통 스타일 */
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: #454b52;
+    line-height: 1.5;
+    word-break: keep-all; /* 단어 단위로 줄바꿈 */
+}
+
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+#wrap {
+    /* 좌우 margin이 40px이 항상 남게하기 위해, min-width를 1260 + 40 + 40 = 1340으로 제한 */
+    min-width: 1340px;  
+}
+
+/* HTML 표준을 준수하기 위해 입력하지만, 홈페이지에는 보이지 않게 할 요소들 */
+.sr-only, .skip, .blind {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}

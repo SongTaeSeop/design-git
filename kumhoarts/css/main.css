@@ -137,6 +137,7 @@
     padding: 192px 0 194px 0;
     display: flex;
     justify-content: space-between;
+    position: relative; /* .more 정렬 기준 */
 }
 
 .community .notice .tit h3 {
@@ -185,6 +186,24 @@
     color: #E9E3D5;
 }
 
+.community .notice .more {
+    position: absolute; /* .notice를 기준으로 정렬 */
+    left: 0;
+    top: 386px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    padding: 15px 34px;
+}
+
+.community .notice .more:hover {
+    background-color: #fff;
+    color: #8F1A2E;
+}
+
+
+.community .youtube {
+    position: relative; /* .more 정렬 기준 */
+}
 
 .community .youtube .tit h3 {
     color: #E9E3D5;
@@ -226,7 +245,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.5s; /* trnasition은 호버 이전에 제공해야 부드러운 트랜지션이 가능함 */
+    transition: 0.3s; /* trnasition은 호버 이전에 제공해야 부드러운 트랜지션이 가능함 */
 }
 
 .community .youtube .list ul li a:hover .photo img {
@@ -240,6 +259,20 @@
     margin: 16px 0 0 0;
 }
 
+.community .youtube .more {
+    position: absolute; /* .youtube를 기준으로 정렬 */
+    right: 0;
+    top: 39px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    padding: 15px 34px;
+}
+
+.community .youtube .more:hover {
+    background-color: #fff;
+    color: #8F1A2E;
+}
+
 
 .footer {
     border-top: 1px solid #656F83;
@@ -251,6 +284,40 @@
 .footer .f_nav ul {
     display: flex;
     gap: 0 41px;
+}
+
+.footer .f_nav ul li {
+    position: relative; /* ::before 정렬 기준 */
+}
+.footer .f_nav ul li::before {
+    content: "";
+    position: absolute;
+    left: -19px;
+    top: 7px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(101, 111, 131, 0.2);
+}
+.footer .f_nav ul li:first-child::before {
+    display: none; /* 첫 번째 li::before 제거 */
+}
+
+.footer .f_nav ul li a {
+    display: block;
+    position: relative; /* ::after 정렬 기준 */
+}
+.footer .f_nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #656F83;
+    transition: 0.3s;
+}
+.footer .f_nav ul li a:hover::after {
+    width: 100%;
 }
 
 .footer .f_info {

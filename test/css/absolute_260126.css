@@ -1,0 +1,131 @@
+@import url(pretendard.css);
+@import url(common.css);
+
+.box {
+    width: 500px;
+    height: 400px;
+    background-color: yellowgreen;
+    position: relative; /* .point의 정렬 기준이 되기 위해 추가함 (특성은 기본값과 거의 같음) */
+}
+
+.box .point {
+    display: inline-block;
+    padding: 30px;
+    background-color: red;
+    color: #fff;
+    position: absolute; /* .point는 나를 감싸고 있는 .box를 기준으로 정렬하기 원함 */
+    right: 0;
+    bottom: 0;
+}
+
+.notice {
+    margin: 100px 0;
+}
+
+.notice .wrapper {
+    display: flex; /* h2와 .list를 좌우 배치 */
+    justify-content: space-between;
+    position: relative; /* .more의 정렬 기준 */
+}
+
+.notice h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+
+.notice .list {
+    width: 832px;
+}
+
+.notice .list ul li {
+    border-bottom: 1px solid #ccc;
+}
+
+.notice .list ul li:first-child {
+    border-top: 1px solid #ccc;
+}
+
+.notice .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.notice .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+    /* 제목을 한 줄로 제한함 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: calc(100% - 137px); /* 제목의 너비는 감싸는 요소 a의 전체 너비에서 137px 줄인 것 */
+}
+
+.notice .list ul li a span {
+    color: #666;
+}
+
+.notice .more {
+    position: absolute; /* .wrapper를 기준으로 정렬 */
+    left: 0;
+    top: 115px;
+    display: block;
+    border: 1px solid #ccc;
+    padding: 15px 34px;
+    border-radius: 50px;
+}
+
+.notice .more:hover {
+    background-color: #1d1d1d;
+    color: #fff;
+    border-color:#1d1d1d;
+    /* 호버 때에도 border 두께를 유지해야 함, 그렇지 않으면 영역의 크기가 변함, border의 색상만 변경하는 것을 권장함 */
+}
+
+
+.f_nav {
+    margin: 100px 0;
+    color: #656F83;
+}
+
+.f_nav ul {
+    display: flex;
+    gap: 0 30px;
+}
+
+.f_nav ul li {
+    position: relative; /* ::before 정렬 기준 */
+}
+.f_nav ul li::before { /* li 사이에 구분선 추가 */
+    content: ""; /* ::before, ::after 필수 */
+    /* ::before, ::after는 반드시 absolute로 조작함 */
+    position: absolute; /* li를 기준으로 정렬 */
+    top: 8px;
+    left: -14px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(101, 111, 131, 0.2);
+}
+.f_nav ul li:first-child::before { /* 첫 번째 li 왼쪽의 구분선 제거 */
+    display: none;
+}
+
+.f_nav ul li a {
+    display: block;
+    position: relative; /* ::after 정렬 기준 */
+}
+.f_nav ul li a::after{ /* 호버링 시 그릴 밑줄 설정 */
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    bottom: 1px;
+    width: 0;
+    height: 1px;
+    background-color: #656F83;
+    transition: 0.5s; /* 호버링 시 밑줄 너비 변화함 */
+}
+.f_nav ul li a:hover::after { /* 호버링 시 밑줄 그림 */
+    width: 100%;
+}
