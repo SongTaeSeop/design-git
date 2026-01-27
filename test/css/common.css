@@ -29,10 +29,10 @@ em, address {
 
 /* 공통 스타일 */
 body {
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: "pretendard", sans-serif;
     font-weight: 400;
     font-size: 17px;
-    color: #454b52;
+    color: #3d3d3d;
     line-height: 1.5;
     word-break: keep-all; /* 단어 단위로 줄바꿈 */
 }
@@ -43,8 +43,8 @@ body {
 }
 
 #wrap {
-    /* 좌우 margin이 40px이 항상 남게하기 위해, min-width를 1260 + 40 + 40 = 1340으로 제한 */
-    min-width: 1340px;  
+    /* 좌우 margin이 30px이 항상 남게하기 위해, min-width를 1260 + 30 + 30 = 1320으로 제한 */
+    min-width: 1320px;
 }
 
 /* HTML 표준을 준수하기 위해 입력하지만, 홈페이지에는 보이지 않게 할 요소들 */
@@ -59,3 +59,19 @@ body {
     white-space: nowrap !important;
     border: 0 !important;
 }
+
+
+@media screen and (max-width:768px) { /* 너비 768px 이하 */
+                body {
+                    font-size: 16px;
+                }
+                .wrapper {
+                    width: auto;
+                    margin: 0 16px;
+                }
+                
+                #wrap {
+                    /* 좌우 margin이 30px이 항상 남게하기 위해, min-width를 1260 + 30 + 30 = 1320으로 제한 */
+                    min-width: 0;
+                }
+} /* @media screen and (max-width:768px) */
