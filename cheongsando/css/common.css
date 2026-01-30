@@ -18,6 +18,7 @@ body {
     /* 좌우 margin이 40px이 항상 남게하기 위해, min-width를 1260 + 40 + 40 = 1340으로 제한 */
     /* 추가) .picture 100px 여유분 1340 + 100 = 1440px */
     min-width: 1440px;
+    position: relative; /* .header가 position absolute일 때 정렬 기준, 그래야 .header 너비가 body에 관계없이 유지됨*/
 }
 
 /* 너비 768px 이하부터 */
