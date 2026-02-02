@@ -427,6 +427,8 @@
     height: 387px;
     background: url(../images/tour01.jpg) no-repeat center center / cover;
     color: #fff;
+    text-align: center; /* 접힌 상태 제목 가운데 정렬 */
+    padding: 0 0 35px 0;
 }
 .tour .list ul li.tour02 a {
     background-image: url(../images/tour02.jpg);
@@ -436,6 +438,41 @@
 }
 .tour .list ul li.tour04 a {
     background-image: url(../images/tour04.jpg);
+}
+
+.tour .list ul li.active a {
+    text-align: left; /* 펼친 상태 제목 왼쪽 정렬 */
+    padding: 0 40px 34px 40px;
+}
+
+.tour .list ul li a h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.tour .list ul li.active a h3 {
+    font-size: 28px;
+}
+
+.tour .list ul li a p {
+    display: none;
+    position: relative; /* ::after 정렬 기준 */
+}
+
+.tour .list ul li.active a p {
+    display: block;
+    margin: 10px 0 0 0;
+}
+
+.tour .list ul li a p::after {
+    content: "";
+    position: absolute; /* p 기준 정렬 */
+    right: -7px;
+    bottom: 11px;
+    width: 30px;
+    height: 30px;
+    background: url(../images/tour_more.svg) no-repeat center center / contain;
 }
 
 .tour .more {
@@ -486,9 +523,52 @@
                 
                 .tour .list {
                     margin: 36px 0 0 0;
+                    overflow-x: auto; /* 아래 ul에서 너비가 넘치므로 가로 스크롤 바를 만듦, 그렇지 않으면 만들지 않음 */
                 }
 
+                .tour .list ul {
+                    /* 너비: <li의 width> * 4 + <사이 여백> * 3 
+                        = (250 * 4) + (16 * 3) = 1048px*/
+                    width: 1048px;
+                }
                 
+                .tour .list ul li {
+                    width: 250px; /* 모바일은 너비가 같음 */
+                }
+                
+                .tour .list ul li.active {
+                    width: 250px; /* 모바일은 너비가 같음 */
+                }
+                
+                .tour .list ul li a {
+                    /* height: 387px; 높이는 PC, 모바일 같지만 일단 적음 */
+                    text-align: left; /* 모바일 텍스트 왼쪽 정렬 */
+                    padding: 0 24px 19px 24px; /* 모바일은 패딩이 같음 */
+                }
+                
+                .tour .list ul li.active a {
+                    padding: 0 24px 19px 24px; /* 모바일은 패딩이 같음 */
+                }
+                
+                .tour .list ul li a h3 {
+                    font-size: 28px;
+                }
+                
+                .tour .list ul li a p {
+                    display: block;
+                    margin: 10px 0 0 0; /* .active에만 들어간 margin 추가 */
+                }
+
+                .tour .list ul li.active a p {
+                    display: block; /* margin은 PC와 같음 */
+                }
+                .tour .list ul li a p::after {
+                    display: none; /* 아이콘 안 나옴 */
+                }                
+                
+                .tour .list ul li a p br {
+                    display: none; /* br 안 나옴 */
+                }
 
                 .tour .more {
                     right: 0; /* 1px에서 바뀜 */
@@ -516,6 +596,319 @@
 } /* @media screen and (max-width:768px) */
 
 
-.footer {
-    margin: 500px 0 0 0;
+.community {
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    padding: 163px 0 205px 0;
 }
+
+.community .wrapper {
+    display: flex; /* .tit, .group 좌우 배치 */
+    justify-content: space-between;
+}
+
+.community .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    /* margin: 0 0 17px 0; 아래 글자가 있으면 margin을 추가 */
+}
+
+.community .group {
+    display: flex; /* .notice, .service 좌우 배치 */
+    gap: 0 24px;
+    align-items: flex-end; /* 아래를 기준으로 정렬 */
+}
+
+.community .group .notice {
+    width: 511px;
+    height: 426px;
+    border-radius: 16px;
+    background-color: rgba(29, 29, 29, 0.3);
+    padding: 49px 40px 0 40px; /* 높이가 주어진 경우, 아래 여백을 주지 않음 */
+    backdrop-filter: blur(20px);
+    position: relative; /* .more 정렬 기준 */
+}
+
+.community .group .notice h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.community .group .notice .list {
+    margin: 11px 0 0 0;
+}
+
+.community .group .notice .list ul li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.community .group .notice .list ul li:first-child {
+    border-top: none;
+}
+
+.community .group .notice .list ul li a {
+    display: flex; /* h4, span 좌우 배치 */
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.community .group .notice .list ul li a h4 {
+    width: calc(100% - 100px); /* 오른쪽 날짜 부분 제외하고 너비 전부 사용 */
+    /* 1줄로 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .group .notice .list ul li a:hover h4 {
+    font-weight: 700;
+    color: #1d1d1d;
+}
+
+.community .group .notice .more {
+    position: absolute; /* .notice 기준 정렬 */
+    right: 40px;
+    top: 50px;
+    /* .more의 글자는 보이지 않음 (span의 sr-only), 아이콘만 표시함 */
+    width: 34px;
+    height: 34px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: url(../images/more_white.svg) no-repeat center center / 12px; /* 너비를 입력하면 비율은 알아서 조정됨 */
+}
+
+/*** .notice:hover .notice:hover .notice:hover ***/
+.community .group .notice:hover {
+    background-color: #fff;
+    color: #3d3d3d; /* 링크, 날짜 글자색 */
+}
+.community .group .notice:hover h3 {
+    color: #1d1d1d; /* 제목 글자색 */
+}
+.community .group .notice:hover .list ul li {
+    border-color: #ccc;
+}
+.community .group .notice:hover .more {
+    border-color: #1d1d1d;
+    background-color: #1d1d1d;
+}
+
+.community .group .service {
+    /* 너비: <li 너비> * 2 + <여백> 
+    = 196 * 2 + 12 = */
+    width: 404px;
+}
+
+.community .group .service ul {
+    display: flex; /* li 좌우 배치 */
+    flex-wrap: wrap; /* 여러 줄 허용 */
+    gap: 12px 12px; /* 위아래 좌우 여백*/
+}
+
+.community .group .service ul li {
+    /* 너비: 100% / <1줄에 표시할 li 개수> - <1줄의 중간 여백 합> / <1줄에 표시할 li 개수>
+     <1줄에 표시할 li 개수> = 2, <1줄의 중간 여백 합> = 12px
+     (100% / 2) - (12px / 2) = 50% - 6px
+     */
+    width: calc(50% - 6px);
+}
+
+.community .group .service ul li a {
+    display: block;
+    height: 156px;
+    background-color: rgba(29, 29, 29, 0.3);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    padding: 30px 0 0 30px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    position: relative; /* ::after 정렬 기준 */
+}
+.community .group .service ul li a::after {
+    content: "";
+    position: absolute; /* a 기준 정렬 */
+    right: 30px;
+    bottom: 31px;
+    /* 4개 아이콘 중 가장 넓은 크기를 기준으로 함 */
+    width: 38px;
+    height: 38px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.community .group .service ul li.ico01 a::after {
+    background-image: url(../images/service01.svg);
+}
+.community .group .service ul li.ico02 a::after {
+    background-image: url(../images/service02.svg);
+}
+.community .group .service ul li.ico03 a::after {
+    background-image: url(../images/service03.svg);
+}
+.community .group .service ul li.ico04 a::after {
+    background-image: url(../images/service04.svg);
+}
+
+/*** a:hover a:hover a:hover ***/
+.community .group .service ul li a:hover {
+    background-color: #fff;
+    color: #3d3d3d;
+}
+.community .group .service ul li.ico01 a:hover::after {
+    background-image: url(../images/service01_on.svg);
+}
+.community .group .service ul li.ico02 a:hover::after {
+    background-image: url(../images/service02_on.svg);
+}
+.community .group .service ul li.ico03 a:hover::after {
+    background-image: url(../images/service03_on.svg);
+}
+.community .group .service ul li.ico04 a:hover::after {
+    background-image: url(../images/service04_on.svg);
+}
+
+/* 너비 768px 이하부터 */
+@media screen and (max-width:768px) {
+                .community {
+                    padding: 114px 0 137px 0;
+                }
+                
+                .community .wrapper {
+                    display: block; /* flex 풀음 */
+                }
+                
+                .community .tit h2 {
+                    font-size: 28px;
+                }
+
+                /* .community .tit h2 br,
+                .community .tit p br {
+                    display: none; 모바일에서 줄바꿈 해제
+                } */
+                
+                .community .group {
+                    display: block; /* flex 풀음 */
+                    margin: 43px 0 0 0; /* .tit와 .group 사이 여백 */
+                    /* gap: 0 24px;
+                    align-items: flex-end; flex 풀어서 작동 안 됨 */
+                }
+                
+                .community .group .notice {
+                    width: auto;
+                    height: auto;
+                    padding: 32px 24px 30px 24px; /* 높이가 안 주어진 경우, 아래 여백을 줌 */
+                }
+                
+                .community .group .notice h3 {
+                    font-size: 24px;
+                }
+                
+                .community .group .notice .list ul li a {
+                    padding: 10px 0;
+                }
+                
+                .community .group .notice .more {
+                    right: 21px;
+                    top: 37px;
+                    /* .more의 글자는 보이지 않음 (span의 sr-only), 아이콘만 표시함 */
+                    width: 22px; /* 이건 원의 크기 */
+                    height: 22px;
+                    background-size: 8px; /* 아이콘 크기만 변경됨 */
+                }
+                
+                .community .group .service {
+                    width: auto;
+                    margin: 16px 0 0 0;
+                }
+                
+                .community .group .service ul {
+                    gap: 16px 16px; /* 위아래 좌우 여백*/
+                }
+                
+                .community .group .service ul li {
+                    /* 너비: 100% / <1줄에 표시할 li 개수> - <1줄의 중간 여백 합> / <1줄에 표시할 li 개수>
+                    <1줄에 표시할 li 개수> = 2, <1줄의 중간 여백 합> = 16px
+                    (100% / 2) - (16px / 2) = 50% - 8px
+                    */
+                    width: calc(50% - 8px);
+                }
+                
+                .community .group .service ul li a {
+                    height: 92px;
+                    padding: 31px 0 0 24px;
+                    font-size: 24px;
+                }
+                .community .group .service ul li a::after {
+                    right: 24px;
+                    bottom: 36px;
+                    /* 4개 아이콘 중 가장 넓은 크기를 기준으로 함 */
+                    width: 22px;
+                    height: 22px;
+                    background-size: contain;
+                }
+} /* @media screen and (max-width:768px) */
+
+
+.footer {
+    background-color: #F0F0F0;
+    padding: 75px 0 73px 0;
+    color: #666;
+}
+
+.footer .f_nav ul {
+    display: flex; /* li 좌우 배치 */
+    gap: 0 40px;
+    flex-wrap: wrap;
+}
+
+.footer .f_nav ul li {
+    position: relative; /* ::after 정렬 기준 */
+}
+.footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 5px;
+    width: 1px;
+    height: 14px;
+    background-color: #ccc;
+}
+.footer .f_nav ul li:last-child::after {
+    display: none; /* 마지막 li의 선 삭제 */
+}
+
+.footer .f_info {
+    display: flex; /* address, span 좌우 배치 */
+    gap: 0 22px;
+    flex-wrap: wrap;
+    margin: 28px 0;
+}
+
+.footer .copyright .license {
+    font-size: 14px;
+    color: #767676;
+    text-decoration: underline;
+}
+
+/* 너비 768px 이하부터 */
+@media screen and (max-width:768px) {
+                .footer {
+                    padding: 72px 0 67px 0;
+                }
+                
+                .footer .f_nav ul {
+                    gap: 0 37px;
+                }
+
+                .footer .f_nav ul li::after {
+                    right: -20px;
+                    top: 5px;
+                    height: 12px;
+                }
+                
+                .footer .f_info {
+                    gap: 0 20px;
+                    flex-wrap: wrap;
+                    margin: 32px 0 38px 0;
+                }
+} /* @media screen and (max-width:768px) */
