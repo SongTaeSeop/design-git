@@ -21,6 +21,16 @@ em, address {
     font-style: normal; /* em, address는 기본 기울임체임 */
 }
 
+button {
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    cursor: pointer;
+}
+
 * {
     margin: 0;
     padding: 0;
