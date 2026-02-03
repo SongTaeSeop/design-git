@@ -1,0 +1,53 @@
+
+/* common.css: 홈페이지 전체에 들어가는 공통 스타일, layout.css라고도 함, 프로젝트마다 변경됨, 다시말해 수정할 시 프로젝트 구조 전체가 바뀔 수 있음 */
+body {
+    font-family: "Paperozi", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: #3d3d3d;
+    line-height: 1.5;
+    word-break: keep-all; /* 단어 단위로 줄바꿈 */
+}
+
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+#wrap {
+    /* 좌우 margin이 40px이 항상 남게하기 위해, min-width를 1260 + 40 + 40 = 1340으로 제한 */
+    /* 추가) .picture 100px 여유분 1340 + 100 = 1440px */
+    min-width: 1440px;
+    position: relative; /* .header가 position absolute일 때 정렬 기준, 그래야 .header 너비가 body에 관계없이 유지됨*/
+}
+
+/* 너비 768px 이하부터 */
+@media screen and (max-width:768px) {
+                body {
+                    font-size: 16px;
+                }
+                
+                .wrapper {
+                    width: auto;
+                    margin: 0 16px;
+                }
+                
+                #wrap {
+                    min-width: 0;
+                }
+} /* @media screen and (max-width:768px) */
+
+
+/* HTML 표준을 준수하기 위해 입력하지만, 홈페이지에는 보이지 않게 할 요소들 */
+.sr-only, .skip, .blind {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+

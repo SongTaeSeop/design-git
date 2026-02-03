@@ -1,0 +1,227 @@
+@import url(pretendard.css);
+@import url(common.css);
+
+.header {
+    position: fixed; /* 무조건 body와 정렬함 */
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 90px;
+    background-color: #1d1d1d;
+    color: #fff;
+}
+.header.fixed {
+    background-color: #fff;
+    color: #1d1d1d;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    text-align: center;
+    line-height: 90px;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+
+
+.tour {
+    margin: 100px 0;
+}
+
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tour .list ul li {
+    width: 190px;
+    overflow: hidden; /* 내용 중 p가 영역을 넘침 */
+    transition: 0.3s;
+}
+.tour .list ul li.active {
+    width: 654px;
+}
+
+.tour .list ul li a {
+    height: 387px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    padding: 0 30px 30px 30px;
+}
+
+.tour .list ul li:nth-child(1) a {
+    background-color: #ff6347;
+}
+.tour .list ul li:nth-child(2) a {
+    background-color: #035036;
+}
+.tour .list ul li:nth-child(3) a {
+    background-color: #0810C1;
+}
+.tour .list ul li:nth-child(4) a {
+    background-color: #00bf99;
+}
+
+.tour .list ul li a h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.tour .list ul li a p {
+    display: none;
+    white-space: nowrap;
+}
+.tour .list ul li.active a p {
+    display: block;
+    margin: 10px 0 0 0;
+}
+
+@media screen and (max-width:768px) { /* 너비 768px 이하 */
+                .tour .list ul {
+                    flex-direction: column;
+                    gap: 1px 0;
+                }
+                
+                .tour .list ul li {
+                    width: auto;
+                    overflow: visible; /* 모바일은 전부 보임 */
+                }
+                .tour .list ul li.active {
+                    width: auto;
+                }
+                
+                .tour .list ul li a {
+                    height: auto;
+                    padding: 30px 16px;
+                }
+
+                .tour .list ul li a p {
+                    display: block;
+                    white-space: normal; /* 원래 줄바꿈 대로 */
+                    margin: 10px 0 0 0;
+                }
+
+                .tour .list ul li a p br {
+                    display: none;
+                }
+    
+} /* @media screen and (max-width:768px) */
+
+.culture {
+    margin: 100px 0;
+}
+
+.culture .list ul {
+    display: flex;
+    gap: 0 12px;
+}
+
+.culture .list ul li {
+    flex: 1 1 0%;
+    overflow: hidden; /* 내용 중 p가 영역을 넘침 */
+    transition: 0.3s;
+}
+.culture .list ul li.active {
+    flex: 3.442 1 0%
+}
+
+.culture .list ul li a {
+    height: 387px;
+    color: #fff;
+    position: relative; /* .txt 정렬 기준 */
+    display: block;
+}
+
+.culture .list ul li:nth-child(1) a {
+    background-color: #ff6347;
+}
+.culture .list ul li:nth-child(2) a {
+    background-color: #035036;
+}
+.culture .list ul li:nth-child(3) a {
+    background-color: #0810C1;
+}
+.culture .list ul li:nth-child(4) a {
+    background-color: #00bf99;
+}
+
+.culture .list ul li a .txt {
+    position: absolute; /* a 기준 정렬 */
+    left: 30px;
+    bottom: -33px;
+    transition: 0.3s;
+}
+.culture .list ul li.active a .txt {
+    bottom: 30px;
+}
+
+.culture .list ul li a h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.culture .list ul li a p {
+    /* display: none에서 block으로 바뀔 때는 transition이 불가능 (아직) */
+    /* 안 보이다가 천천히 보이게 하도록 만들려면 opacity를 사용함 */
+    /* display: none; */
+    opacity: 0;
+    white-space: nowrap;
+    margin: 10px 0 0 0;
+    transition: 0.3s;
+}
+.culture .list ul li.active a p {
+    opacity: 1;
+}
+
+@media screen and (max-width:768px) { /* 너비 768px 이하 */
+                .culture .list {
+                    overflow-x: auto;
+                }
+
+                .culture .list ul {
+                    gap: 0 16px;
+                    width: 1000px;
+                }
+                
+                .culture .list ul li.active {
+                    flex: 1 1 0%;
+                }
+                
+                .culture .list ul li a {
+                    height: 250px;
+                    padding: 30px 16px 0 16px;
+                }
+                
+                .culture .list ul li a .txt {
+                    /* absolute 해제 */
+                    position: relative;
+                    left: auto;
+                    bottom: auto;
+                }
+                .culture .list ul li.active a .txt {
+                    bottom: auto;
+                }
+                
+                .culture .list ul li a p {
+                    /* display: none에서 block으로 바뀔 때는 transition이 불가능 (아직) */
+                    /* 안 보이다가 천천히 보이게 하도록 만들려면 opacity를 사용함 */
+                    /* display: none; */
+                    opacity: 1;
+                    white-space: normal;
+                }
+
+                .culture .list ul li a p br {
+                    display: none;
+                }
+} /* @media screen and (max-width:768px) */
+
+body {
+    margin: 0 0 1000px 0;
+}

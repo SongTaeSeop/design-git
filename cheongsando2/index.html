@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- 라이브러리 파일 먼저 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <title>청산도</title>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 스크롤 아래로 내리면 header 고정, fixed 클래스 추가 -->
+        <!-- 스크롤을 아래로 내리면 hide 클래스 추가 (안 보여야 함) -->
+        <header class="header fixed">
+            <div class="wrapper">
+                <h1 class="logo"><a href="index.html"><span class="sr-only">완도군 청산도</span></a></h1>
+                <nav class="gnb">
+                    <button class="gnb_open"><span class="sr-only">메뉴 열기</span></button> <!-- 모바일 메뉴 열기 버튼, 페이지가 이동하는 기능: a 태그, 메뉴가 열리는 기능이 작동하는 것: button 태그 -->
+                    <div class="gnb_wrap">
+                        <ul>
+                            <li><a href="#none">청산도 소개</a></li>
+                            <li><a href="#none">관광안내</a></li>
+                            <li><a href="#none">추천여행</a></li>
+                            <li><a href="#none">커뮤니티</a></li>
+                        </ul>
+                    </div> <!-- //gnb_wrap -->
+                </nav>
+                <div class="util"> <!-- 헤더 오른쪽 요소 -->
+                    <div class="weather">
+                        <strong>-2.9℃</strong>
+                        <span>맑음</span>
+                    </div> <!-- //weather -->
+                </div> <!-- //util -->
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <div class="wrapper">
+                    <h2><img src="images/visual_tit.png" alt="삶의 쉼표가 되는 섬, 청산도"></h2>
+                    <a href="#none" class="picture">
+                        <span>은하수<br>
+                        사진공방
+                        </span>
+                    </a>
+                </div>
+            </section> <!-- //visual -->
+            <section class="culture">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>청산도, <br>일상의 기록</h2>
+                        <p>바다와 돌담, 밭과 골목이 어우러진 청산도의 하루는 느린 시간 속에서 자연과 사람이 함께 숨 쉬는 풍경입니다.<br>
+                            아침 햇살과 바람, 반복되는 삶의 장면들이 모여 청산도만의 조용하고 단단한 일상을 만들어 줍니다.
+                        </p>
+                    </div> <!-- //tit -->
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#none">
+                                    <div class="photo"><img src="images/culture01.jpg" alt="우체통"></div>
+                                    <h3><span>1년 뒤 감동이 배달되는 느림 우체통</span></h3>
+                                    <p>느린걸음 느린카페에는 보내고 싶은 달(月)에 편지를 보낼 수 있는 12개의 느림보 우체통이 카페 안밖에 있습니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#none">
+                                    <div class="photo"><img src="images/culture02.jpg" alt="해안을 따라 이어지는 길"></div>
+                                    <h3><span>이야기가 있는 생태 탐방로, 슬로길</span></h3>
+                                    <p>아름다운 풍경에 취해 절로 발걸음이 느려진다하여 슬로길이라 이름 붙여졌습니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#none">
+                                    <div class="photo"><img src="images/culture03.jpg" alt="주황색 거리"></div>
+                                    <h3><span>청산 파시문화거리</span></h3>
+                                    <p>좁다란 골목길을 찬찬히 살펴보면 옛 안통길의 흔적을 고스란히 느낄 수 있습니다.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div> <!-- //list -->
+                    <a href="#none" class="more"><span>더보기</span></a>
+                </div>
+            </section> <!-- //culture -->
+            <section class="tour">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>느린 걸음으로 완성되는 <br>슬로시티 청산도의 풍경</h2>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li class="tour01 active">
+                                <a href="#none">
+                                    <h3>청산진성</h3>
+                                    <p>청산진성터에 오르면 청산도의 아름다운 풍경이<br>
+                                        마치 파노라마처럼 펼쳐집니다.
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="tour02">
+                                <a href="#none">
+                                    <h3>고인돌</h3>
+                                    <p>청산진성을 따라 읍리로 들어서면<br>
+                                        인고의 세월을 묵묵히 괴고 있는 고인돌을 만날 수 있습니다.
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="tour03">
+                                <a href="#none">
+                                    <h3>숭모사</h3>
+                                    <p>숭모사는 김류선생의 학행을<br>
+                                        추모하기 위하여 세웠다는 서당입니다.
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="tour04">
+                                <a href="#none">
+                                    <h3>백련암</h3>
+                                    <p>청산도에 있는 유일한 절로 오랜 절의 역사와 함께<br>
+                                        동백나무 군락이 특별한 경치를 자아냅니다.
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div> <!-- //list -->
+                    <a href="#none" class="more"><span>더보기</span></a>
+                </div>
+            </section> <!-- //tour -->
+            <section class="community">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>지금, 청산도</h2>
+                    </div> <!-- //tit -->
+                    <div class="group">
+                        <div class="notice">
+                            <h3>공지사항</h3>
+                            <div class="list">
+                                <ul>
+                                    <li>
+                                        <a href="#none">
+                                            <h4>청산도 바자회</h4>
+                                            <span>26-01-28</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <h4>크리스마스 카드</h4>
+                                            <span>25-12-25</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <h4>청산도 봉숭아꽃</h4>
+                                            <span>25-08-13</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <h4>청산 미래의 아름다움 靑山八景 (청산팔경)</h4>
+                                            <span>25-04-08</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <h4>청산도 한달살이(여성전용)</h4>
+                                            <span>25-01-09</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div> <!-- //list -->
+                            <a href="#none" class="more"><span class="sr-only">더보기</span></a>
+                        </div> <!-- //notice -->
+                        <div class="service">
+                            <ul>
+                                <li class="ico01"><a href="#none">교통</a></li>
+                                <li class="ico02"><a href="#none">숙박</a></li>
+                                <li class="ico03"><a href="#none">음식</a></li>
+                                <li class="ico04"><a href="#none">축제</a></li>
+                            </ul>
+                        </div> <!-- //service -->
+                    </div> <!-- //group -->
+                </div>
+            </section> <!-- //community -->
+        </main>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="f_nav">
+                    <ul>
+                        <li class="privacy"><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none">이메일무단수집거부</a></li>
+                        <li><a href="#none">저작권안내</a></li>
+                        <li><a href="#none">기상청 날씨정보</a></li>
+                        <li><a href="#none">해상 일기예보</a></li>
+                        <li><a href="#none">지역 물때표</a></li>
+                    </ul>
+                </div> <!-- //f_nav -->
+                <div class="f_info">
+                    <address>전라남도 완도군 청산면 도청리 1143번지</address>
+                    <span>문의전화: 061-552-0809</span>
+                </div>
+                <div class="copyright">
+                    <p>© cheongsando.net All rights reserved.</p>
+                    <p class="license">※ www.cheongsando.net의 내용 및 이미지 무단링크, 무단전재, 재배포를 금지합니다.</p>
+                </div>
+            </div>
+        </footer>
+    </div> <!-- //wrap -->
+</body>
+</html>
