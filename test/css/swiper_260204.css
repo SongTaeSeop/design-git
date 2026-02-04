@@ -1,0 +1,385 @@
+@import url(pretendard.css);
+@import url(common.css);
+
+.visual .swiper-slide {
+    height: 900px;
+    background: url(../images/visual01.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.visual .swiper-slide.bg2 {
+    background-image: url(../images/visual02.jpg);
+}
+.visual .swiper-slide.bg3 {
+    background-image: url(../images/visual03.jpg);
+}
+
+.visual .swiper-slide h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 597px 0 26px 0;
+}
+
+.visual .ctrl_wrap {
+    position: absolute; /* .swiper 기준 정렬 */
+    left: 50%; /* 정렬 기준인 .swiper의 왼쪽에서부터 50% */
+    transform: translateX(-50%); /* 나 자신인 .ctrl_wrap의 너비 50%를 왼쪽(-)으로 이동 */
+    bottom: 61px;
+    color: #fff;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.visual .ctrl_wrap .paging {
+    width: auto;
+    display: flex;
+    gap: 0 2px;
+    margin: 0 6px 0 0;
+}
+/* swiper-pagination-bullet swiper-pagination-bullet-active */
+.visual .ctrl_wrap .paging .swiper-pagination-bullet {
+    margin: 0;
+    background: #fff;
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px; /* 높이 절반 */
+}
+.visual .ctrl_wrap .paging .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 34px;
+}
+
+.visual .ctrl_wrap .btn {
+    display: block;
+    position: relative; /* ::before, ::after 정렬 기준 */
+    width: 18px;
+    height: 18px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.visual .ctrl_wrap .btn.prev::before,
+.visual .ctrl_wrap .btn.next::before {
+    content: "";
+    position: absolute; /* .btn 기준 정렬 */
+    left: 6px;
+    top: 5px;
+    width: 5px;
+    height: 5px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 0 0 1px 1px;
+    transform: rotate(45deg);
+}
+.visual .ctrl_wrap .btn.next::before {
+    left: 4px;
+    transform: rotate(225deg);
+}
+.visual .ctrl_wrap .btn.stop::before,
+.visual .ctrl_wrap .btn.stop::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    width: 1px;
+    height: 8px;
+    background-color: #fff;
+}
+.visual .ctrl_wrap .btn.stop::after {
+    left: 10px;
+}
+.visual .ctrl_wrap .btn.play::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    background: url(../images/visual_play.svg) no-repeat center center;
+}
+.visual .ctrl_wrap .btn.play {
+    display: none;
+}
+
+/*** .btn:hover .btn:hover .btn:hover ***/
+.visual .ctrl_wrap .btn:hover {
+    background-color: #fff;
+}
+.visual .ctrl_wrap .btn.prev:hover::before,
+.visual .ctrl_wrap .btn.next:hover::before {
+    border-color: #1d1d1d;
+}
+.visual .ctrl_wrap .btn.stop:hover::before,
+.visual .ctrl_wrap .btn.stop:hover::after {
+    background-color: #1d1d1d;
+}
+.visual .ctrl_wrap .btn.play:hover::before {
+    background-image: url(../images/visual_play_on.svg);
+}
+/*** .btn:hover .btn:hover .btn:hover 끝 ***/
+
+@media screen and (max-width:768px) { /* 너비 768px 이하 */
+            .visual .swiper-slide {
+                height: 600px;
+            }
+
+            .visual .swiper-slide h3 {
+                font-size: 24px;
+                margin: 300px 0 14px 0;
+            }
+
+            .visual .swiper-slide p {
+                display: none;
+            }
+} /* @media screen and (max-width:768px) */
+
+.news {
+    margin: 100px 0 0 0;
+}
+
+.news h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+}
+
+.news .list {
+    margin: 26px 0 0 0;
+    position: relative; /* ctrl_wrap 정렬 기준 */
+}
+
+.news .list .swiper-slide a {
+    display: block;
+}
+
+.news .list .swiper-slide a h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news .list .swiper-slide a p {
+    margin: 21px 0;
+    /* 2줄 제한 */
+    line-height: 1.5; /* 알면 안 써도 됨 */
+    height: 3em; /* line-height x <보이는 줄 수> em*/
+    overflow: hidden;
+    
+    /* 비표준, 잘린 부분 끝에 말줄임표 추가 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.news .list .swiper-slide a .photo {
+    overflow: hidden;
+}
+
+.news .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+    vertical-align: top;
+}
+.news .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.125, 1.125, 1)
+}
+
+.news .list .ctrl_wrap {
+    position: absolute; /* .list 기준 정렬 */
+    right: 0;
+    top: -87px;
+    display: flex;
+    gap: 0 12px;
+}
+
+.news .list .ctrl_wrap button {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #1d1d1d;
+    border-radius: 50%;
+    background: url(../images/news_next.svg) no-repeat center center;
+}
+.news .list .ctrl_wrap button.prev {
+    transform: rotate(180deg);
+}
+/* swiper의 버튼 비활성화 클래스: swiper-button-disabled */
+.news .list .ctrl_wrap button.swiper-button-disabled {
+    opacity: 0.6;   
+}
+
+@media screen and (max-width:768px) { /* 너비 768px 이하 */    
+    .news h2 {
+        font-size: 24px;
+        margin-right: 85px;
+    }
+    
+    .news .list {
+        margin: 17px 0 0 0;
+    }
+    
+    .news .list .swiper-slide a h3 {
+        font-size: 20px;
+        /* 모바일은 2줄 제한 */
+        white-space: normal;
+        line-height: 1.3;
+        height: 2.6em; /* line-height x <보이는 줄 수> em*/
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+    
+    .news .list .swiper-slide a p {
+        margin: 11px 0;
+    }
+    
+    .news .list .ctrl_wrap {
+        top: -50px;
+    }
+    
+    .news .list .ctrl_wrap button {
+        width: 32px;
+        height: 32px;
+        background-size: 10px; /* 가로 사이즈 조정, 세로는 비율에 맞게 */
+    }
+} /* @media screen and (max-width:768px) */
+
+.notice {
+    margin: 130px 0 0 0;
+}
+
+.notice h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+}
+
+.notice .list {
+    margin: 26px 0 0 0;
+    position: relative; /* ctrl_wrap 정렬 기준 */
+}
+
+.notice .list .swiper-slide a {
+    display: block;
+}
+
+.notice .list .swiper-slide a h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notice .list .swiper-slide a p {
+    margin: 21px 0;
+    /* 2줄 제한 */
+    line-height: 1.5; /* 알면 안 써도 됨 */
+    height: 3em; /* line-height x <보이는 줄 수> em*/
+    overflow: hidden;
+    
+    /* 비표준, 잘린 부분 끝에 말줄임표 추가 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.notice .list .swiper-slide a .photo {
+    overflow: hidden;
+}
+
+.notice .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+    vertical-align: top;
+}
+.notice .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.125, 1.125, 1)
+}
+
+.notice .list .ctrl_wrap {
+    position: absolute; /* .list 기준 정렬 */
+    right: 0;
+    top: -87px;
+    display: flex;
+    gap: 0 12px;
+}
+
+.notice .list .ctrl_wrap button {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #1d1d1d;
+    border-radius: 50%;
+    background: url(../images/news_next.svg) no-repeat center center;
+}
+.notice .list .ctrl_wrap button.prev {
+    transform: rotate(180deg);
+}
+/* swiper의 버튼 비활성화 클래스: swiper-button-disabled */
+.notice .list .ctrl_wrap button.swiper-button-disabled {
+    opacity: 0.6;   
+}
+
+@media screen and (max-width:768px) { /* 너비 768px 이하 */    
+                .notice h2 {
+                    font-size: 24px;
+                    margin-right: 85px;
+                }
+                
+                .notice .list {
+                    margin: 17px 0 0 0;
+                }
+
+                .notice .list .swiper-slide {
+                    width: 250px;
+                }
+                
+                .notice .list .swiper-slide a h3 {
+                    font-size: 20px;
+                    /* 모바일은 2줄 제한 */
+                    white-space: normal;
+                    line-height: 1.3;
+                    height: 2.6em; /* line-height x <보이는 줄 수> em*/
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                }
+                
+                .notice .list .swiper-slide a p {
+                    margin: 11px 0;
+                }
+                
+                .notice .list .ctrl_wrap {
+                    top: -50px;
+                }
+                
+                .notice .list .ctrl_wrap button {
+                    width: 32px;
+                    height: 32px;
+                    background-size: 10px; /* 가로 사이즈 조정, 세로는 비율에 맞게 */
+                }
+} /* @media screen and (max-width:768px) */
+
+
+
+
+
+
+body {
+    margin: 0 0 1000px 0;
+}
