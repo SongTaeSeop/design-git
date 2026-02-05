@@ -1,0 +1,38 @@
+/* default.css: 태그의 브라우저 스타일 삭제, reset.css라고도 함, 수정할 일이 없음 */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+strong {
+    font-weight: inherit;
+}
+
+em, address {
+    font-style: normal; /* em, address는 기본 기울임체임 */
+}
+
+button {
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    line-height: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
