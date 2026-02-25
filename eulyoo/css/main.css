@@ -346,6 +346,7 @@
                 }
 } /* @media screen and (max-width:1024px) */
 
+
 .visual {
     position: relative; /* .ctrl_left, .ctrl_right 정렬 기준 */
 }
@@ -436,6 +437,266 @@
         display: none;
     }
 } /* @media screen and (max-width:768px) */
+
+
+.book {
+    background-color: var(--color-bg);
+    padding: clamp(107px, 18vw, 186px) 0 clamp(99px, 13vw, 131px) 0;
+    /* display: flex; .inner 오른쪽 배치
+    justify-content: flex-end; */
+}
+
+.book .inner {
+    /* width: calc(50% + calc(var(--wrapper-w) / 2)); */
+    display: flex; /* .tit .list 좌우 배치 */
+    justify-content: space-between;
+    position: relative; /* .btn_wrap 정렬 기준 */
+    margin-left: calc((100% - var(--wrapper-w)) / 2); /* (전체 너비 - wrapper 너비) / 2) */
+}
+
+@media screen and (max-width:1384px){ /* 1284+50+50 = 1384 */
+        .book .inner {
+            /* width: calc(100% - var(--wrapper-margin)); */
+            margin-left: var(--wrapper-margin);
+        }
+}
+
+.book .tit h2 {
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-tit);
+    line-height: var(--line-height-tit);
+    color: var(--font-color-tit);
+    margin: 0 0 9px 0;
+}
+
+.book .list {
+    width: calc(100% - 326px); /* inner 100% - 326px */
+}
+
+.book .list .swiper {
+    padding-right: var(--wrapper-margin);
+}
+
+.book .list .swiper-wrapper {
+    align-items: flex-end; /* 책 정렬 기준점을 아래로 */
+}
+
+.book .list .swiper-slide {
+    width: 275px;
+}
+
+.book .list .swiper-slide a {
+    display: block;
+}
+
+.book .list .swiper-slide a .photo {
+    overflow: hidden;
+    border: 1px solid #D0CABC;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.book .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 책 안 잘림 */
+    vertical-align: bottom;
+}
+
+.book .list .swiper-slide a .txt {
+    /* 높이 고정을 위해 폰트 크기와 line-height를 부모에게 제공함 */
+    font-size: var(--font-size-subTit2);
+    line-height: var(--line-height-tit);
+    height: calc((var(--line-height-tit) * 3em) + (1.0417em + 0.1667em));
+}
+
+.book .list .swiper-slide a .txt h3 {
+    font-weight: var(--font-weight-tit);
+    color: var(--font-color-tit);
+    margin: 1.0417em 0 0.1667em 0;
+    /* 최대 2줄 */
+    max-height: calc(var(--line-height-tit) * 2em);
+    overflow: hidden;
+    /* 책 제목은 단어 단위 줄바꿈 해제 */
+    word-break: normal;
+}
+
+.book .list .swiper-slide a .txt h3 strong {
+    /* 밑줄 */
+    background-image: linear-gradient(transparent calc(100% - 1px), var(--font-color-tit) 10px);
+    /* background-color: var(--font-color-tit); */
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position: left bottom;
+    transition: background-size 0.3s ease;
+}
+
+.book .list .swiper-slide a:hover .txt h3 strong {
+    background-size: 100% 100%;
+}
+
+.book .list .swiper-slide a .txt span {
+    font-size: var(--font-size-default);
+    line-height: var(--line-height-default);
+    color: var(--font-color-gray);
+    /* 1줄 제한 */
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book .btn_wrap {
+    display: flex;
+    gap: 0 4px;
+    position: absolute;
+    left: 0;
+    top: 257px;
+}
+
+.book .btn_wrap button,
+.book .btn_wrap .more {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--font-color-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color-gray);
+    fill: var(--font-color-gray);
+}
+.book .btn_wrap button.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+.book .btn_wrap button:not(.swiper-button-disabled):hover,
+.book .btn_wrap .more:hover {
+    border-color: var(--color-main);
+    background-color: var(--color-main);
+    color: #fff;
+    fill: #fff;
+}
+
+@media screen and (max-width:1024px){
+                .book .inner {
+                    flex-direction: column;
+                    gap: 72px 0;
+                }
+                
+                .book .tit h2 br.not-in-mobile {
+                    display: none;
+                }
+
+                .book .tit p {
+                    display: none;
+                }
+
+                .book .list {
+                    width: auto;
+                }
+
+                .book .list .swiper-slide a .txt h3 {
+                    margin: 0.5em 0 0.1em 0;
+                }
+
+                .book .btn_wrap {
+                    font-size: var(--font-size-tit);
+                    left: auto;
+                    right: var(--wrapper-margin);
+                    top: calc(var(--line-height-tit) * 1em);
+                }
+
+} /* @media screen and (max-width:1024px) */
+
+@media screen and (max-width:768px) {
+                .book .list .swiper-slide {
+                    width: 225px;
+                }
+
+                .book .btn_wrap button {
+                    display: none;
+                }
+
+                .book .btn_wrap button,
+                .book .btn_wrap .more {
+                    width: 36px;
+                    height: 36px;
+                }
+
+                .book .btn_wrap .more svg {
+                    width: 16px;
+                    height: 16px;
+                }
+} /* @media screen and (max-width:768px) */
+
+
+.interview {
+    margin: clamp(67px, 17vw, 171px) 0 clamp(119px, 14vw, 142px) 0;
+}
+
+.interview .tit h2 {
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-tit);
+    line-height: var(--line-height-tit);
+    color: var(--font-color-tit);
+    margin: 0 0 9px 0;
+}
+
+.interview .tit h2 br{
+    display: none;
+}
+
+.interview .list {
+    margin: clamp(46px, 6vw, 62px) 0 0 0;
+}
+
+.interview .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.interview .list ul li {
+    /* (100% / 1줄 li 개수) - (여백 합 / 1줄 li 개수) */
+    width: calc((100% / 3) - 16px);
+}
+.interview .list ul li:nth-child(2) {
+    margin-top: 50px;
+}
+
+.interview .list ul li a {
+    display: block;
+}
+
+.interview .list ul li a .photo {
+    position: relative; /* ::before 정렬 기준 */
+    overflow: hidden;
+    height: 416px;
+    border-radius: 70px 0 70px 0;
+}
+.interview .list ul li:nth-child(2) a .photo {
+    border-radius: 0 70px 0 70px;
+}
+.interview .list ul li a .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+}
+
+.interview .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+
 
 .footer {
     margin: 1000px 0 0 0;
