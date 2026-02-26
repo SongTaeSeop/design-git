@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery -->
     <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Swiper -->
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
@@ -142,7 +147,7 @@
             </section>
             <section class="book">
                 <div class="inner">
-                    <div class="tit">
+                    <div class="tit"  data-aos="fade-up">
                         <h2>독자를 <br class="not-in-mobile">
                             위한 <br>
                             책 이야기
@@ -151,7 +156,7 @@
                             그 안의 가치를 전합니다.
                         </p>
                     </div>
-                    <div class="list">
+                    <div class="list"  data-aos="fade-up" data-aos-delay="100">
                         <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
                             <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                                 <li class="swiper-slide">
@@ -229,7 +234,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="btn_wrap">
+                    <div class="btn_wrap"  data-aos="fade-up">
                         <button class="prev">
                             <span class="sr-only">이전 팝업 보기</span>
                             <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
@@ -251,7 +256,7 @@
                     </div>
                 </div>
             </section>
-            <section class="interview">
+            <section class="interview" data-aos="fade-up">
                 <div class="wrapper">
                     <div class="tit">
                         <h2>영상으로 <br>
@@ -259,7 +264,7 @@
                         </h2>
                         <p>신간과 작가 이야기를 생생하게 전달합니다.</p>
                     </div>
-                    <div class="list">
+                    <div class="list" data-aos="fade-up" data-aos-delay="100">
                         <ul>
                             <!-- 마우스를 올리면 over 클래스 추가 (PC) -->
                             <li>
@@ -330,7 +335,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a href="#none" class="more">
+                    <a href="#none" class="more" data-aos="fade-up">
                         <span>더보기</span>
                         <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.5625 14V7.4375H0V6.5625H6.5625V0H7.4375V6.5625H14V7.4375H7.4375V14H6.5625Z" />
@@ -340,13 +345,13 @@
             </section>
             <section class="story">
                 <div class="wrapper">
-                    <div class="tit">
+                    <div class="tit" data-aos="fade-up">
                         <h2>지금의 생각, <br>
                             을유연재
                         </h2>
                         <p>다양한 시선과 이야기로 이어지는 연재 글.</p>
                     </div>
-                    <div class="list">
+                    <div class="list" data-aos="fade-up" data-aos-delay="100">
                         <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
                             <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                                 <!-- 긴 이미지가 들어간 항목은 long 클래스 추가 -->
@@ -438,7 +443,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="btn_wrap">
+                    <div class="btn_wrap" data-aos="fade-up" data-aos-delay="150">
                         <button class="prev">
                             <span class="sr-only">이전 팝업 보기</span>
                             <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
