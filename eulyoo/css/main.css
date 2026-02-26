@@ -741,7 +741,7 @@
     position: absolute;
     left: 0;
     bottom: -47px;
-    z-index: 111;
+    z-index: 12;
     width: 92.2%;
     background-color: var(--color-main);
     color: #fff;
