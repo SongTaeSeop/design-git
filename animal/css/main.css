@@ -1,0 +1,15 @@
+@import url(default.css);
+@import url(common.css);
+@import url(fonts.css);
+@import url(layout.css);
+
+h2 {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-tit);
+    color: var(--font-color-tit);
+    line-height: var(--line-height-tit);
+}
+
+.wrapper {
+    border: 1px solid var(--color-tomato);
+}
