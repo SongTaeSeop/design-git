@@ -3,13 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <title>종합 유기견 보호센터</title>
 </head>
-<body>
-    <div class="wrapper">
-        <h2>길잃은 동물을 발견하면 신고하세요</h2>
-        <p>공공장소에서 주인 없이 떠도는 동물을 발견한 경우 관할 시군구청 또는 동물보호센터에 신고하시기 바랍니다. 신고 동물은 구조·보호되며 소유자 반환을 위해 반환대상 동물공고를 하게 됩니다.</p>
+    <div id="wrap">
+        <!--
+            1. 메뉴는 스크롤 시 상단 고정: fixed 클래스
+            2. PC) 메뉴에 마우스를 오버함: menu_over 클래스
+            3. Mobile) 메뉴를 엶: menu_open 클래스
+        -->
+        <header class="header">
+            <div class="wrapper">
+                <h1 class="logo"><a href="index.html"><span class="sr-only">전국 종합 유기견 보호센터 종합 유기견 보호센터</span></a></h1>
+                <nav class="gnb">
+                    <ul class="depth1">
+                        <!--
+                            1. 메뉴에 마우스를 오버: over 클래스
+                        -->
+                        <li>
+                            <a href="#none"><span>찾습니다</span></a>
+                            <ul class="depth2">
+                                <li><a href="#none"><span>반려동물 실종 신고</span></a></li>
+                                <li><a href="#none"><span>유기동물 보호 중</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#none"><span>구조 분양</span></a>
+                        </li>
+                        <li>
+                            <a href="#none"><span>봉사 · 후원</span></a>
+                            <ul class="depth2">
+                                <li><a href="#none"><span>자원봉사 모집</span></a></li>
+                                <li><a href="#none"><span>기부금 및 후원</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#none"><span>커뮤니티</span></a>
+                            <ul class="depth2">
+                                <li><a href="#none"><span>자유게시판</span></a></li>
+                                <li><a href="#none"><span>재회 성공담</span></a></li>
+                                <li><a href="#none"><span>입양 후기</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#none"><span>반려 지식</span></a>
+                            <ul class="depth2">
+                                <li><a href="#none"><span>애견 지식정보</span></a></li>
+                                <li><a href="#none"><span>냥이지식정보</span></a></li>
+                                <li><a href="#none"><span>기타 동물 지식정보</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="util">
+                    <a href="#none" class="mypage"><span class="sr-only">마이페이지</span><span class="mobile-only">로그인</span></a>
+
+                    <button class="sitemap_btn" title="메뉴 열기">
+                        <span class="line1"></span>
+                        <span class="line2"></span>
+                        <span class="line3"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="sitemap">
+                <div class="wrapper">
+                    <h2>SITEMAP</h2>
+                    <div class="sitemap_wrap">
+                        <ul class="depth1">
+                            <!-- 
+                                Mobile) li를 클릭하면 open 클래스 추가
+                            -->
+                            <li>
+                                <a href="#none"><span>찾습니다</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#none"><span>반려동물 실종 신고</span></a></li>
+                                    <li><a href="#none"><span>유기동물 보호 중</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none"><span>구조 분양</span></a>
+                            </li>
+                            <li>
+                                <a href="#none"><span>봉사 · 후원</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#none"><span>자원봉사 모집</span></a></li>
+                                    <li><a href="#none"><span>기부금 및 후원</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none"><span>커뮤니티</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#none"><span>자유게시판</span></a></li>
+                                    <li><a href="#none"><span>재회 성공담</span></a></li>
+                                    <li><a href="#none"><span>입양 후기</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="open">
+                                <a href="#none"><span>반려 지식</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#none"><span>애견 지식정보</span></a></li>
+                                    <li><a href="#none"><span>냥이지식정보</span></a></li>
+                                    <li><a href="#none"><span>기타 동물 지식정보</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sitemap_bg"></div> <!-- 모바일 메뉴 뒷배경 어둡게 -->
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="sr-only">팝업</h2>
+                <div class="popup_wrap">
+                    <div class="popup"> <!-- slick에서 호출하는 이름 -->
+                        <div class="item bg1">
+                            <div class="wrapper">
+                                <p><span class="pc-only">당신의 작은 제보가 누군가의 가족을 다시 만나게 합니다 <br></span>
+                                    반려 지식과 입양 후기가 모이는 따뜻한 연결의 장소
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item bg2">
+                            <div class="wrapper">
+                                <p><span class="pc-only">기적 같은 재회부터 몽글몽글한 입양 후기까지 <br></span>
+                                    소중한 생명을 지키는 우리들의 따뜻한 이야기
+                                </p>
+                            </div></div>
+                        <div class="item bg3">
+                            <div class="wrapper">
+                                <p><span class="pc-only">작은 제보로 시작되는 큰 기적 <br></span>
+                                    사랑으로 이어지는 반려 커뮤니티
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ctrl_wrap">
+                    <button class="stop"><span class="sr-only">일시정지</span></button>  <!-- 일시정지 버튼 -->
+                    <button class="play"><span class="sr-only">재생</span></button>  <!-- 재생 버튼 -->
+                </div>
+            </section>
+            <section class="find">
+
+            </section>
+            <section class="message">
+
+            </section>
+            <section class="adopt">
+
+            </section>
+            <section class="review">
+
+            </section>
+        </main>
+        <footer class="footer">
+
+        </footer>
     </div>
+<body>
 </body>
 </html>
