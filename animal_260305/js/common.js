@@ -14,7 +14,7 @@ $(document).ready(function () {
         } else {
             device_status = "mo";
         }
-        console.log(device_status);
+        // console.log(device_status);
     }
 
     device_chk(); //문서가 로딩되었을때 단 1번 실행

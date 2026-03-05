@@ -41,6 +41,7 @@ body{
 :root{
     --wrapper-margin: 30px;
     --wrapper-w: 1440px;
+    --gap: 24px;
     --font-color-default: #504E4F;
     --font-color-tit: #242223;
     --color-main: #142840;
@@ -84,6 +85,7 @@ body{
         --font-size-subtit: 20px;
         --wrapper-margin: 16px;
         --header-h: 56px;
+        --gap: 16px;
     }
 }
 ::selection{
