@@ -1,0 +1,368 @@
+/*
+    layout.css
+    header, footer의 스타일이 저장됨...
+*/
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: #fff;
+}
+.header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo a {
+    display: block;
+    height: calc(var(--header-h) * 0.44);
+    width: calc(var(--header-h) * 2.12);
+    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+}
+.header.menu_over,
+.header.fixed {
+    background-color: #fff;
+    color: var(--font-color-tit);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.header.menu_over .logo a,
+.header.fixed .logo a {
+    background-image: url(../images/common/logo.svg);
+}
+@media screen and (min-width: 1025px) {
+    /* 1025px이상일때만 적용 */
+    .header .gnb ul.depth1 {
+        display: flex;
+        text-align: center;
+    }
+    .header .gnb ul.depth1 > li {
+        position: relative; /* ul.depth2 정렬의 기준 */
+    }
+    .header .gnb ul.depth1 > li > a {
+        display: block;
+        line-height: var(--header-h);
+        font-size: 20px;
+        font-weight: var(--font-weight-bold);
+        padding: 0 22px;
+    }
+    /* 2차메뉴가 있는 1차메뉴만 */
+    .header .gnb ul.depth1 > li:has(ul.depth2) > a > span {
+        display: block;
+        padding-right: 14px;
+        position: relative; /* after 정렬의 기준 */
+    }
+    .header .gnb ul.depth1 > li:has(ul.depth2) > a > span::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 45px;
+        width: 5px;
+        height: 10px;
+        background-image: var(--icon-arrow-w);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        transform: rotate(90deg);
+        transition: transform 0.3s;
+    }
+    .header .gnb ul.depth1 > li > ul.depth2 {
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); /* 가운데 */
+        top: 82px;
+        background-color: var(--color-main);
+        padding: 18px 24px;
+        border-radius: 10px;
+    }
+    .header .gnb ul.depth1 > li > ul.depth2 > li > a {
+        display: block;
+        padding: 5px 0;
+        white-space: nowrap; /* 무조건 1줄 */
+        color: #fff;
+    }
+    .header .gnb ul.depth1 > li > ul.depth2 > li > a:hover {
+        text-decoration: underline;
+    }
+    .header .util {
+        display: flex;
+    }
+    .header .util .mypage {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-image: var(--icon-mypage-w);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .header .util .sitemap_btn {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        z-index: 10;
+    }
+    .header .util .sitemap_btn span {
+        width: 23px;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 2px;
+        position: absolute;
+        left: 9px;
+    }
+    .header .util .sitemap_btn span.line1 {
+        top: 12px;
+        transition: transform 0.3s, top 0.3s;
+    }
+    .header .util .sitemap_btn span.line2 {
+        top: 19px;
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
+    .header .util .sitemap_btn span.line3 {
+        top: 26px;
+        transition: transform 0.3s, top 0.3s;
+    }
+    .header.menu_open .util .sitemap_btn span.line1 {
+        transform: rotate(45deg);
+        top: 50%;
+    }
+    .header.menu_open .util .sitemap_btn span.line2 {
+        opacity: 0;
+    }
+    .header.menu_open .util .sitemap_btn span.line3 {
+        transform: rotate(-45deg);
+        top: 50%;
+    }
+
+    .header .sitemap {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--color-main);
+        color: var(--color-white);
+        transform: translateY(-110%);
+        transition: transform 0.3s;
+    }
+    .header .sitemap .sitemap_wrap{
+        width: var(--wrapper-w);
+        margin: var(--header-h) auto 0 auto;
+        height: calc(100vh - var(--header-h));
+        overflow-y: auto;
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li{
+        border-bottom: 1px solid var(--color-w20);
+        padding: 40px 0;
+        display: flex;
+        align-items: center;
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li > button{
+        display: block;
+        font-size: 32px;
+        font-weight: var(--font-weight-bold);
+        width: 185px;
+        cursor: default;
+        text-align: left;
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li > ul.depth2{
+        display: flex;
+        gap: 0 45px;
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li > ul.depth2 > li > a{
+        display: block;
+        font-size: 20px;
+        position: relative;
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li > ul.depth2 > li > a:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 0;
+        height: 1px;
+        background-color: var(--color-white);
+        transition: 0.3s;
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li > ul.depth2 > li > a:hover:after{
+        width: 100%;
+    }
+    .header .sitemap .sitemap_bg{
+        display: none;
+    }
+    .header.menu_open .sitemap{
+        transform: translateY(0);
+    }
+
+    /* 메뉴에 오버했을때 */
+    .header.menu_over .gnb ul.depth1 > li.over > a {
+        color: var(--color-main);
+    }
+    .header.menu_over .gnb ul.depth1 > li.over:has(ul.depth2) > a > span::after {
+        background-image: var(--icon-arrow-main);
+        transform: rotate(270deg);
+    }
+    .header.menu_over .gnb ul.depth1 > li:has(ul.depth2) > a > span::after,
+    .header.fixed .gnb ul.depth1 > li:has(ul.depth2) > a > span::after {
+        background-image: var(--icon-arrow-tit);
+    }
+    .header.menu_over .util .mypage,
+    .header.fixed .util .mypage {
+        background-image: var(--icon-mypage);
+    }
+    .header.menu_over .util .sitemap_btn span,
+    .header.fixed .util .sitemap_btn span {
+        background-color: var(--font-color-default);
+    }
+} /* media */
+@media screen and (max-width:1500px) and (min-width:1025px){
+    .header .sitemap .sitemap_wrap{
+        width: auto;
+        margin: var(--header-h) var(--wrapper-margin) 0 var(--wrapper-margin);
+    }
+}/*media*/
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  /* 1280~1025 */
+    .header .gnb ul.depth1 > li > a {
+        padding: 0 15px;
+    }
+} /* media */
+
+@media screen and (max-width: 1024px) {
+    .header .wrapper{
+        margin-right: 0;
+    }
+    .header .gnb{
+        display: none;
+    }
+    .header .util .mypage{
+        display: none;
+    }
+    .header .util .sitemap_btn{
+        width: var(--header-h);
+        height: var(--header-h);
+        position: relative;
+        z-index: 10;
+    }
+    .header .util .sitemap_btn span{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 23px;
+        height: 3px;
+        border-radius: 3px;
+        background-color: #fff;
+        transition: 0.3s;
+    }
+    .header .util .sitemap_btn span.line1{
+        top: calc(50% - 7px);
+    }
+    .header .util .sitemap_btn span.line3{
+        top: calc(50% + 7px);
+    }
+    .header.menu_open .util .sitemap_btn span.line1{
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .header.menu_open .util .sitemap_btn span.line2{
+        opacity: 0;
+    }
+    .header.menu_open .util .sitemap_btn span.line3{
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    .header .sitemap{
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        transform: translateX(110%);
+    }
+    .header.menu_open .sitemap{
+        transform: translateX(0);
+    }
+    .header .sitemap .sitemap_wrap{
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 80%;
+        max-width: 500px;
+        height: 100vh;
+        background-color: var(--color-main);
+        transform: translateX(110%);
+        transition: transform 0.3s;
+    }
+    .header.menu_open .sitemap .sitemap_wrap{
+        transform: translateX(0);
+    }
+    .header .sitemap .sitemap_wrap ul.depth1{
+        margin-top: var(--header-h);
+        padding: 27px var(--wrapper-margin) 0 var(--wrapper-margin);
+        height: calc(100vh - var(--header-h));
+        overflow-y: auto;
+        background-color: var(--color-white);
+        color: var(--font-color-tit);
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li{
+        border-bottom: 1px solid #EDEDED;
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li > button{
+        display: block;
+        font-size: 22px;
+        font-weight: var(--font-weight-bold);
+        padding: 12px 0 13px 0;
+        width: 100%;
+        text-align: left;
+        position: relative;
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li:has(ul.depth2) > button::after{
+        content: "";
+        position: absolute;
+        right: 7px;
+        top: 20px;
+        transform: rotate(90deg);
+        width: 7px;
+        height: 15px;
+        background-image: var(--icon-arrow-tit);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        transition: 0.3s;
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li.open:has(ul.depth2) > button::after{
+        transform: rotate(270deg);
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li > ul.depth2{
+        display: none;
+        background-color: #F4F4F4;
+        padding: 10px 0 10px var(--wrapper-margin);
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li > ul.depth2 > li > a{
+        display: block;
+        padding: 4px 0;
+    }
+    .header .sitemap .sitemap_bg{
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    .header.menu_open .sitemap .sitemap_bg{
+        opacity: 1;
+    }
+
+}/*media*/
+.footer {
+    margin: 2000px 0 0 0;
+}
