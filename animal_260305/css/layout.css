@@ -370,6 +370,120 @@
     }
 
 }/*media*/
-.footer {
-    margin: 2000px 0 0 0;
+
+.container {
+    position: relative;
+    z-index: 10;
+    background-color: var(--color-white);
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent; /* .container 내부 요소가 준 margin을 위 아래로 적용 */
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--font-color-default);
+    color: var(--color-w80);
+    padding: 77px 0 clamp(71px, 7vw, 79px) 0;
+}
+
+.footer .wrapper {
+    position: relative; /* .top 정렬 기준 */
+    padding-right: 50px;
+}
+
+.footer .top {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-sub1);
+    background-image: var(--icon-arrow-w);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 10px;
+    transform: rotate(-90deg);
+}
+
+.footer .f_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 38px;
+}
+
+.footer .f_nav ul li {
+    position: relative;
+}
+.footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -19px;
+    top: 5px;
+    width: 1px;
+    height: 14px;
+    background-color: var(--color-w20);
+}
+.footer .f_nav ul li:last-child:after {
+    display: none;
+}
+
+.footer .f_info {
+    margin: clamp(28px, 3vw, 34px) 0 34px 0;
+}
+
+.footer .f_info span {
+    display: inline-block;
+    margin-right: 26px;
+}
+
+.footer .top span {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding-top: 103px;
+    }
+    .footer .wrapper {
+        position: relative; /* .top 정렬 기준 */
+        padding-right: 0;
+    }
+
+    .footer .top {
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        top: -80px;
+        width: 88px;
+        height: 53px;
+        border-radius: 100px;
+        background-image: none;
+        color: var(--color-white);
+    }
+    .footer .top::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -11px;
+        width: 100%;
+        height: 100%;
+        background-image: var(--icon-arrow-w);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 10px;
+        transform: rotate(-90deg);
+    }
+
+    .footer .top span {
+        display: block;
+        margin: 21px 0 0 0;
+    }
+
+    .footer .f_info {
+        margin-bottom: 38px;
+    }
+} /* @media screen and (max-width: 768px) */

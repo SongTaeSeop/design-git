@@ -270,7 +270,6 @@
     font-weight: var(--font-weight-bold);
     white-space: nowrap;
     position: relative; /* img 정렬 기준 */
-    border: 1px solid tomato;
 }
 
 .message strong {
@@ -328,7 +327,7 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-2%);
+        transform: translateY(-3%);
     }
     100% {
         transform: translateY(0);
@@ -337,13 +336,13 @@
 
 @keyframes swing {
     0% {
-        transform: rotate(10deg);
+        transform: rotate(3deg);
     }
     50% {
-        transform: rotate(-10deg);
+        transform: rotate(-3deg);
     }
     100% {
-        transform: rotate(10deg);
+        transform: rotate(3deg);
     }
 }
 
@@ -352,7 +351,7 @@
         transform: translateX(0);
     }
     50% {
-        transform: translateX(-4%);
+        transform: translateX(-3%);
     }
     100% {
         transform: translateX(0);
@@ -632,27 +631,27 @@
 }
 
 @media screen and (max-width:768px) {
-    .review h2 {
-        padding: 0;
-        border-bottom: none;
-    }
+                .review h2 {
+                    padding: 0;
+                    border-bottom: none;
+                }
 
-    .review .more a {
-        width: 28px;
-        height: 28px;
-        border: 1px solid var(--font-color-default);
-        border-radius: 50%;
-        padding-right: 0;
-    }
-    .review .more a::after {
-        right: 50%;
-        width: 11px;
-        height: 11px;
-        transform: translate(50%, -50%);
-    }
+                .review .more a {
+                    width: 28px;
+                    height: 28px;
+                    border: 1px solid var(--font-color-default);
+                    border-radius: 50%;
+                    padding-right: 0;
+                }
+                .review .more a::after {
+                    right: 50%;
+                    width: 11px;
+                    height: 11px;
+                    transform: translate(50%, -50%);
+                }
 
-    .review .more a strong,
-    .review .more a span {
-        display: none;
-    }
+                .review .more a strong,
+                .review .more a span {
+                    display: none;
+                }
 } /* @media screen and (max-width:768px) */

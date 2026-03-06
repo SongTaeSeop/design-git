@@ -77,16 +77,16 @@ $(document).ready(function () {
         if (device_status == "mo") {
             if($(this).hasClass('open') == true){
                 $(this).removeClass('open')
-                $(this).find('ul.depth2').slideUp(300, function(){
+                $(this).find('ul.depth2').stop().slideUp(300, function(){
                     $(this).removeAttr('style')
                 })
             }else{
                 $('.header .sitemap .sitemap_wrap ul.depth1 > li:has(ul.depth2)').removeClass('open')
-                $('.header .sitemap .sitemap_wrap ul.depth1 > li:has(ul.depth2) > ul.depth2').slideUp(300, function(){
+                $('.header .sitemap .sitemap_wrap ul.depth1 > li:has(ul.depth2) > ul.depth2').stop().slideUp(300, function(){
                     $(this).removeAttr('style')
                 })
                 $(this).addClass('open')
-                $(this).find('ul.depth2').slideDown()
+                $(this).find('ul.depth2').stop().slideDown(150)
             }
         }
     })
@@ -96,4 +96,30 @@ $(document).ready(function () {
         }
     })
 
+    /***
+     * .top 클릭 상단 스크롤
+     * ***/
+    $('.footer .top').on('click', function() {
+        $('html, body').animate({
+            scrollTop: 0,
+        }, 500);
+    });
+
+    /***
+     * .footer 높이 계산하여, .container의 하단 margin 제공
+     * ***/
+
+    let footer_h;
+
+    function footer_count() {
+        footer_h = $('.footer').outerHeight();
+        // console.log(footer_h);
+        $('.container').css('margin-bottom', footer_h);
+    }
+
+    footer_count();
+
+    $(window).resize(function() {
+        footer_count();
+    });
 });
