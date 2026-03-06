@@ -26,13 +26,13 @@ $(document).ready(function () {
         if (device_status == "pc") {
             $(".header").addClass("menu_over");
             $(this).addClass("over");
-            $(this).find("ul.depth2").slideDown();
+            $(this).find("ul.depth2").stop().slideDown(300);
         }
     });
     $(".header .gnb ul.depth1 > li").on("mouseleave", function () {
         if (device_status == "pc") {
             $(this).removeClass("over");
-            $(this).find("ul.depth2").slideUp();
+            $(this).find("ul.depth2").stop().slideUp(150);
         }
     });
     $(".header").on("mouseleave", function () {
@@ -44,7 +44,7 @@ $(document).ready(function () {
         if (device_status == "pc") {
             $(".header").removeClass("menu_over");
             $(".header .gnb ul.depth1 > li:has(ul.depth2)").removeClass('over')
-            $(".header .gnb ul.depth1 > li:has(ul.depth2) > ul.depth2").slideUp();
+            $(".header .gnb ul.depth1 > li:has(ul.depth2) > ul.depth2").stop().slideUp(150);
         }
     });
 

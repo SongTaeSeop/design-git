@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
     <script src="js/main.js"></script>
     <title>종합유기견보호센터2</title>
 </head>
+
 <body>
     <div id="wrap">
         <!--
@@ -135,19 +137,23 @@
                     </div><!--//popup-->
                 </div><!--//popup_wrap-->
                 <div class="ctrl_wrap">
-                    <button class="stop"><span class="sr-only">일시정지</span></button>  <!-- 일시정지 버튼 -->
-                    <button class="play"><span class="sr-only">재생</span></button>  <!-- 재생 버튼 -->
+                    <button class="stop"><span class="sr-only">일시정지</span></button> <!-- 일시정지 버튼 -->
+                    <button class="play"><span class="sr-only">재생</span></button> <!-- 재생 버튼 -->
                 </div><!--//ctrl_wrap-->
             </section>
             <section class="find">
                 <div class="wrapper">
                     <h2>찾습니다</h2>
                     <div class="tab_list">
-                        <ul role="tablist"> <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role -->
+                        <ul role="tablist">
+                            <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role -->
                             <!-- aria-selected: 탭 선택 여부 https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected -->
                             <!-- aria-controls: 해당 입력이 제어하는 id https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls -->
-                            <li id="find_tab01" role="tab" aria-selected="true" aria-controls="find_conts01" class="animal active"><button><span>반려동물</span><em class="sr-only"> 선택됨</em></button></li> <!-- 선택된 요소는 탭 이름에 '선택됨' 추가해서 써야 함-->
-                            <li id="find_tab02" role="tab" aria-selected="false" aria-controls="find_conts02" class="people"><button><span>보호자</span><em class="sr-only"></em></button></li>
+                            <li id="find_tab01" role="tab" aria-selected="true" aria-controls="find_conts01"
+                                class="animal active"><button><span>반려동물</span><em class="sr-only"> 선택됨</em></button>
+                            </li> <!-- 선택된 요소는 탭 이름에 '선택됨' 추가해서 써야 함-->
+                            <li id="find_tab02" role="tab" aria-selected="false" aria-controls="find_conts02"
+                                class="people"><button><span>보호자</span><em class="sr-only"></em></button></li>
                         </ul>
                     </div>
                     <div class="tab_conts">
@@ -395,7 +401,8 @@
                                         </ul>
                                     </div>
                                     <div class="item">
-                                        <div class="photo"><img src="images/main/find_people04.jpg" alt="래브라도 리트리버"></div>
+                                        <div class="photo"><img src="images/main/find_people04.jpg" alt="래브라도 리트리버">
+                                        </div>
                                         <ul>
                                             <li>
                                                 <strong>발견장소</strong>
@@ -479,7 +486,8 @@
                                         </ul>
                                     </div>
                                     <div class="item">
-                                        <div class="photo"><img src="images/main/find_people08.jpg" alt="래브라도 리트리버"></div>
+                                        <div class="photo"><img src="images/main/find_people08.jpg" alt="래브라도 리트리버">
+                                        </div>
                                         <ul>
                                             <li>
                                                 <strong>발견장소</strong>
@@ -513,13 +521,227 @@
                         <strong>떠도는 동물을 발견한 경우 <span>떠도는 동물을 발견한 경우 </span></strong>
                         <strong>관할 시군구청 또는 동물보호센터에 <span>관할 시군구청 또는 동물보호센터에 </span></strong>
                         <strong>신고하시기 바랍니다.<span>신고하시기 바랍니다.</span></strong>
+                        <!-- 주변 플로팅 이미지 시계방향 -->
+                        <img src="images/main/message_sun.png" alt="해" class="sun">
+                        <img src="images/main/message_cat.png" alt="고양이" class="cat">
+                        <img src="images/main/message_fish.png" alt="물고기 뼈" class="fish">
+                        <img src="images/main/message_dog.png" alt="개" class="dog">
+                        <img src="images/main/message_pot.png" alt="화분" class="pot">
                     </p>
                 </div>
             </section>
-            <section class="adopt"></section>
-            <section class="review"></section>
+            <section class="adopt">
+                <h2>가족이 되어주세요</h2>
+                <div class="list_wrap">
+                    <div class="list"> <!-- slick에서 호출하는 이름 -->
+                        <div class="list_item">
+                            <a href="#none">
+                                <div class="photo"><img src="images/main/adopt01.jpg" alt="고양이 - 한국 고양이"></div>
+                                <strong class="tmp">임보</strong>
+                                <span>고양이 - 한국 고양이<br>
+                                    여아 / 11개월 / 중성화 완료<br>
+                                    새끼 네마리를 낳은 어미냥
+                                </span>
+                            </a>
+                        </div> <!-- "list_item" -->
+                        <div class="list_item">
+                            <a href="#none">
+                                <div class="photo"><img src="images/main/adopt02.jpg" alt="강아지 - 믹스견"></div>
+                                <strong>입양</strong>
+                                <span>강아지 - 믹스견<br>
+                                    2살추정/6키로/중성화<br>
+                                    심장사상충 치료중
+                                </span>
+                            </a>
+                        </div> <!-- "list_item" -->
+                        <div class="list_item">
+                            <a href="#none">
+                                <div class="photo"><img src="images/main/adopt03.jpg" alt="강아지 - 믹스견"></div>
+                                <strong>입양</strong>
+                                <span>강아지 - 믹스견<br>
+                                    2~3살/7~8키로<br>
+                                    중성화완료
+                                </span>
+                            </a>
+                        </div> <!-- "list_item" -->
+                        <div class="list_item">
+                            <a href="#none">
+                                <div class="photo"><img src="images/main/adopt04.jpg" alt="고양이 - 아비시니안"></div>
+                                <strong class="tmp">임보</strong>
+                                <span>고양이 - 아비시니안<br>
+                                    중성화 완료 5살 남아<br>
+                                    완전 개냥이
+                                </span>
+                            </a>
+                        </div> <!-- "list_item" -->
+                        <div class="list_item">
+                            <a href="#none">
+                                <div class="photo"><img src="images/main/adopt05.jpg" alt="강아지 - 말티즈"></div>
+                                <strong>입양</strong>
+                                <span>강아지 - 말티즈<br>
+                                    남자아이 / 1살정도<br>
+                                    접종여부는 모름
+                                </span>
+                            </a>
+                        </div> <!-- "list_item" -->
+                        <div class="list_item">
+                            <a href="#none">
+                                <div class="photo"><img src="images/main/adopt06.jpg" alt="고양이 - 한국 고양이"></div>
+                                <strong class="tmp">임보</strong>
+                                <span>고양이 - 한국 고양이<br>
+                                    3살 수컷, 중성화완료<br>
+                                    사람 잘 따르고 온순함
+                                </span>
+                            </a>
+                        </div> <!-- "list_item" -->
+                        <div class="list_item">
+                            <a href="#none">
+                                <div class="photo"><img src="images/main/adopt07.jpg" alt="강아지 - 폼피츠"></div>
+                                <strong>입양</strong>
+                                <span>강아지 - 폼피츠<br>
+                                    2021년생 / 4.3kg / 암컷<br>
+                                    사람 좋아함, 애교 많음
+                                </span>
+                            </a>
+                        </div> <!-- "list_item" -->
+                        <div class="list_item">
+                            <a href="#none">
+                                <div class="photo"><img src="images/main/adopt08.jpg" alt="고양이 - 믹스"></div>
+                                <strong>입양</strong>
+                                <span>고양이 - 믹스<br>
+                                    9개월 수컷<br>
+                                    무릎냥
+                                </span>
+                            </a>
+                        </div> <!-- "list_item" -->
+                        <div class="list_item">
+                            <a href="#none">
+                                <div class="photo"><img src="images/main/adopt09.jpg" alt="강아지 - 믹스견"></div>
+                                <strong class="tmp">임보</strong>
+                                <span>강아지 - 믹스견<br>
+                                    암컷 / 6kg<br>
+                                    초대박 영특한 콩이
+                                </span>
+                            </a>
+                        </div> <!-- "list_item" -->
+                        <div class="list_item">
+                            <a href="#none">
+                                <div class="photo"><img src="images/main/adopt10.jpg" alt="강아지 - 믹스견"></div>
+                                <strong>입양</strong>
+                                <span>강아지 - 믹스견<br>
+                                    수컷 / 2017년생 / 10kg<br>
+                                    온순 + 차분 + 호기심많음
+                                </span>
+                            </a>
+                        </div> <!-- "list_item" -->
+                    </div>
+                </div>
+                <div class="rolling_wrap">
+                    <div class="rolling">
+                        <!-- ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP. -->
+                        <p>ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="review">
+                <div class="wrapper">
+                    <h2>우리의 해피엔딩</h2>
+                    <div class="list_wrap">
+                        <div class="list"> <!-- slick에서 호출하는 이름 -->
+                            <div class="list_item">
+                                <a href="#none">
+                                    <div class="photo"><img src="images/main/review01.jpg" alt="강아지"></div>
+                                    <h3><span>일주일 만에 돌아왔습니다.</span></h3>
+                                    <p>7일째 되는 아침에 집에 돌아왔습니다.
+                                        누군가 데리고 있다가 집으로 보내신건지
+                                        믿기지 않지만 스스로 돌아왔고 사실입니다.
+                                    </p>
+                                </a>
+                            </div> <!-- list_item -->
+                            <div class="list_item">
+                                <a href="#none">
+                                    <div class="photo"><img src="images/main/review02.jpg" alt="강아지"></div>
+                                    <h3><span>포기하려던 찰나 두달만에 찾았습니다.</span></h3>
+                                    <p>찾고자하면 긴 시간이 지나도 찾을 수 있다는 것에 놀랐습니다.
+                                        포기하지마시고 꼭 찾으시길 바랍니다!
+                                        도와주시고, 관심가져주셔서 정말 감사드립니다.
+                                    </p>
+                                </a>
+                            </div> <!-- list_item -->
+                            <div class="list_item">
+                                <a href="#none">
+                                    <div class="photo"><img src="images/main/review03.jpg" alt="고양이"></div>
+                                    <h3><span>팅커벨 찾았어요</span></h3>
+                                    <p>고마우신 분께서 다음날 아침 일찍 연락주셔서 데리러갔다왔어요
+                                        정말감사합니다 애가 집에와서 넋이 빠진얼굴을하고 있어요 많이 놀랐나봐요
+                                        다른분들도 좋으신분들 빨리 만나서 애기찾길 바래요
+                                    </p>
+                                </a>
+                            </div> <!-- list_item -->
+                            <div class="list_item">
+                                <a href="#none">
+                                    <div class="photo"><img src="images/main/review04.jpg" alt="고양이"></div>
+                                    <h3><span>고양이 밥주시는 할머니에 의해 발견되었네요!!</span></h3>
+                                    <p>신고해주시고 신고받고 찾아주신 덕에 딱 2주만에 찾았어요 ㅠㅠ 
+                                        몸무게가 많이 빠졌더라구요.. 
+                                        그래도 다른 건강 문제 없이 안전하게 잘 찾게 해주셔서 감사합니다
+                                    </p>
+                                </a>
+                            </div> <!-- list_item -->
+                            <div class="list_item">
+                                <a href="#none">
+                                    <div class="photo"><img src="images/main/review05.jpg" alt="강아지"></div>
+                                    <h3><span>실종 딱 열흘 만에 찾았어요.</span></h3>
+                                    <p>고양이 찾았다고 연락온곳은 고양이 잃어버린 장소 반경 5m 안에 있는 길고양이 급식소 였구요. 근처 주민 분이.발견하시고 전단지 확인하셔서 전화 주셨어요.
+                                        아침에 인사드린 주민분이 셨는데 저녁에 딱하고 발견해서 임보까지 해주셨더라구요. 정말 동네분들 도움 아니었으면 못찾았을거에요.
+                                        다른 분들도 희망 잃어버리지 마시고 꼭꼭 찾으시길 기도할게요.
+                                    </p>
+                                </a>
+                            </div> <!-- list_item -->
+                            <div class="list_item">
+                                <a href="#none">
+                                    <div class="photo"><img src="images/main/review06.jpg" alt="강아지"></div>
+                                    <h3><span>타비 잘 지내고 있어요!</span></h3>
+                                    <p>24-2-247 꼬질꼬질하던 회색ㅋㅋㅋ 고양이가 타비라는 이름으로 가족이 된지 
+                                        벌써 1년이 넘었습니다☺️ 여전히 건강하고 사람 좋아하고 착한 순둥이입니다. 
+                                        타비 덕분에 하루하루가 너무 소중하고 행복합니다. 보호센터 선생님들 항상 감사합니다! 새해 복 많이 받으세요. :&#41;
+                                    </p>
+                                </a>
+                            </div> <!-- list_item -->
+                            <div class="list_item">
+                                <a href="#none">
+                                    <div class="photo"><img src="images/main/review07.jpg" alt="강아지"></div>
+                                    <h3><span>하디</span></h3>
+                                    <p>밥도 잘먹고 놀이도 잘하고 쑥쑥 잘 크고 있는 귀염둥이 하디 
+                                        ♡앉아,기다려,돌아,손,하이파이브 까지 하는 똑똑 가나디로 크고있습니다 
+                                        ~~종종 공원으로 데려가서 놀다오는데 어쩜 이리 사회성도 좋은지.. 
+                                        겁은 많지만 애교도 많고 사람도 강아지도 좋아하는 하디 입니다 ㅎㅎ
+                                    </p>
+                                </a>
+                            </div> <!-- list_item -->
+                            <div class="list_item">
+                                <a href="#none">
+                                    <div class="photo"><img src="images/main/review08.jpg" alt="강아지"></div>
+                                    <h3><span>다정한 다랭이 , 멋진 머랭이 즐거운 산책시간</span></h3>
+                                    <p>작년 5월 저희 집에 와서 봄, 여름, 가을, 겨울을 보내고 있어요. 
+                                        똘똘하고 시크한 멋이 있는 머랭이, 먹을 거 좋아하고 다정한 다랭이란 
+                                        행복하게 지내고 있네요^^
+                                    </p>
+                                </a>
+                            </div> <!-- list_item -->
+                        </div>
+                    </div>
+                    <div class="more">
+                        <a href="#none">
+                            <strong>11,422</strong>
+                            <span>건의 후기</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer class="footer"></footer>
     </div>
 </body>
+
 </html>
