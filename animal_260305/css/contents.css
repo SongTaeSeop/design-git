@@ -1,0 +1,129 @@
+/* contents.css: 각각의 컨텐츠 페이지 스타일 
+    => 여기 있는 css를 수정하면 해당 스타일을 갖는 페이지 하나만 영향을 받음
+    => 그러기 위해 선택자 시작을 `.cnt_파일명`으로 시작하도록 함
+*/
+
+.cnt_info {
+    margin: 0 0 clamp(57px, 17vw, 173px) 0;
+}
+
+.cnt_info .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cnt_info .photo {
+    overflow: hidden;
+    width: 33.82%;
+    height: clamp(415px, 69vw, 696px);
+    border-radius: 32px;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.1);
+    margin: 66px 0 0 0;
+}
+
+.cnt_info .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cnt_info .txt_wrap {
+    width: 52.15%;
+}
+
+.cnt_info .txt_wrap .tit {
+    position: relative; /* ::before 정렬 기준 */
+    color: var(--color-white);
+    padding: 0 0 64px 0;
+}
+/* wrapper를 재정의하는 가운데 배경 */
+.cnt_info .txt_wrap .tit::before {
+    content: "";
+    position: absolute;
+    right: calc(((100vw - var(--wrapper-w)) / 2 - 93px) * -1);
+    top: 0;
+    width: calc(100vw - 186px); /* right의 93px * 2 */
+    height: 100%;
+    z-index: -1;
+    border-radius: 36px;
+    background-color: var(--color-main);
+}
+
+.cnt_info .txt_wrap .tit h2 {
+    font-size: 40px;
+    font-weight: var(--font-weight-bold);
+    padding: 92px 0 25px 0;
+}
+
+.cnt_info .txt_wrap .txt {
+    margin: 50px 0 66px 0;
+}
+
+.cnt_info .txt_wrap .sign {
+    text-align: right;    
+}
+
+.cnt_info .txt_wrap .sign img {
+    width: 250px;
+}
+
+
+@media screen and (max-width:1686px) { /* 1440 + (30px * 2) (93px * 2) */
+    .cnt_info .wrapper {
+        width: auto;
+        margin: 0 calc(var(--wrapper-margin) * 2);
+    }
+
+    .cnt_info .txt_wrap .tit::before {
+        right: calc(var(--wrapper-margin) * -1);
+        width: calc(100vw - (var(--wrapper-margin) * 2));
+        border-radius: var(--wrapper-margin);
+    }
+} /* @media screen and (max-width:1686px) */
+
+@media screen and (max-width:1024px) {
+                .cnt_info .wrapper {
+                    display: block; /* flex 해제*/
+                    margin: 0 var(--wrapper-margin);
+                }
+
+                .cnt_info .photo {
+                    width: 100%;
+                    max-width: 700px;
+                    border-radius: 8px;
+                    margin: 0 auto;
+                }
+
+                .cnt_info .photo img {
+                    object-position: top;
+                }
+
+                .cnt_info .txt_wrap {
+                    width: auto;
+                }
+
+                .cnt_info .txt_wrap .tit {
+                    padding: 0 0 50px 0;
+                }
+                /* wrapper를 재정의하는 가운데 배경 */
+                .cnt_info .txt_wrap .tit::before {
+                    right: calc(var(--wrapper-margin) * -1);
+                    top: -274px;
+                    width: 100vw;
+                    height: calc(100% + 274px);
+                    border-radius: 12px;
+                }
+                .cnt_info .txt_wrap .tit h2 {
+                    font-size: 28px;
+                    padding: 34px 0 19px 0;
+                }
+
+                .cnt_info .txt_wrap .txt {
+                    margin: 34px 0 21px 0;
+                }
+
+                .cnt_info .txt_wrap .sign img {
+                    width: 125px;
+                }
+    
+} /* @media screen and (max-width:1024px) */

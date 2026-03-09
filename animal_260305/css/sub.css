@@ -1,0 +1,215 @@
+/* sub.css: 서브 페이지에서 불러오는 CSS
+    => 서브 페이지들이 공통적으로 적용되는 스타일    
+*/
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+@import url(contents.css);
+
+/* 선택된 메뉴 표시 */
+@media screen and (min-width:1025px){
+    .header .gnb ul.depth1 > li.active > a {
+        color: var(--color-point);
+        text-decoration: underline;
+    }
+    .header.menu_over .gnb ul.depth1 > li.active > a,
+    .header.fixed .gnb ul.depth1 > li.active > a {
+        color: var(--color-main);
+    }
+
+    .header .gnb ul.depth1 > li.active:has(ul.depth2) > a > span::after {
+        background-image: var(--icon-arrow-point);
+    }
+    .header.menu_over .gnb ul.depth1 > li.active:has(ul.depth2) > a > span::after,
+    .header.fixed .gnb ul.depth1 > li.active:has(ul.depth2) > a > span::after {
+        background-image: var(--icon-arrow-main);
+    }
+
+    .header .gnb ul.depth1 > li.active > ul.depth2 > li.active a {
+        color: var(--color-point);
+        text-decoration: underline;
+    }
+
+    .header .sitemap .sitemap_wrap ul.depth1 > li.active > button,
+    .header .sitemap .sitemap_wrap ul.depth1 > li.active > a {
+        color: var(--color-point);
+    }
+
+    .header .sitemap .sitemap_wrap ul.depth1 > li.active > ul.depth2 > li.active > a {
+        font-weight: var(--font-weight-bold);
+        color: var(--color-point);
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li.active > ul.depth2 > li.active > a:after {
+        background-color: var(--color-point);
+    }
+} /* @media screen and (min-width:1025px) */
+
+@media screen and (max-width:1024px) {
+    .header .sitemap .sitemap_wrap ul.depth1 > li.active > button,
+    .header .sitemap .sitemap_wrap ul.depth1 > li.active > a {
+        color: var(--color-main);
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li.active:has(ul.depth2) > button::after {
+        transform: rotate(270deg);
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li.active > ul.depth2 > li.active > a {
+        font-weight: var(--font-weight-bold);
+        color: var(--color-main);
+        text-decoration: underline;
+    }
+} /* @media screen and (max-width:1024px) */
+
+.sub_visual {
+    background: url(../images/sub/sub_visual01.jpg) no-repeat center center / cover;
+    color: var(--color-white);
+}
+.sub_visual.bg2 {
+    background-image: url(../images/sub/sub_visual02.jpg);
+}
+.sub_visual.bg3 {
+    background-image: url(../images/sub/sub_visual03.jpg);
+}
+.sub_visual.bg4 {
+    background-image: url(../images/sub/sub_visual04.jpg);
+}
+.sub_visual.bg5 {
+    background-image: url(../images/sub/sub_visual05.jpg);
+}
+
+.sub_visual .wrapper {
+    height: clamp(253px, 40vw, 400px);
+    position: relative;
+}
+
+.sub_visual .breadcrumb {
+    padding: clamp(82px, 15vw, 154px) 0 11px 0;
+}
+
+.sub_visual .breadcrumb ol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1.7em;
+}
+
+.sub_visual .breadcrumb ol li {
+    position: relative;
+}
+.sub_visual .breadcrumb ol li::before {
+    content: "";
+    position: absolute;
+    left: -1em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.4706em;
+    height: 0.8235em;
+    background-image: var(--icon-arrow-w);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.sub_visual .breadcrumb ol li:first-child::before {
+    display: none;
+}
+
+.sub_visual .breadcrumb ol li.home a {
+    display: block;
+    width: 0.8235em;
+    height: 0.8824em;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='15' viewBox='0 0 14 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 13.2857V5.57143C0 5.3 0.0619792 5.04286 0.185938 4.8C0.309896 4.55714 0.48125 4.35714 0.7 4.2L5.95 0.342857C6.25625 0.114286 6.60625 0 7 0C7.39375 0 7.74375 0.114286 8.05 0.342857L13.3 4.2C13.5188 4.35714 13.6901 4.55714 13.8141 4.8C13.938 5.04286 14 5.3 14 5.57143V13.2857C14 13.7571 13.8286 14.1607 13.4859 14.4964C13.1432 14.8321 12.7312 15 12.25 15H9.625C9.37708 15 9.16927 14.9179 9.00156 14.7536C8.83385 14.5893 8.75 14.3857 8.75 14.1429V9.85714C8.75 9.61429 8.66615 9.41072 8.49844 9.24643C8.33073 9.08214 8.12292 9 7.875 9H6.125C5.87708 9 5.66927 9.08214 5.50156 9.24643C5.33385 9.41072 5.25 9.61429 5.25 9.85714V14.1429C5.25 14.3857 5.16615 14.5893 4.99844 14.7536C4.83073 14.9179 4.62292 15 4.375 15H1.75C1.26875 15 0.856771 14.8321 0.514063 14.4964C0.171354 14.1607 0 13.7571 0 13.2857Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.sub_visual .sub_tit {
+    text-align: center;
+    font-size: clamp(32px, 4vw, 45px);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+}
+
+.sub_visual .snb {
+    position: absolute;
+    left: 0;
+    bottom: 9px;
+    width: 100%;
+    height: var(--snb-h);
+    background-color: rgba(20, 40, 64, 0.8);
+    border-radius: 100px;
+    backdrop-filter: blur(6px);
+}
+
+.sub_visual .snb ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;                    
+    overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+    overflow-x: auto; /* 좌우 스크롤바 생성 */
+}
+.sub_visual .snb ul::-webkit-scrollbar { /* 스크롤바의 영역 */
+    /* 감추기 */
+    /* display: none; */
+}
+
+.sub_visual .snb ul li a {
+    display: block;
+    line-height: var(--snb-h);
+    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    padding: 0 1.4em;
+    white-space: nowrap;
+}
+
+.sub_visual .snb ul li a span{
+    position: relative;
+}
+.sub_visual .snb ul li.active a span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.7em;
+    width: 100%;
+    height: 6px;
+    background-color: var(--color-white);
+    border-radius: 100px;
+}
+
+.page_tit h1 {
+    margin: clamp(64px, 9vw, 92px) 0 clamp(48px, 8vw, 84px) 0;
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    color: var(--font-color-tit);
+    text-align: center;
+}
+
+.contents {
+    min-height: 300px; /* 보통 서브 페이지의 contents에는 최소 높이를 줌 */
+}
+
+@media screen and (max-width:768px){
+    .sub_visual .snb {
+        left: calc(var(--wrapper-margin) * -1);
+        width: calc(100% + var(--wrapper-margin) * 2);
+        border-radius: 0;
+    }
+
+    .sub_visual .snb ul {
+        justify-content: flex-start;
+        padding: 0 var(--wrapper-margin);
+    }
+
+    .sub_visual .snb ul li a {
+        padding: 0 2.8em 0 0;
+    }
+    .sub_visual .snb ul li:last-child a {
+        padding: 0;
+    }
+
+    .sub_visual .snb ul li.active a span::after {
+        bottom: -9px;
+        height: 3px;
+    }
+    
+} /* @media screen and (max-width:768px) */
