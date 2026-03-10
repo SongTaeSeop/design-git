@@ -4,7 +4,7 @@
 */
 
 .cnt_info {
-    margin: 0 0 clamp(57px, 17vw, 173px) 0;
+    margin: 0 0 clamp(57px, 17.3vw, 173px) 0;
 }
 
 .cnt_info .wrapper {
@@ -15,7 +15,7 @@
 .cnt_info .photo {
     overflow: hidden;
     width: 33.82%;
-    height: clamp(415px, 69vw, 696px);
+    height: clamp(415px, 69.6vw, 696px);
     border-radius: 32px;
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.1);
     margin: 66px 0 0 0;
@@ -125,5 +125,311 @@
                 .cnt_info .txt_wrap .sign img {
                     width: 125px;
                 }
-    
 } /* @media screen and (max-width:1024px) */
+
+
+/* 입양후기: notice.html */
+.cnt_notice {
+    margin: 0 0 clamp(119px, 23vw, 238px) 0;
+}
+
+.cnt_notice .notice_wrap {
+    width: 952px;
+    margin: 0 auto;   
+}
+
+@media screen and (max-width:1012px) { /* 952 + 30 + 30 */
+                .cnt_notice .notice_wrap {
+                    width: auto;
+                    margin: var(--wrapper-margin);
+                }                        
+} /* @media screen and (max-width:1024px) */
+
+.cnt_notice .search_wrap .search {
+    border: 3px solid var(--font-color-default);
+    border-radius: 100px;
+    height: clamp(56px, 9vw, 90px);
+    display: flex; /* input.keyword, input.btn 좌우 배치 */
+    justify-content: space-between;
+    padding: 0 0 0 clamp(58px, 9.4vw, 94px);
+    position: relative; /* ::before 정렬 기준 */
+}
+.cnt_notice .search_wrap .search::before {
+    content: "";
+    position: absolute;
+    left: clamp(20px, 3.7vw, 37px);
+    top: clamp(10px, 2.2vw, 22px);
+    width: clamp(30px, 3.6vw, 36px);
+    height: clamp(29px, 3.5vw, 35px);
+    background: url(../images/contents/notice_search_ico.svg) no-repeat center center / contain;
+}
+
+.cnt_notice .search_wrap .search label {
+    display: none;
+}
+
+.cnt_notice .search_wrap .search .keyword {
+    width: calc(100% - clamp(88px, 12vw, 120px) - clamp(12px, 2.4vw, 24px));
+    font-size: clamp(20px, 2.4vw, 24px);
+    color: var(--font-color-default);
+    border: 0;
+    outline: 0;
+}
+.cnt_notice .search_wrap .search .keyword::placeholder {
+    opacity: 0.5;
+}
+
+.cnt_notice .search_wrap .search .btn {
+    width: clamp(88px, 12vw, 120px);
+    border: 0;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.7937 29.5875C10.6591 29.5875 7.15979 28.1555 4.29587 25.2916C1.43196 22.4277 0 18.9284 0 14.7937C0 10.6591 1.43196 7.15979 4.29587 4.29587C7.15979 1.43196 10.6591 0 14.7937 0C18.9284 0 22.4277 1.43196 25.2916 4.29587C28.1555 7.15979 29.5875 10.6591 29.5875 14.7937C29.5875 16.4628 29.322 18.037 28.7909 19.5164C28.2598 20.9957 27.5391 22.3044 26.6287 23.4424L39.3741 36.1878C39.7914 36.605 40 37.1361 40 37.7809C40 38.4258 39.7914 38.9569 39.3741 39.3741C38.9569 39.7914 38.4258 40 37.7809 40C37.1361 40 36.605 39.7914 36.1878 39.3741L23.4424 26.6287C22.3044 27.5391 20.9957 28.2598 19.5164 28.7909C18.037 29.322 16.4628 29.5875 14.7937 29.5875ZM14.7937 25.0356C17.6387 25.0356 20.0569 24.0398 22.0484 22.0484C24.0398 20.0569 25.0356 17.6387 25.0356 14.7937C25.0356 11.9488 24.0398 9.53058 22.0484 7.53912C20.0569 5.54765 17.6387 4.55192 14.7937 4.55192C11.9488 4.55192 9.53058 5.54765 7.53912 7.53912C5.54765 9.53058 4.55192 11.9488 4.55192 14.7937C4.55192 17.6387 5.54765 20.0569 7.53912 22.0484C9.53058 24.0398 11.9488 25.0356 14.7937 25.0356Z' fill='%23504E4F'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: clamp(24px, 4vw, 40px);
+    cursor: pointer;
+}
+
+.cnt_notice .join_wrap .agree_box {
+    margin: clamp(38px, 7.6vw, 76px) 0 0 0;
+}
+.cnt_notice .join_wrap h2 {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    color: var(--font-color-tit);
+    margin: 0 0 clamp(31px, 6.3vw, 63px) 0;
+}
+
+.cnt_notice .join_wrap .agree_box .agree_txt {
+    border: 1px solid #ccc;
+    height: clamp(194px, 38.9vw, 389px);
+    padding: clamp(18px, 3.6vw, 36px) clamp(15px, 3vw, 30px);
+    overflow-y: auto; /* p가 길면 스크롤바 생성 */
+}
+
+.cnt_notice .join_wrap .agree_box .agree_txt p {
+    white-space: pre-line;
+}
+
+.cnt_notice .join_wrap .agree_box .agree_chk {
+    margin: clamp(18px, 3.6vw, 36px) 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 16px clamp(30px, 9vw, 90px);
+    font-size: clamp(20px, 2.4vw, 24px);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.3;
+    color: var(--font-color-tit);
+    flex-wrap: wrap;
+}
+
+.cnt_notice .join_wrap .agree_box .agree_chk .item {
+    display: flex;
+}
+
+.cnt_notice .join_wrap .agree_box .agree_chk input {
+    display: none;
+}
+
+.cnt_notice .join_wrap .agree_box .agree_chk label {
+    display: block;
+    padding: 0 0 0 1.8333em; /* 아이콘 자리 */
+    position: relative; /* ::before 정렬 기준 */
+    cursor: pointer;
+}
+.cnt_notice .join_wrap .agree_box .agree_chk label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.375em;
+    height: 1.375em;
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.8136 20.3808L23.131 11.3207C23.3509 11.1069 23.6074 11 23.9006 11C24.1938 11 24.4503 11.1069 24.6702 11.3207C24.8901 11.5345 25 11.7884 25 12.0824C25 12.3764 24.8901 12.6303 24.6702 12.8441L14.5832 22.6793C14.3633 22.8931 14.1068 23 13.8136 23C13.5204 23 13.2639 22.8931 13.044 22.6793L8.31663 18.0824C8.09675 17.8686 7.99139 17.6147 8.00055 17.3207C8.00971 17.0267 8.12423 16.7728 8.34411 16.559C8.56399 16.3452 8.8251 16.2383 9.12743 16.2383C9.42977 16.2383 9.69087 16.3452 9.91075 16.559L13.8136 20.3808Z' fill='%23787878'/%3E%3Crect x='0.5' y='0.5' width='32' height='32' rx='16' stroke='%23787878'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* input:checked인 태그 다음에 나오는 label의 경우 */
+.cnt_notice .join_wrap .agree_box .agree_chk input:checked + label::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='32' height='32' rx='16' fill='%23242223' stroke='%23787878'/%3E%3Cpath d='M13.8136 20.3808L23.131 11.3207C23.3509 11.1069 23.6074 11 23.9006 11C24.1938 11 24.4503 11.1069 24.6702 11.3207C24.8901 11.5345 25 11.7884 25 12.0824C25 12.3764 24.8901 12.6303 24.6702 12.8441L14.5832 22.6793C14.3633 22.8931 14.1068 23 13.8136 23C13.5204 23 13.2639 22.8931 13.044 22.6793L8.31663 18.0824C8.09675 17.8686 7.99139 17.6147 8.00055 17.3207C8.00971 17.0267 8.12423 16.7728 8.34411 16.559C8.56399 16.3452 8.8251 16.2383 9.12743 16.2383C9.42977 16.2383 9.69087 16.3452 9.91075 16.559L13.8136 20.3808Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.cnt_notice .join_wrap .join_box {
+    margin: clamp(49px, 9.9vw, 99px) 0 0 0;
+}
+
+.cnt_notice .join_wrap .join_box .join_info {
+    display: flex;
+    flex-direction: column;
+    gap: 7px 0;
+}
+
+.cnt_notice .join_wrap .join_box .join_info .item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cnt_notice .join_wrap .join_box .join_info .item .tit {
+    font-size: clamp(20px, 2.4vw, 24px);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.3;
+    color: var(--font-color-tit);
+    margin: 14px 0 0 0;
+}
+
+.cnt_notice .join_wrap .join_box .join_info .item .tit + * {
+    width: calc(100% - 152px);
+}
+
+.cnt_notice .join_wrap .join_box .join_info .item select,
+.cnt_notice .join_wrap .join_box .join_info .item input[type='text'],
+.cnt_notice .join_wrap .join_box .join_info .item input[type='password'],
+.cnt_notice .join_wrap .join_box .join_info .item textarea {
+    border: 1px solid #787878;
+    border-radius: 8px;
+    padding: 0 20px;
+    height: 58px;
+}
+
+.cnt_notice .join_wrap .join_box .join_info .item .group {
+    display: flex;
+    align-items: center;
+    gap: 0 44px;
+    padding: 0 20px;
+    height: 58px;
+}
+
+.cnt_notice .join_wrap .join_box .join_info .item .group label {
+    padding: 0 0 0 54px;
+    position: relative;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1.3;
+    color: var(--font-color-tit);
+}
+.cnt_notice .join_wrap .join_box .join_info .item .group label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='39' height='39' rx='7.5' stroke='%23787878'/%3E%3Cpath d='M16.8136 24.3808L26.131 15.3207C26.3509 15.1069 26.6074 15 26.9006 15C27.1938 15 27.4503 15.1069 27.6702 15.3207C27.8901 15.5345 28 15.7884 28 16.0824C28 16.3764 27.8901 16.6303 27.6702 16.8441L17.5832 26.6793C17.3633 26.8931 17.1068 27 16.8136 27C16.5204 27 16.2639 26.8931 16.044 26.6793L11.3166 22.0824C11.0967 21.8686 10.9914 21.6147 11.0005 21.3207C11.0097 21.0267 11.1242 20.7728 11.3441 20.559C11.564 20.3452 11.8251 20.2383 12.1274 20.2383C12.4298 20.2383 12.6909 20.3452 12.9108 20.559L16.8136 24.3808Z' fill='%23787878'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateY(-50%);
+}
+.cnt_notice .join_wrap .join_box .join_info .item .group input:checked + label::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='39' height='39' rx='7.5' fill='%23242223' stroke='%23787878'/%3E%3Cpath d='M16.8136 24.3808L26.131 15.3207C26.3509 15.1069 26.6074 15 26.9006 15C27.1938 15 27.4503 15.1069 27.6702 15.3207C27.8901 15.5345 28 15.7884 28 16.0824C28 16.3764 27.8901 16.6303 27.6702 16.8441L17.5832 26.6793C17.3633 26.8931 17.1068 27 16.8136 27C16.5204 27 16.2639 26.8931 16.044 26.6793L11.3166 22.0824C11.0967 21.8686 10.9914 21.6147 11.0005 21.3207C11.0097 21.0267 11.1242 20.7728 11.3441 20.559C11.564 20.3452 11.8251 20.2383 12.1274 20.2383C12.4298 20.2383 12.6909 20.3452 12.9108 20.559L16.8136 24.3808Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.cnt_notice .join_wrap .join_box .join_info .item .group input {
+    display: none;
+}
+
+.cnt_notice .join_wrap .join_box .join_info .item textarea {
+    height: 299px;
+    padding: 13px 20px;
+    resize: none;
+    overflow: auto;
+}
+
+@media screen and (max-width:768px) {
+    .cnt_notice .join_wrap .join_box .join_info {
+        gap: 20px 0;
+    }
+
+    .cnt_notice .join_wrap .join_box .join_info .item {
+        flex-direction: column;
+        gap: 5px 0;
+    }
+    
+    .cnt_notice .join_wrap .join_box .join_info .item .tit {
+        margin: 0;
+    }
+
+    .cnt_notice .join_wrap .join_box .join_info .item .tit + * {
+        width: 100%;
+    }
+
+    .cnt_notice .join_wrap .join_box .join_info .item .group {
+        flex-wrap: wrap;
+        gap: 22px 44px;
+        padding: 10px 20px;
+        height: 100%;
+    }
+} /* @media screen and (max-width:768px) */
+
+.cnt_notice .join_wrap .join_box .join_button {
+    margin: 66px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 16px;
+}
+
+.cnt_notice .join_wrap .join_box .join_button a,
+.cnt_notice .join_wrap .join_box .join_button input,
+.cnt_notice .join_wrap .join_box .join_button button {
+    display: block;
+    height: 58px; /* 태그가 다른 요소가 같은 높이로 있으면 padding으로 한 번에 조정 불가능 */
+    font-size: 24px;
+    line-height: 58px;
+    padding: 0 42px;
+    background-color: var(--font-color-default);
+    color: var(--color-white);
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.cnt_notice .join_wrap .join_box .join_button .ok {
+    background-color: var(--color-sub1);
+}
+
+
+/* 자원봉사 모집 support.html */
+.cnt_support {
+    margin: 0 0 clamp(119px, 23vw, 238px) 0;
+}
+
+.cnt_support .table_wrap {
+    overflow-x: auto;
+}
+
+.cnt_support .table_wrap table {
+    min-width: 600px;
+    border-top: 3px solid var(--color-main);
+}
+
+.cnt_support .table_wrap table th,
+.cnt_support .table_wrap table td {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: clamp(5px, 2.5vw, 25px);
+}
+.cnt_support .table_wrap table th:first-child,
+.cnt_support .table_wrap table td:first-child {
+    border-left: 0;
+}
+.cnt_support .table_wrap table th:last-child,
+.cnt_support .table_wrap table td:last-child {
+    border-right: 0;
+}
+
+
+.cnt_support .table_wrap table thead th {
+    background-color: #f4f4f4;
+    font-size: clamp(20px, 2.4vw, 24px);
+    font-weight: var(--font-weight-bold);
+    color: var(--font-color-tit);
+    line-height: 1.3;
+}
+
+.cnt_support .table_wrap table tbody th {
+    font-size: clamp(20px, 2.4vw, 24px);
+    font-weight: var(--font-weight-bold);
+    color: var(--font-color-tit);
+    line-height: 1.3;
+}
