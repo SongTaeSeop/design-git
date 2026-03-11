@@ -1,0 +1,38 @@
+@import url(reset.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.section {
+    font-size: 65px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.visual {
+    background-color: #444F2D;
+    color: #fff;
+}
+
+.tree {
+
+}
+
+.biz {
+    background-color: #534333;
+    color: #fff;
+}
+
+.story {
+
+}
+
+.footer {
+    background-color: #15282F;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.link {
+    position: fixed;
+    left: 50px;
+    top: 50%;
+}

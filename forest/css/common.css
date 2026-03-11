@@ -1,0 +1,21 @@
+body, html {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #3d3d3d;
+    line-height: 1.5;
+    word-break: keep-all; /* 단어 줄바꿈 */
+    word-wrap: break-word; /* 단어가 제한된 넓이보다 길면 강제 줄바꿈 */
+}
+
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1320px) { /* 1260 + 30 + 30 */
+    .wrapper {
+        width: auto; /* 브라우저 너비대로 */
+        margin: 0 30px; /* 좌우 여백 고정 */
+    }
+}
