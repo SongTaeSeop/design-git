@@ -13,9 +13,26 @@ body, html {
     margin: 0 auto;
 }
 
-@media screen and (max-width: 1320px) { /* 1260 + 30 + 30 */
+
+@media screen and (max-width: 1610px) { /* aside가 .wrapper에 닿음 */
     .wrapper {
         width: auto; /* 브라우저 너비대로 */
-        margin: 0 30px; /* 좌우 여백 고정 */
+        margin: 0 175px; /* (1610 - 1260) / 2 */
     }
+}
+
+.sr-only {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --header-h: clamp(56px, calc(80 / 1024 * 100vw), 80px);
 }

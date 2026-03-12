@@ -4,138 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.37/fullpage.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.37/fullpage.css">
+    <script src="js/count.js"></script>
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
     <title>생명의숲</title>
 </head>
 <body>
+    <header class="header" data-bg="white">
+        <div class="wrapper">
+            <h1 class="logo"><a href="index.html"><span class="sr-only">생명의숲 FOREST FOR LIFE</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span class="sr-only">메뉴 열기</span></button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <li><a href="#none"><span>소개</span></a></li>
+                        <li><a href="#none"><span>활동</span></a></li>
+                        <li><a href="#none"><span>참여와후원</span></a></li>
+                        <li><a href="#none"><span>자료실</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="util">
+                <a href="#none" class="mypage"><span class="sr-only">마이페이지</span></a>
+                <div class="search">
+                    <button class="search_open"><span class="sr-only">검색 열기</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
     <div id="fullpage">
         <section class="section visual fp-auto-height-responsive"> <!-- fp-auto-height-responsive: 모바일에서 fullpage 해제 -->
-            1. visual
+            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                    <li class="swiper-slide">
+                        <!-- 이미지: 확대 애니메이션, 동영상: 자동 재생 -->
+                        <div class="photo"><img src="images/main/visual01.jpg" alt=""></div>
+                        <div class="visual_txt">
+                            <div class="line"><span>오늘 한 그루</span></div>
+                            <div class="line"><span>내일의 숲이 됩니다</span></div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide">
+                        <!-- 이미지: 확대 애니메이션, 동영상: 자동 재생 -->
+                        <div class="photo"><img src="images/main/visual02.jpg" alt=""></div>
+                        <div class="visual_txt">
+                            <div class="line"><span>숲으로 연결되는</span></div>
+                            <div class="line"><span>우리의 내일</span></div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide">
+                        <!-- 이미지: 확대 애니메이션, 동영상: 자동 재생 -->
+                        <div class="video">
+                            <video autoplay loop muted playsinline aria-label="잎사귀 근접 촬영">
+                                <source src="images/main/visual03.mp4">
+                            </video>
+                        </div>
+                        <div class="visual_txt">
+                            <div class="line"><span>함께 심고 지키는</span></div>
+                            <div class="line"><span>우리의 숲</span></div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                </ul>
+            </div>
         </section> <!-- visual -->
         <section class="section tree fp-auto-height-responsive">
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            2. tree<br>
-            
+            <div class="wrapper">
+                <div class="txt">
+                    <h2>
+                        <strong class="counter" data-start="0" data-end="39488">39,488</strong>
+                        <!-- <strong class="counter" data-start="0" data-end="3">3</strong>
+                        <strong class="counter" data-start="0" data-end="9">9</strong>
+                        <strong>,</strong>
+                        <strong class="counter" data-start="0" data-end="4">4</strong>
+                        <strong class="counter" data-start="0" data-end="8">8</strong>
+                        <strong class="counter" data-start="0" data-end="8">8</strong> -->
+                        <span>그루</span>
+                    </h2>
+                    <p>2025년 심은 나무 39,488 그루, 생명의숲이 기록한 푸른 진심</p>
+                </div>
+                <div class="photo">
+                    <img src="images/main/tree.png" alt="나무" class="tree">
+                    <img src="images/main/cloud_left.png" alt="왼쪽 구름" class="cloud_left">
+                    <img src="images/main/cloud_right.png" alt="오른쪽 구름" class="cloud_right">
+                    <img src="images/main/sun.png" alt="태양" class="sun">
+                    <img src="images/main/leaf.png" alt="왼쪽 나뭇잎" class="leaf_left">
+                    <img src="images/main/leaf.png" alt="오른쪽 나뭇잎" class="leaf_right">
+                </div>
+            </div>
         </section> <!-- tree -->
         <section class="section biz fp-auto-height-responsive">
-            3. biz
+            <div class="wrapper">3. biz</div>
         </section> <!-- biz -->
         <section class="section story fp-auto-height-responsive">
-            4. story
+            <div class="wrapper">4. story</div>
         </section> <!-- story -->
         <footer class="section footer fp-auto-height">
-            5. footer
+            <div class="wrapper">5. footer</div>
         </footer>
     </div>
-    <aside class="link">
+    <aside class="sec_nav" data-bg=""> <!-- 배경이 흰색인 경우: white -->
+        <!-- data-<이름>: 자유롭게 사용 가능한 속성, 여기서는 데이터 덮어 씌우기 용으로 클래스와 분리하려고 사용함-->
         <ul>
-            <li><a href="#main">Main</a></li>
-            <li><a href="#tree">나무 심기</a></li>
-            <li><a href="#biz">숲 활동</a></li>
-            <li><a href="#story">활동 이야기</a></li>
+            <li class="active"><a href="#main"><span>Main</span></a></li>
+            <li><a href="#tree"><span>나무 심기</span></a></li>
+            <li><a href="#biz"><span>숲 활동</span></a></li>
+            <li><a href="#story"><span>활동 이야기</span></a></li>
         </ul>
+    </aside>
+    <aside class="quick" data-bg="">
+        <button class="open"><span>퀵메뉴 열기</span></button>
+        <div class="quick_wrap">
+            <ul>
+                <li class="kakao"><a href="#none"><span>같이가치</span></a></li>
+                <li class="naver"><a href="#none"><span>해피빈</span></a></li>
+                <li class="green"><a href="#none"><span>그린짐</span></a></li>
+                <li class="top"><button><span>TOP</span></button></li>
+            </ul>
+        </div>
+        <button class="close"><span>퀵메뉴 닫기</span></button>
+
     </aside>
 </body>
 </html>
