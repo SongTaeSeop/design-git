@@ -21,6 +21,13 @@ body, html {
     }
 }
 
+@media screen and (max-width: 1024px) { /* aside가 .wrapper에 닿음 */
+    .wrapper {
+        margin: 0 clamp(16px, calc(30 / 1024 * 100vw), 30px);
+    }
+} /* @media screen and (max-width: 1024px) */
+
+
 .sr-only {
     position: absolute;
     clip: rect(1px, 1px, 1px, 1px);

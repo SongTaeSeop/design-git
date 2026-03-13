@@ -11,18 +11,25 @@
     opacity: 1;
     transition: opacity 0.3s;
 }
-.header[data-bg="white"] {
-    color: #1d1d1d;
-    border-color: transparent
-}
-.header[data-bg="none"] {
-    opacity: 0;
+@media screen and (min-width: 769px) {
+    .header[data-bg="white"] {
+        color: #1d1d1d;
+        border-color: transparent;
+    }
+    .header[data-bg="white"] .logo a {
+        background-image: url(../images/common/logo.svg);
+    }
+    .header[data-bg="none"] {
+        opacity: 0;
+    }
 }
 
 .header .wrapper {
     display: flex;
     justify-content: space-between; /* .logo, .gnb, .util 좌우 배치 */
     align-items: center;
+    width: auto; /* 브라우저 너비대로 */
+    margin: 0 clamp(16px, calc(30 / 1024 * 100vw), 30px);
 }
 
 .header .logo a {
@@ -31,10 +38,6 @@
     height: clamp(18px, calc(27 / 1024 * 100vw), 27px);
     background: url(../images/common/logo_w.svg) no-repeat left center / contain;
 }
-.header[data-bg="white"] .logo a {
-    background-image: url(../images/common/logo.svg);
-}
-
 @media screen and (min-width: 1025px) { /* 너비 1025px 이상 */
     .header .gnb .gnb_open {
         display: none; /* PC에서 안 보임 */
@@ -92,9 +95,7 @@
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='18' viewBox='0 0 24 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 2.57143V0H24V2.57143H0ZM0 18V15.4286H24V18H0ZM0 10.2857V7.71429H24V10.2857H0Z' fill='white'/%3E%3C/svg%3E%0A");
         background-position: center center;
         background-repeat: no-repeat;
-    }
-    .header[data-bg="white"] .gnb .gnb_open {
-        background-image: url("data:image/svg+xml,%3Csvg width='24' height='18' viewBox='0 0 24 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 2.57143V0H24V2.57143H0ZM0 18V15.4286H24V18H0ZM0 10.2857V7.71429H24V10.2857H0Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+        vertical-align: top;
     }
 
     .header .gnb .gnb_wrap {
@@ -106,5 +107,25 @@
     }
 } /* @media screen and (max-width: 1024px) */
 
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .header[data-bg="white"] .gnb .gnb_open {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='18' viewBox='0 0 24 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 2.57143V0H24V2.57143H0ZM0 18V15.4286H24V18H0ZM0 10.2857V7.71429H24V10.2857H0Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+    }
+} /* @media screen and (min-width: 769px) and (max-width: 1024px) */
 
+@media screen and (max-width: 768px) {
+    /* :not([data-bg=""]) data-bg 값이 빈 값만 아니라면 */
+    .header:not([data-bg=""]) {
+        color: #1d1d1d;
+        border-color: transparent;
+        background-color: #fff;
+    }
 
+    .header:not([data-bg=""]) .logo a {
+        background-image: url(../images/common/logo.svg);
+    }
+
+    .header:not([data-bg=""]) .gnb .gnb_open {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='18' viewBox='0 0 24 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 2.57143V0H24V2.57143H0ZM0 18V15.4286H24V18H0ZM0 10.2857V7.71429H24V10.2857H0Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+    }
+} /* @media screen and (max-width: 768px) */
