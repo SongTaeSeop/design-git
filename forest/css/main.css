@@ -525,17 +525,10 @@
     margin-right: 30px;
 }
 
-
 @media screen and (max-width: 768px) {
     .story {
         margin: 89px 0 97px 0;
     }
-}
-
-
-.footer {
-    background-color: #15282F;
-    color: rgba(255, 255, 255, 0.8);
 }
 
 

@@ -129,3 +129,85 @@
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='18' viewBox='0 0 24 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 2.57143V0H24V2.57143H0ZM0 18V15.4286H24V18H0ZM0 10.2857V7.71429H24V10.2857H0Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
     }
 } /* @media screen and (max-width: 768px) */
+
+
+.footer {
+    background-color: #15282F;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0 0 71px 0;
+}
+
+.footer .f_head {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+.footer .f_head::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer .f_head .wrapper {
+    display: flex; /* .group 좌우 배치 */
+    justify-content: space-between;
+    gap: 0 13%;
+}
+
+.footer .f_head .group {
+    width: 43.5%;
+    display: flex; /* .tit, a 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .f_head .group .tit {
+    margin: 41px 0 44px 0;
+}
+
+.footer .f_head .group .tit strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 13px 0;
+}
+
+.footer .f_head .group a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #475D2E;
+    color: #fff;
+    font-weight: 700;
+    width: 230px;
+    height: 63px;
+    border-radius: 100px;
+}
+
+.footer .f_head .group a span {
+    display: block;
+    padding: 0 0 0 42px;
+    position: relative;
+}
+
+.footer .f_head .group a span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.footer .f_head .group.sponsor a span::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='25' viewBox='0 0 30 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.75 25V20H0L4.8125 12.5H2.5L11.25 0L15 5.375L18.75 0L27.5 12.5H25.1875L30 20H21.25V25H16.25V20H13.75V25H8.75ZM20.9062 17.5H25.4375L20.5938 10H22.6875L18.75 4.375L16.5312 7.53125L20 12.5H17.6875L20.9062 17.5ZM4.5625 17.5H17.9375L13.0938 10H15.1875L11.25 4.375L7.3125 10H9.40625L4.5625 17.5ZM4.5625 17.5H9.40625H7.3125H15.1875H13.0938H17.9375H4.5625ZM20.9062 17.5H17.6875H20H16.5312H22.6875H20.5938H25.4375H20.9062Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.footer .f_head .group.newsletter a span::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='29' height='23' viewBox='0 0 29 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 23V0H29V23H0ZM14.5 12.9375L2.9 5.75V20.125H26.1V5.75L14.5 12.9375ZM14.5 10.0625L26.1 2.875H2.9L14.5 10.0625ZM2.9 5.75V2.875V20.125V5.75Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
