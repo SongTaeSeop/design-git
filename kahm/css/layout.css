@@ -79,6 +79,9 @@
         background-repeat: no-repeat;
         background-position: center center;
     }
+    .header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2):hover > a > span::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
 
     .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
         position: absolute;
@@ -113,7 +116,6 @@
 .header .util .language_open,
 .header .util .mypage,
 .header .util .sitemap_open {
-    display: block;
     width: 48px;
     height: 48px;
     background-repeat: no-repeat;
@@ -121,15 +123,19 @@
 }
 
 .header .util .search {
+    display: block;
     background-image: var(--icon-search);
 }
 .header .util .language_open {
+    display: block;
     background-image: var(--icon-language);
 }
 .header .util .mypage {
+    display: block;
     background-image: var(--icon-account);
 }
 .header .util .sitemap_open {
+    display: none; /* PC에서는 메뉴 열기 없음 */
     background-image: var(--icon-menu);
 }
 
@@ -149,7 +155,7 @@
 
 .header .util .language_list ul {
     position: absolute;
-    left: -13px;
+    left: calc(-13px - var(--wrapper-margin));
     top: calc(var(--header-h) - 11px); 
     background-color: var(--color-text);
     color: var(--white);
@@ -182,7 +188,9 @@
     .header .util .sitemap_open {
         width: var(--header-h);
         height: var(--header-h);
-        border: 1px solid tomato;
+    }
+    .header .util .sitemap_open {
+        display: block;
     }
 } /* @media screen and (max-width: 1024px) */
 
@@ -194,15 +202,163 @@
     }
 } /* @media screen and (max-width: 768px) */
 
-/* sitemap */
+/* sitemap PC는 사이트맵 없음 */
 .header .sitemap {
     display: none;
 }
 
-.header .sitemap.open {
-    display: block;
-}
+@media screen and (max-width: 1024px) {
+    .header .sitemap {
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        width: 100vw;
+        max-width: 320px;
+    }
+    .header .sitemap.open {
+        display: block;
+    }
+    
+    .header .sitemap .util_mobile {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        z-index: 1;
+        background-color: var(--color-emphasis);
+    }
 
-@media screen and (min-width: 1025px) {
+    .header .sitemap .util_mobile .mypage,
+    .header .sitemap .util_mobile .search,
+    .header .sitemap .util_mobile .language_open,
+    .header .sitemap .util_mobile .sitemap_close {
+        display: block;
+        width: var(--header-h);
+        height: var(--header-h);
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .header .sitemap .util_mobile .mypage {
+        background-image: var(--icon-account-w);
+    }
+    .header .sitemap .util_mobile .search {
+        background-image: var(--icon-search-w);
+    }
+    .header .sitemap .util_mobile .language_open {
+        background-image: var(--icon-language-w);
+    }
+    .header .sitemap .util_mobile .sitemap_close {
+        background-image: var(--icon-close-w);
+    }
+    
+    .header .sitemap .util_mobile .mypage {
+        position: absolute;
+        left: 0;
+        top: calc(var(--header-h) / 2);
+        transform: translateY(-50%);
+    }
 
-}
+    /* 모바일 language */
+    .header .sitemap .util_mobile .language_wrap {
+        position: relative; /* language_list ul 정렬 기준 */
+        display: flex;
+        align-items: center;
+        height: var(--header-h);
+    }
+
+    .header .sitemap .util_mobile .language_list {
+        display: none;
+    }
+    .header .sitemap .util_mobile .language_list.open {
+        display: block;
+    }
+
+    .header .sitemap .util_mobile .language_list ul {
+    position: absolute;
+    right: calc(var(--header-h) * -1 + var(--wrapper-margin));
+    top: var(--header-h); 
+    z-index: 1;
+    background-color: var(--color-text);
+    color: var(--white);
+    padding: 10px 10px 10px 10px;
+    }
+
+    .header .sitemap .util_mobile .language_list ul li a {
+        display: block;
+        padding: 7px 20px 7px 10px;
+        white-space: nowrap;
+    }
+    .header .sitemap .util_mobile .language_list ul li.active a {
+        font-weight: var(--weight-bold);
+        background-color: var(--color-emphasis);
+    }
+    .header .sitemap .util_mobile .language_list ul li:hover a {
+        text-decoration: underline;
+    }
+
+    /* 모바일 메뉴 리스트 */
+    .header .sitemap .sitemap_wrap {
+        position: absolute;
+        right: 0;
+        top: var(--header-h);
+        width: 100%;
+        background-color: var(--white);
+    }
+
+    .header .sitemap .sitemap_wrap ul.depth1 {
+        height: calc(100vh - var(--header-h));
+        overflow-y: auto;
+        padding: 26px var(--wrapper-margin) 26px 40px; 
+    }
+    
+    .header .sitemap .sitemap_wrap ul.depth1 > li > a {
+        display: block;
+        position: relative; /* 아이콘 정렬 기준 */
+        padding: 15px 0;
+        border-bottom: 1px solid var(--color-whitish-background);
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li:has(ul.depth2) > a::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 16px;
+        height: 9px;
+        transform: translateY(-50%) rotate(180deg);
+        background-image: var(--icon-arrow);
+        background-repeat: no-repeat;
+        background-position: center center;
+    }    
+    .header .sitemap .sitemap_wrap ul.depth1 > li > a[target="_blank"] > span {
+        position: relative;
+    }
+    .header .sitemap .sitemap_wrap ul.depth1 > li > a[target="_blank"] > span::after {
+        content: "";
+        position: absolute;
+        right: -18px;
+        top: 50%;
+        width: 12px;
+        height: 12px;
+        transform: translateY(-50%);
+        background-image: var(--icon-newtab);
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .header .sitemap .sitemap_wrap ul.depth1 > li > ul.depth2 {
+        display: none;
+    }
+
+    .header .sitemap .dim {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100vh;
+        background-color: cyan;
+    }
+
+
+} /* @media screen and (max-width: 1024px) */
