@@ -1,0 +1,9 @@
+@import url(default.css);
+@import url(common.css);
+@import url(fonts.css);
+@import url(layout.css);
+
+.visual {
+    height: calc(900px + var(--header-h));
+    background: linear-gradient(#e66465, #9198e5);
+}

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'PyeojinGothic';
+  src: url('../fonts/PyeojinGothic-Regular.woff2') format('woff2'),
+        url('../fonts/PyeojinGothic-Regular.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'PyeojinGothic';
+  src: url('../fonts/PyeojinGothic-Bold.woff2') format('woff2'),
+        url('../fonts/PyeojinGothic-Bold.woff2') format('woff');
+  font-weight: 700;
+}
