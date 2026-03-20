@@ -4,6 +4,280 @@
 @import url(layout.css);
 
 .visual {
-    height: calc(900px + var(--header-h));
-    background: linear-gradient(#e66465, #9198e5);
+    background: url(../images/main/visual_bg.jpg) no-repeat center center / cover;
+}
+
+.visual .swiper {
+    height: clamp(500px, calc(900 / 1024 * 100vw), calc(100vh - var(--header-h)));
+    margin-top: var(--header-h);
+}
+
+.visual .swiper-slide {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    gap: 24px 0;
+}
+
+.visual .swiper-slide .tit {
+    margin: 240px 0 0 0;
+    color: var(--white);
+}
+
+.visual .swiper-slide .tit h2 {
+    font-size: clamp(32px, calc(60 / 1024 * 100vw), 60px);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-height-tit);
+    margin: 0 0 13px 0;
+}
+
+.visual .swiper-slide .tit p {
+    font-size: var(--size-heading-5);
+    width: 21.2917em;
+}
+
+.visual .swiper-slide .photo {
+    max-width: clamp(250px, calc(725 / 1024 * 100vw), 725px);
+    max-height: clamp(250px, calc(725 / 1024 * 100vw), 725px);
+    margin: calc(88 / 1920 * 100vw) 28px 0 0;
+}
+
+.visual .swiper-slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(8px 16px 8px rgba(0, 0, 0, 0.1));
+}
+
+.visual .swiper-slide .info_box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: clamp(18px, calc(48 / 1024 * 100vw), 48px) clamp(18px, calc(48 / 1024 * 100vw), 48px) clamp(7px, calc(18 / 1024 * 100vw), 18px) clamp(18px, calc(48 / 1024 * 100vw), 48px);
+    background-color: var(--white);
+}
+
+.visual .swiper-slide .info_box h3 {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: var(--size-heading-4);
+    font-weight: var(--weight-bold);
+}
+.visual .swiper-slide .info_box a {
+    text-decoration: underline;
+    vertical-align: 9%;
+}
+
+.visual .swiper-slide .info_box p {
+    font-size: var(--size-heading-4);
+    line-height: var(--line-height-default);
+    height: calc(2em * var(--line-height-default));
+    overflow-y: hidden;
+    width: 415px;
+    max-width: 415px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+@media screen and (max-width: 1024px) {
+    .visual .swiper-slide .tit p {
+        width: 18.1667em;
+    }
+    .visual .swiper-slide .photo {
+        margin: 0 28px 0 0;
+    }
+} /* @media screen and (max-width: 1024px) */
+
+@media screen and (max-width: 768px) {
+    .visual .swiper-slide .tit {
+        margin: 63px 0 0 0;
+    }
+    .visual .swiper-slide {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .visual .swiper-slide .tit p {
+        display: none;
+    }
+    .visual .swiper-slide .photo {
+        align-self: center;
+        max-height: 250px;
+    }
+
+    .visual .swiper-slide .info_box p {
+        width: auto;
+        height: calc(1em * var(--line-height-default));
+        -webkit-line-clamp: 1;
+    }
+
+} /* @media screen and (max-width: 768px) */
+
+@media screen and (min-width: 1025px) {
+    .museum .tab_wrapper {
+        margin: 146px 0 0 0;
+        position: relative;
+    }
+
+    .museum .tab_wrapper .tab {
+        position: absolute;
+        left: 0;
+        top: 78px;
+        z-index: 10;
+    }
+
+    .museum .tab ul {
+        display: flex;
+        gap: 12px 12px;
+    }
+
+    .museum .tab li .tab-item {
+        display: block;
+        padding: 6px 14px 5px 15px;
+        background-color: var(--white);
+        border: 1px solid var(--color-second-text);
+        border-radius: 10px;
+    }
+    .museum .tab li.active .tab-item {
+        background-color: var(--color-text);
+        color: var(--white);
+        border-color: var(--color-text);
+    }
+    .museum .tab li .tab-item:hover {
+        box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+    }
+}
+
+.museum .tab_wrapper .tab-contents {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.museum .tab-contents .txt_box {
+    width: 404px;
+    margin: 147px 0 0 0;
+}
+
+.museum .tab-contents .txt_box h3 {
+    font-size: var(--size-heading-2);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-height-tit);
+    margin: 0 0 34px 0;
+}
+.museum .tab-contents .txt_box span {
+    font-weight: var(--weight-bold);
+}
+
+.museum .tab-contents .img_box .swiper {
+    width: 618px;
+}
+
+.museum .tab-contents .img_box .photo_box_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 24px;
+}
+
+.museum .tab-contents .img_box .photo_box_wrapper .photo_box {
+    width: calc(50% - 12px); /* 297 */
+    background-color: var(--color-whitish-background);
+    padding: 10px 10px 30px 10px;
+}
+
+.museum .tab-contents .img_box .photo_box_wrapper .photo_box .photo {
+    overflow: hidden;
+    width: 100%;
+    height: 276px;
+    vertical-align: top;
+}
+
+.museum .tab-contents .img_box .photo_box_wrapper .photo_box .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.museum .tab-contents .img_box .photo_box_wrapper .photo_box h4 {
+    margin: 12px 10px 0 10px;
+    font-weight: var(--weight-bold);
+}
+
+.museum .tab-contents .img_box .photo_box_wrapper .photo_box span {
+    margin:  0 0 0 10px;
+    display: block;
+    overflow: hidden;
+    line-height: var(--line-height-default);
+    height: calc(1em * var(--line-height-default));
+    color: var(--color-second-text);
+}
+
+.museum .tab-contents .controls_box {
+    position: absolute;
+    left: 0;
+    bottom: 147px;
+    width: 404px;
+}
+.museum .tab-contents .controls_box .navigation {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    gap: 0 40px;
+}
+
+.museum .tab-contents .controls_box .navigation button {
+    width: 37px;
+    height: 37px;
+    background: var(--icon-arrow) no-repeat center center / 18px;
+    transform: rotate(270deg);
+    border-radius: 50%;
+}
+.museum .tab-contents .controls_box .navigation button.next {
+    transform: rotate(270deg) scaleY(-1);
+}
+.museum .tab-contents .controls_box .navigation button:hover {
+    background-color: var(--color-whitish-background);
+}
+
+.museum .tab-contents .controls_box .more {
+    display: inline-block;
+    font-weight: var(--weight-bold);
+    position: relative;
+}
+.museum .tab-contents .controls_box .more::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%, 1em);
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--color-second-text);
+    border-radius: 50%;
+    pointer-events: none;
+}
+.museum .tab-contents .controls_box .more:hover {
+    background-color: var(--color-emphasis);
+    color: var(--white);
+    box-shadow: 15px 0 0 3px var(--color-emphasis), -15px 0 0 3px var(--color-emphasis);;
+}
+.museum .tab-contents .controls_box .more:hover::before {
+    display: none;
+}
+
+.museum .tab-contents > .more {
+    position: absolute;
+    left: calc(276px + 12px);
+    top: 78px;
+    width: 37px;
+    height: 37px;
+    border: 1px solid var(--color-second-text);
+    border-radius: 10px;
+    background: var(--icon-plus) no-repeat center center / 22px;
+}
+
+.museum .tab-contents > .more:hover {
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
 }

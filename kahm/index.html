@@ -8,6 +8,7 @@
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
     <title>한국미술역사관</title>
 </head>
 <body>
@@ -74,7 +75,7 @@
                 </div>
             </div>
             <!-- open: sitemap 보여줌 -->
-            <div class="sitemap open">
+            <div class="sitemap">
                 <h2><span class="sr-only">전체 메뉴</span></h2>
                 <!-- 모바일 유틸 -->
                 <div class="util_mobile">
@@ -82,7 +83,8 @@
                     <button class="search"><span class="sr-only">검색 열기</span></button>
                     <div class="language_wrap">
                         <button class="language_open"><span class="sr-only">언어 메뉴 열기</span></button>
-                        <div class="language_list open">
+                        <!-- open: language_list 보여줌 -->
+                        <div class="language_list">
                             <ul>
                                 <li class="active"><a href="#" lang="ko"><span>한국어</span></a></li>
                                 <li><a href="#none" lang="en"><span>English (영어)</span></a></li>
@@ -91,7 +93,8 @@
                     </div>
                     <div class="sitemap_wrap">
                         <ul class="depth1">
-                            <li>
+                            <!-- open: depth2 보여줌 -->
+                            <li class="">
                                 <a href="#none"><span>미술관 소개</span></a>
                                 <ul class="depth2">
                                     <li><a href="#none"><span>인사말씀</span></a></li>
@@ -109,7 +112,7 @@
                                     <li><a href="#none"><span>2종 사립미술관</span></a></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li class="">
                                 <a href="#none"><span>한류작가전</span></a>
                                 <ul class="depth2">
                                     <li><a href="#none"><span>그림/사진</span></a></li>
@@ -134,11 +137,291 @@
         <main class="contents">
             <section class="visual">
                 <div class="wrapper">
-
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                            <li class="swiper-slide">
+                                <div class="tit">
+                                    <h2>한국미술역사관</h2>
+                                    <p>한국 예술을 영원히 보존하고 세계와 나누다.</p>
+                                </div>         
+                                <div class="photo" data-swiper-parallax-opacity="0"><img src="images/main/visual01.jpg" alt="조용문 작품"></div>
+                                <div class="info_box">
+                                    <h3 data-swiper-parallax-opacity="0">조용문 미술관</h3>
+                                    <a href="#none1"><span>작품보기</span></a>
+                                    <p data-swiper-parallax-opacity="0">Image of Map 022-136<br>72.7x60.6cm Mixed Media 4,000,000원</p>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">            
+                                <div class="tit">
+                                    <h2>한국미술역사관</h2>
+                                    <p>한국 예술을 영원히 보존하고 세계와 나누다.</p>
+                                </div>         
+                                <div class="photo" data-swiper-parallax-opacity="0"><img src="images/main/visual02.jpg" alt="장현숙 작품"></div>
+                                <div class="info_box">
+                                    <h3 data-swiper-parallax-opacity="0">장현숙 미술관</h3>
+                                    <a href="#none2"><span>작품보기</span></a>
+                                    <p data-swiper-parallax-opacity="0">계절의 흔적 - 행복한 나들이-1<br>46x56cm 한지, 분채</p>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">               
+                                <div class="tit">
+                                    <h2>한국미술역사관</h2>
+                                    <p>한국 예술을 영원히 보존하고 세계와 나누다.</p>
+                                </div>         
+                                <div class="photo" data-swiper-parallax-opacity="0"><img src="images/main/visual03.jpg" alt="주은화 작품"></div>
+                                <div class="info_box">
+                                    <h3 data-swiper-parallax-opacity="0">주은화 미술관</h3>
+                                    <a href="#none3"><span>작품보기</span></a>
+                                    <p data-swiper-parallax-opacity="0">용(Dragon)<br>29.5x 39.5cm Mixed Media on Canvas 2024</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
             <section class="museum">
+                <h2 class="sr-only">사립미술관</h2>
+                <div class="wrapper">
+                    <!-- tab -->
+                    <div class="tab_wrapper">
+                    <!-- tab list -->
+                        <div class="tab">
+                            <ul role="tablist">
+                                <li id="first_class" role="tab" aria-selected="true" aria-controls="first_class_museum" class="active">
+                                    <button type="button" class="tab-item">1종 사립미술관<span class="sr-only"> 선택됨</span></button>
+                                </li>
+                                <li id="second_class" role="tab" aria-selected="false" aria-controls="second_class_museum">
+                                    <button type="button" class="tab-item">2종 사립미술관</button>
+                                </li>
+                            </ul>
+                        </div>
+                    <!-- //tab list -->
 
+                    <!-- tab contents -->
+                        <div class="tab-conts">
+                            <section id="first_class_museum" aria-labelledby="first_class" class="tab-contents active" data-quick-nav="false">
+                                <div class="txt_box">
+                                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                            <li class="swiper-slide">
+                                                <h3 data-swiper-parallax-opacity="0">조용문 미술관</h3>
+                                                <p data-swiper-parallax-opacity="0">"조용문은 골판지라는 마띠에르로 도시와 세상을 그리는 포르멜(formel, 정형) 추상화를 그리는 것이다."</p>
+                                                <span data-swiper-parallax-opacity="0">- 조용문의 작품 세계 : 정형 추상화</span>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                            <li class="swiper-slide">
+                                                <h3 data-swiper-parallax-opacity="0">장현숙 미술관</h3>
+                                                <p data-swiper-parallax-opacity="0">"장현숙은 자연의 본질을 겹겹의 색채로 쌓아 올리며, 내면의 역동적인 생명력을 시각적 명상으로 승화시킨다."</p>
+                                                <span data-swiper-parallax-opacity="0">- 생의 파동, 색채로 빚은 서정적 운율</span>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                            <li class="swiper-slide">
+                                                <h3 data-swiper-parallax-opacity="0">주은화 미술관</h3>
+                                                <p data-swiper-parallax-opacity="0">"자연의 순수함을 간결한 선과 색채로 응축해, 내면의 평온과 생동하는 위로를 전한다."</p>
+                                                <span data-swiper-parallax-opacity="0">- 본질적 서정성이 빚은 안식</span>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="img_box">
+                                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                            <li class="swiper-slide">
+                                                <div class="photo_box_wrapper">
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum01.jpg" alt="조용문 미술관 작품 1"></div>
+                                                        <h4>Image of Map 022-136</h4>
+                                                        <span>72.7x60.6cm Mixed Media 4,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum02.jpg" alt="조용문 미술관 작품 2"></div>
+                                                        <h4>Image of Map 022-137</h4>
+                                                        <span>90.9x72.7cm  Mixed Media 6,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum03.jpg" alt="조용문 미술관 작품 3"></div>
+                                                        <h4>Image of Map 022-139</h4>
+                                                        <span>131x162cm Mixed Media 20,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum04.jpg" alt="조용문 미술관 작품 4"></div>
+                                                        <h4>Image of Map 022-145</h4>
+                                                        <span>91x116cm Mixed Media 1,000,000원</span>
+                                                    </div>
+                                                </div>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                            <li class="swiper-slide">
+                                                <div class="photo_box_wrapper">
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum05.jpg" alt="장현숙 미술관 작품 1"></div>
+                                                        <h4>계절의 흔적 - 비단에 수 놓은듯 1</h4>
+                                                        <span>33x47cm 한지, 한국화 물감 500,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum06.jpg" alt="장현숙 미술관 작품 2"></div>
+                                                        <h4>계절의 흔적 - 비단에 수 놓은듯 2</h4>
+                                                        <span>54x42cm 한지, 한국화 물감 1,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum07.jpg" alt="장현숙 미술관 작품 3"></div>
+                                                        <h4>계절의 흔적 - 찬란한 나들이 1</h4>
+                                                        <span>50x70cm 한지, 한국화 물감 1,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum08.jpg" alt="장현숙 미술관 작품 4"></div>
+                                                        <h4>계절의 흔적 - 찬란한 나들이 2</h4>
+                                                        <span>50x70cm 한지, 한국화 물감 1,000,000원</span>
+                                                    </div>
+                                                </div>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                            <li class="swiper-slide">
+                                                <div class="photo_box_wrapper">
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum09.jpg" alt="주은화 미술관 작품 1"></div>
+                                                        <h4>용(Dragon)</h4>
+                                                        <span>29.5x 39.5cm Mixed Media on Canvas 2024</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum10.jpg" alt="주은화 미술관 작품 2"></div>
+                                                        <h4>생명을 잇-다</h4>
+                                                        <span>20x20cm Fiberbord Art 3,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum11.jpg" alt="주은화 미술관 작품 3"></div>
+                                                        <h4>Children's eyes. Mother's eyes</h4>
+                                                        <span>40x90cm 혼합화 6,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum12.jpg" alt="주은화 미술관 작품 4"></div>
+                                                        <h4>일식(日蝕 solar eclipse)과 고인돌 1</h4>
+                                                        <span>40x31cm 아크릴화(Acrylic on Canvas) 3,000,000원</span>
+                                                    </div>
+                                                </div>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="controls_box">
+                                    <div class="navigation">              
+                                        <button type="button" class="prev"><span class="sr-only">이전</span></button>
+                                        <button type="button" class="next"><span class="sr-only">다음</span></button>
+                                    </div>
+                                    <a href="#none" class="more"><span class="sr-only">미술관 </span>더 보기</a>
+                                </div>
+                                <a href="#none" class="more"><span class="sr-only">1종 사립미술관 더 보기</span></a>
+                            </section>
+                            <section id="second_class_museum" aria-labelledby="second_class" class="tab-contents" data-quick-nav="false">
+                                <div class="txt_box">
+                                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                            <li class="swiper-slide">
+                                                <h3 data-swiper-parallax-opacity="0">조용문 미술관</h3>
+                                                <p data-swiper-parallax-opacity="0">"조용문은 골판지라는 마띠에르로 도시와 세상을 그리는 포르멜(formel, 정형) 추상화를 그리는 것이다."</p>
+                                                <span data-swiper-parallax-opacity="0">- 조용문의 작품 세계 : 정형 추상화</span>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                            <li class="swiper-slide">
+                                                <h3 data-swiper-parallax-opacity="0">장현숙 미술관</h3>
+                                                <p data-swiper-parallax-opacity="0">"장현숙은 자연의 본질을 겹겹의 색채로 쌓아 올리며, 내면의 역동적인 생명력을 시각적 명상으로 승화시킨다."</p>
+                                                <span data-swiper-parallax-opacity="0">- 생의 파동, 색채로 빚은 서정적 운율</span>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                            <li class="swiper-slide">
+                                                <h3 data-swiper-parallax-opacity="0">주은화 미술관</h3>
+                                                <p data-swiper-parallax-opacity="0">"자연의 순수함을 간결한 선과 색채로 응축해, 내면의 평온과 생동하는 위로를 전한다."</p>
+                                                <span data-swiper-parallax-opacity="0">- 본질적 서정성이 빚은 안식</span>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="img_box">
+                                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                            <li class="swiper-slide">
+                                                <div class="photo_box_wrapper">
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum01.jpg" alt="조용문 미술관 작품 1"></div>
+                                                        <h4>Image of Map 022-136</h4>
+                                                        <span>72.7x60.6cm Mixed Media 4,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum02.jpg" alt="조용문 미술관 작품 2"></div>
+                                                        <h4>Image of Map 022-137</h4>
+                                                        <span>90.9x72.7cm  Mixed Media 6,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum03.jpg" alt="조용문 미술관 작품 3"></div>
+                                                        <h4>Image of Map 022-139</h4>
+                                                        <span>131x162cm Mixed Media 20,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum04.jpg" alt="조용문 미술관 작품 4"></div>
+                                                        <h4>Image of Map 022-145</h4>
+                                                        <span>91x116cm Mixed Media 1,000,000원</span>
+                                                    </div>
+                                                </div>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                            <li class="swiper-slide">
+                                                <div class="photo_box_wrapper">
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum05.jpg" alt="장현숙 미술관 작품 1"></div>
+                                                        <h4>계절의 흔적 - 비단에 수 놓은듯 1</h4>
+                                                        <span>33x47cm 한지, 한국화 물감 500,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum06.jpg" alt="장현숙 미술관 작품 2"></div>
+                                                        <h4>계절의 흔적 - 비단에 수 놓은듯 2</h4>
+                                                        <span>54x42cm 한지, 한국화 물감 1,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum07.jpg" alt="장현숙 미술관 작품 3"></div>
+                                                        <h4>계절의 흔적 - 찬란한 나들이 1</h4>
+                                                        <span>50x70cm 한지, 한국화 물감 1,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum08.jpg" alt="장현숙 미술관 작품 4"></div>
+                                                        <h4>계절의 흔적 - 찬란한 나들이 2</h4>
+                                                        <span>50x70cm 한지, 한국화 물감 1,000,000원</span>
+                                                    </div>
+                                                </div>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                            <li class="swiper-slide">
+                                                <div class="photo_box_wrapper">
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum09.jpg" alt="주은화 미술관 작품 1"></div>
+                                                        <h4>용(Dragon)</h4>
+                                                        <span>29.5x 39.5cm Mixed Media on Canvas 2024</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum10.jpg" alt="주은화 미술관 작품 2"></div>
+                                                        <h4>생명을 잇-다</h4>
+                                                        <span>20x20cm Fiberbord Art 3,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum11.jpg" alt="주은화 미술관 작품 3"></div>
+                                                        <h4>Children's eyes. Mother's eyes</h4>
+                                                        <span>40x90cm 혼합화 6,000,000원</span>
+                                                    </div>
+                                                    <div class="photo_box">
+                                                        <div class="photo"><img src="images/main/museum12.jpg" alt="주은화 미술관 작품 4"></div>
+                                                        <h4>일식(日蝕 solar eclipse)과 고인돌 1</h4>
+                                                        <span>40x31cm 아크릴화(Acrylic on Canvas) 3,000,000원</span>
+                                                    </div>
+                                                </div>
+                                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="controls_box">
+                                    <div class="navigation">              
+                                        <button type="button" class="prev"><span class="sr-only">이전</span></button>
+                                        <button type="button" class="next"><span class="sr-only">다음</span></button>
+                                    </div>
+                                    <a href="#none" class="more"><span class="sr-only">미술관 </span>더 보기</a>
+                                </div>
+                                <a href="#none" class="more"><span class="sr-only">2종 사립미술관 더 보기</span></a>
+                            </section>
+                        </div>
+                    <!-- //tab contents -->
+                    </div>
+                    <!-- //tab -->
+                </div>
             </section>
             <section class="artist">
 
