@@ -1,14 +1,16 @@
 $(document).ready(function() {
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
         parallax: true,
-        autoplay: {  /* 팝업 자동 실행 */
-            delay: 5000,
-            disableOnInteraction: false,
-        },
+        // autoplay: {  /* 팝업 자동 실행 */
+        //     delay: 5000,
+        //     disableOnInteraction: false,
+        // },
 
         effect: "fade", /* fade 효과 */
 
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        
+        loopPreventsSliding: false, /* loop 적용 시 딜레이가 추가됨 */
     });
 
 
@@ -186,4 +188,47 @@ $(document).ready(function() {
         artist_tab_contents.removeClass('active');
         $('#' + $(this).attr('aria-controls')).addClass('active');
     });
+
+    /***
+     * .news Swiper 
+    * ***/
+
+    const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        // autoplay: {  /* 팝업 자동 실행 */
+        //     delay: 5000,
+        //     disableOnInteraction: false,
+        // },
+
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+        loopPreventsSliding: false, /* loop 적용 시 딜레이가 추가됨 */
+
+        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+            el: '.news .swiper .pagination', /* 해당 요소의 class명 */
+            clickable: true,
+            type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+            renderFraction: function (currentClass, totalClass) {
+                return '<span class="' + currentClass + '"></span>' +
+                        '/' +
+                        '<span class="' + totalClass + '"></span>';
+            },
+        },
+        
+        navigation: {  /* 이전, 다음 버튼 */
+            nextEl: '.news .swiper .next',  /* 다음 버튼의 클래스명 */
+            prevEl: '.news .swiper .prev',  
+        },
+    });
+
+    $('.news .promotion_box .controls_box .right .stop').click(function() {
+        news_swiper.autoplay.stop();
+        $(this).hide();
+        $('.news .promotion_box .controls_box .right .play').show();
+    });
+    $('.news .promotion_box .controls_box .right .play').click(function() {
+        news_swiper.autoplay.start();
+        $(this).hide();
+        $('.news .promotion_box .controls_box .right .stop').show();
+    });
+
 });
