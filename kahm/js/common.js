@@ -68,17 +68,11 @@ $(document).ready(function() {
     /* 
     * #family_site_select
     * ***/
-
+   
     $('#family_site_select').on("change",function() {
-        console.log($(this).val());
         if ($(this).val() != "") {
             window.open($(this).val());
         }
         $(this).val("");
-    });
-				
-
-
-
-    
+    });    
 });
