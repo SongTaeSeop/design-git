@@ -197,7 +197,7 @@
 
                     <!-- tab contents -->
                         <div class="tab-conts">
-                            <section id="first_class_museum" aria-labelledby="first_class" class="tab-contents active" data-quick-nav="false">
+                            <div id="first_class_museum" role="tabpanel" aria-labelledby="first_class" class="tab-contents active" data-quick-nav="false">
                                 <div class="txt_box">
                                     <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                                         <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
@@ -305,8 +305,8 @@
                                     <a href="#none" class="more"><span class="sr-only">미술관 </span>더 보기</a>
                                 </div>
                                 <a href="#none" class="more"><span class="sr-only">1종 사립미술관 더 보기</span></a>
-                            </section>
-                            <section id="second_class_museum" aria-labelledby="second_class" class="tab-contents" data-quick-nav="false">
+                            </div>
+                            <div id="second_class_museum" role="tabpanel" aria-labelledby="second_class" class="tab-contents" data-quick-nav="false">
                                 <div class="txt_box">
                                     <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                                         <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
@@ -414,7 +414,7 @@
                                     <a href="#none" class="more"><span class="sr-only">미술관 </span>더 보기</a>
                                 </div>
                                 <a href="#none" class="more"><span class="sr-only">2종 사립미술관 더 보기</span></a>
-                            </section>
+                            </div>
                         </div>
                     <!-- //tab contents -->
                     </div>
@@ -448,7 +448,8 @@
                         </div>
                         
                         <div class="tab-conts">
-                            <section id="picture_artist" aria-labelledby="picture" class="tab-contents active" data-quick-nav="false">
+                            <h3 class="sr-only">작품 소개</h3>
+                            <div id="picture_artist" role="tabpanel" aria-labelledby="picture" class="tab-contents active" data-quick-nav="false">
                                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
                                         <li class="swiper-slide">
@@ -485,8 +486,8 @@
                                     <div class="swiper-pagination"></div>
                                 </div>
                                 <a href="#none" class="more"><span class="sr-only">그림/사진 더 보기</span> <span aria-hidden="true">더 보기</span></a>
-                            </section>
-                            <section id="statue_artist" aria-labelledby="statue" class="tab-contents" data-quick-nav="false">
+                            </div>
+                            <div id="statue_artist" role="tabpanel" aria-labelledby="statue" class="tab-contents" data-quick-nav="false">
                                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
                                         <li class="swiper-slide">
@@ -524,8 +525,8 @@
                                 </div>
                                 <a href="#none" class="more"><span class="sr-only">조각/공예 더 보기</span> <span aria-hidden="true">더 보기</span></a>
                                     
-                            </section>
-                            <section id="media_art_artist" aria-labelledby="media_art" class="tab-contents" data-quick-nav="false">
+                            </div>
+                            <div id="media_art_artist" role="tabpanel" aria-labelledby="media_art" class="tab-contents" data-quick-nav="false">
                                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
                                         <li class="swiper-slide">
@@ -563,8 +564,8 @@
                                 </div>
                                 <a href="#none" class="more"><span class="sr-only">미디어 아트 더 보기</span> <span aria-hidden="true">더 보기</span></a>
 
-                            </section>
-                            <section id="mixed_art_artist" aria-labelledby="mixed_art" class="tab-contents" data-quick-nav="false">
+                            </div>
+                            <div id="mixed_art_artist" role="tabpanel" aria-labelledby="mixed_art" class="tab-contents" data-quick-nav="false">
                                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
                                         <li class="swiper-slide">
@@ -602,7 +603,7 @@
                                 </div>
                                 <a href="#none" class="more"><span class="sr-only">융복합예술 더 보기</span> <span aria-hidden="true">더 보기</span></a>
 
-                            </section>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -708,7 +709,7 @@
         <footer class="footer">
             <div class="wrapper">
                 <div class="logo">
-                    <img src="images/common/logo_w.svg">
+                    <img src="images/common/logo_w.svg" alt="KAHM 한국미술역사관 Korea Art History Museum">
                 </div>
                 
                 <div class="f_nav">
