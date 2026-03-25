@@ -47,7 +47,7 @@ body{
     --color-whitish-background: #efefef;
     --color-whitish-background2: #F4EDE3;
     --color-emphasis: #40414A;
-    --color-emphasis-white: #F2E3C4;
+    --color-emphasis-white: rgba(242, 227, 196, 0.8);
     --color-whitish-background-high: #F8F7F2;
     --color-whitish-background2-high: #F6EFE5;
     --color-emphasis-high: #181619;
