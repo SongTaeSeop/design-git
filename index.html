@@ -7,10 +7,19 @@
     <title>SongTaeSeop</title>
     <style>
         body {
-            background: linear-gradient(in hsl longer hue 45deg, red 0 100% / 0.1);
+            background: linear-gradient(in hsl longer hue 45deg, red 0 100%);
+            isolation: isolate;
+        }
+        body::after {
+            content: '';
+            position: absolute;
+            background: white;
+            z-index: -1;
+            inset: 0;
+            opacity: 0.92;
         }
         li:nth-child(even) {
-            background-color: #f1f3f5;
+            background-color: rgba(5, 3, 1, 0.1);
         }
     </style>
 </head>

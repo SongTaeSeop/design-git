@@ -3,6 +3,9 @@ $(document).ready(function() {
         $('.header .gnb .gnb_wrap ul.depth1 > li').removeClass('open');
         $(this).addClass('open');
     });
+    $('.header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function() {
+        $(this).removeClass('open');
+    });
 
     $('.header .logo').on('mouseenter focusin', function() {
         $('.header .gnb .gnb_wrap ul.depth1 > li').removeClass('open');
@@ -63,16 +66,32 @@ $(document).ready(function() {
                 $(this).parent().addClass('open');
             }
         }
-    })
+    });
 
-    /* 
-    * #family_site_select
+    /***
+     * .family_site 탭 관련 
     * ***/
-   
-    $('#family_site_select').on("change",function() {
-        if ($(this).val() != "") {
-            window.open($(this).val());
+
+    const footer_tab_dropdown_btn = $('.footer .family_site .tab-dropdown');
+    const footer_tab = $('.footer .family_site ul');
+    const footer_tab_items = $('.footer .family_site ul li');
+    footer_tab_dropdown_btn.click(function() {
+        if (footer_tab.hasClass('open')) {
+            footer_tab.removeClass('open');
+            footer_tab_dropdown_btn.attr('aria-expanded', 'false');
+            footer_tab_dropdown_btn.attr('title', '연관 사이트 목록 열기');
+        } else {
+            footer_tab.addClass('open');
+            footer_tab_dropdown_btn.attr('aria-expanded', 'true');
+            footer_tab_dropdown_btn.attr('title', '연관 사이트 목록 닫기');
         }
-        $(this).val("");
-    });    
+    });
+
+    footer_tab_items.click(function() {
+        /* 메뉴 닫기 */
+        footer_tab.removeClass('open');
+        footer_tab_dropdown_btn.attr('aria-expanded', 'false');
+    });
+    
+    
 });
