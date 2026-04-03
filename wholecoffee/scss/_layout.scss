@@ -1,0 +1,70 @@
+@use "var";
+@use "function";
+@use "mixin";
+
+.header {
+    @include mixin.header;
+    transition: background-color 0.1s;
+    &.fixed {
+        background-color: var.$white;
+        border-bottom: 1px solid var.$main-brown;
+    }
+
+    .wrapper {
+        @include mixin.flex-justify;
+    }
+    
+    .logo {
+        display: flex;
+        align-items: center;
+        height: calc(var.$header-h);
+        a {
+            display: block;
+            @include mixin.icon("layout/logo_w.svg");
+            width: 110px;
+            height: calc(var.$header-h / 3);
+        }
+    }
+    &.fixed .logo {
+        a {
+            @include mixin.change_img("layout/logo.svg");
+        }
+    }
+
+    .toc {
+        @include mixin.pc-only;
+    }
+    
+    .toc ul {
+        @include mixin.flex-justify;
+        gap: function.vw(22, 1920);
+        li a {
+            display: flex;
+            align-items: center;
+            height: var.$header-h;
+            font-size: var.$size-level7;
+            font-weight: var.$weight-bold;
+            color: var.$white;
+            padding: 0 function.em(11, 18);
+        }
+    }
+    &.fixed .toc ul {
+        li a {
+            color: var.$color-tit;
+        }
+    }
+
+    .inquiry {
+        @include mixin.pc-only(inline-block);
+        font-size: var.$size-level7;
+        font-weight: var.$weight-bold;
+        padding: function.em(4, 18) function.em(18, 18);
+        border-radius: max(100vw, 100vh);
+        background-color: var.$blackish;
+        color: var.$white;
+    }
+}
+
+.footer {
+    margin: 10000px 0 0 0;
+}

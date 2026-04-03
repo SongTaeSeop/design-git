@@ -1,0 +1,159 @@
+@use "default";
+@use "common";
+@use "fonts";
+@use "var";
+@use "function";
+@use "mixin";
+@use "layout";
+
+.toc_mobile {
+    @include mixin.tabbar;
+    @include mixin.mobile-only;
+    background-color: var.$white;
+    color: var.$color-tit;
+    border-top: 1px solid var.$main-brown;
+
+    ul {
+        @include mixin.flex-justify;
+        overflow-x: auto;
+        gap: function.vw(22, 1920);
+        li a {
+            display: flex;
+            align-items: center;
+            height: var.$header-h;
+            font-size: var.$size-level7;
+            font-weight: var.$weight-bold;
+            padding: 0 function.em(11, 18);
+        }
+    }
+}
+
+
+.visual {
+    @include mixin.bg("main/visual_bg.jpg");
+    height: var.$visual-height;
+    color: var.$white;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        .txt_box {
+            font-size: var.$size-level5;
+            > strong {
+                display: block;
+                font-size: var.$size-level3;
+                color: var.$emphasis-white;
+                margin: 0 0 function.em(11, 32) 0;
+            }
+            h2 {
+                font-size: var.$size-level1;
+                line-height: var.$line-height-tit;
+                margin: 0 0 function.em(21, 60) 0;
+                strong {
+                    font-weight: var.$weight-bold;
+                }
+            }
+            span {
+                font-size: var.$size-level3;
+                display: inline-block;
+                font-size: var.$size-level3;
+                font-weight: var.$weight-bold;
+                margin: function.em(21, 32) 0;
+                padding: function.em(3, 32) function.em(20, 32);
+                background-color: var.$emphasis-white;
+                color: var.$color-tit;
+            }
+            p br {
+                @include mixin.pc-only;
+            }
+        }
+    }
+}
+
+
+.speciality {
+    background-color: var.$whitish;
+    padding: function.clamping(151, 156, 1024, 1px) 0 function.clamping(76, 166, 1024, 1px) 0;
+    .tit_box {
+        @include mixin.title;
+    }
+
+    .contents_box ul {
+        @include mixin.flex-justify(flex-start);
+        @include mixin.border;
+        border-top-width: 2px;
+        border-bottom-width: 2px;
+        li {
+            @include mixin.border;
+            @include mixin.flex-justify;
+            @include mixin.justify-width(4);
+            gap: 41px 0;
+            flex-direction: column;
+            padding: function.clamping(20, 85, 1440, 1px) 0 function.clamping(30, 52, 1440, 1px) 0;
+            .photo {
+                    height: function.clamping(80, 180, 1440, 1px);
+                    overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            .txt_box {
+                font-size: var.$size-level5;
+                margin: 0 function.clamping(16, 32, 1440, 1px);
+                .tit {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 0 14px;
+                    margin: 0 0 function.clamping(11, 14, 1024, 1px) 0;
+                    span {
+                        @include mixin.numbering;
+                    }
+                    h3 {
+                        line-height: var.$line-height-tit;
+                        font-weight: var.$weight-bold;
+                        color: var.$color-tit;
+                    }
+                }
+                p br {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .speciality {
+        .contents_box ul {
+            flex-direction: column;
+            li {            
+                padding: 20px 10px 30px 30px;
+                flex-direction: row-reverse;
+                align-items: flex-start;
+                .photo {
+                    flex-grow: 1;
+                    align-self: flex-end;
+                }
+                .txt_box {
+                    flex-grow: 2;
+                    margin: 0;
+                    p br {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .speciality .contents_box ul li .txt_box p br {
+        display: block;
+    }
+}

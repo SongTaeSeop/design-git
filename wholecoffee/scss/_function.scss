@@ -1,0 +1,17 @@
+@use "sass:string";
+
+@function img($name) {
+  @return string.unquote("../images/#{$name}");
+}
+
+@function em($px, $base-size) {
+  @return calc($px / $base-size * 1em);
+}
+
+@function vw($px, $base-size) {
+  @return calc($px / $base-size * 100vw);
+}
+
+@function clamping($min, $max, $breakpoint, $unit) {
+  @return clamp($min * $unit, calc($max / $breakpoint * 100vw), $max * $unit);
+}

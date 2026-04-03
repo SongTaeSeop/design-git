@@ -1,0 +1,38 @@
+@use "function";
+
+$wrapper-margin: function.clamping(16, 30, 1024, 0.1rem);
+$wrapper-w: 1440px;
+$gap: 24px;
+$p: 1.6rem;
+$header-h: function.clamping(48, 60, 1024, 1px);
+$weight-normal: 400;
+$weight-bold: 700;
+$line-height-normal: 1.5;
+$line-height-tit: 1.2;
+$size-level1: function.clamping(32, 60, 1024, 0.1rem); /* 60px */
+$size-level2: function.clamping(28, 40, 1024, 0.1rem); /* 40px */
+$size-level3: function.clamping(24, 32, 1024, 0.1rem); /* 32px */
+$size-level4: function.clamping(22, 28, 1024, 0.1rem); /* 28px */
+$size-level5: function.clamping(20, 24, 1024, 0.1rem); /* 24px */
+$size-level6: function.clamping(18, 20, 1024, 0.1rem); /* 20px */
+$size-level7: function.clamping(16, 18, 1024, 0.1rem); /* 18px */
+$color-tit: #030316;
+$color-text: #222222;
+$whitish: #F5F2EB;
+$main-white: #DBCCB3;
+$emphasis-white: #F3EAA7;
+$blackish: #312016;
+$main-brown: #4B2E26;
+$main-green: #393F31;
+$tomato: #9A3837;
+$whitish2: #EAE7E0;
+$white: #ffffff;
+$visual-height: function.clamping(500, 700, 1024, 1px);
+
+@media screen and (max-width:1024px) {
+    $wrapper-margin: 24px;
+}
+@media screen and (max-width:768px) {
+    $wrapper-margin: 16px;
+    $gap: 16px;
+}

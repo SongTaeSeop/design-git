@@ -1,0 +1,116 @@
+@use "var";
+@use "function";
+
+@mixin bg($name, $color: #222) {
+  background: url(function.img($name)) $color no-repeat center center / cover;
+}
+
+@mixin change_img($name) {
+  background-image: url(function.img($name));
+  
+}
+
+@mixin icon($name) {
+  background: url(function.img($name)) no-repeat center center / contain;
+}
+
+@mixin pc-only($display: block, $breakpoint: 768px) {
+  display: $display;
+  @media screen and (max-width: $breakpoint) {
+      display: none;
+  }
+}
+
+@mixin mobile-only($display: block, $breakpoint: 768px) {
+  display: none;
+  @media screen and (max-width: $breakpoint) {
+      display: $display;
+  }
+}
+
+@mixin pos($lr: left, $lr-pos: 0, $tb: top, $tb-pos: 0) {
+  #{$lr}: $lr-pos;
+  #{$tb}: $tb-pos;
+}
+
+@mixin header {
+  position: fixed;
+  @media screen and (max-width: 768px) {
+      position: absolute;
+  }
+  @include pos(left, 0, top, 0);
+  width: 100%;
+  height: var.$header-h;
+  z-index: 1;
+}
+
+@mixin tabbar {
+  position: fixed;
+  @include pos(left, 0, bottom, 0);
+  width: 100%;
+  height: var.$header-h;
+  z-index: 1;
+}
+
+@mixin flex-justify($align: center) {
+  display: flex;
+  justify-content: space-between;
+  align-items: $align;
+}
+
+@mixin title {
+  color: var.$main-green;
+  text-align: center;
+  margin: 0 0 function.clamping(75, 133, 1024, 1px) 0;
+  .subtit {
+    display: block;
+    font-family: "Grandiflora One", cursive;
+    font-size: var.$size-level3;
+    margin: 0 0 function.em(11, 32) 0;
+    opacity: .4;
+    -webkit-text-stroke: 1px var.$main-green;
+  }
+
+  h2 {
+    font-size: var.$size-level1;
+    font-weight: var.$weight-bold;
+
+  }
+}
+
+@mixin border {
+  border-style: solid;
+  border-color: var.$color-tit;
+  border-width: 1px;
+}
+
+@mixin justify-width($count, $breakpoint: 1025px) {    
+  width: 100%;
+  border-width: 0 0 1px 0;
+  @media screen and (min-width: $breakpoint) {
+    width: calc(100% / $count);
+    border-width: 0 1px 0 0;
+    &:last-child {
+      border-right-width: 0; 
+    }
+  }
+}
+
+@mixin numbering {
+  display: block;
+  position: relative;
+  color: var.$color-tit;
+  text-align: center;
+  width: calc(1em * var.$line-height-normal);
+  
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var.$color-tit;
+    opacity: .15;
+  }
+}

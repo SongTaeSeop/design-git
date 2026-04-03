@@ -1,8 +1,6 @@
-/*
-    default.css (reset.css 라고도함)
-    태그의 초기화 - 브라우저가 주는 스타일을 모두 삭제
-    한 번 정의되면 바뀔일이 없음...
-*/
+html, body {
+    font-size: 62.5%;
+}
 h1,h2,h3,h4,h5,h6{
     font-size: inherit;
     font-weight: inherit;
