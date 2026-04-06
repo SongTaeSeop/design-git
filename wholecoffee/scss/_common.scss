@@ -4,28 +4,30 @@
     프로젝트마다 변경됨 - 이 css에 있는 속성을 수정하면 프로젝트 전체가 바뀜
 */
 @use "var";
+@use "mixin";
+
+
+$wrapper-margin: 30px;
+@media screen and (max-width:1024px) {
+    $wrapper-margin: 24px;
+}
+@media screen and (max-width:768px) {
+    $wrapper-margin: 16px;
+}
 
 body {
     font-family: "SUITE", sans-serif;
-    font-size: var.$p;
     font-weight: var.$weight-normal;
     line-height: var.$line-height-normal;
     color: var.$color-text;
     word-break: keep-all;/* 단어 단위로 줄바꿈 */
     word-wrap: break-word;/* 단어가 제한된 넓이보다 길면 강제 줄바꿈 */
 }
-.wrapper{
-    width: var.$wrapper-w; /* 전체화면 최대 너비는 var.$wrapper-w) */
-    margin: 0 auto; /* 화면에 가운데 정렬 */
+.wrapper {
+    @include mixin.wrapper;
 }
 #wrap{
     position: relative;
-}
-@media screen and (max-width:1500px) { /* 1440 + 30 + 30 */
-    .wrapper{
-        width: auto;
-        margin: 0 var.$wrapper-margin;
-    }
 }
 /* html 표준때문에 입력해야하는 태그이지만 홈페이지에 나오지 않는
    태그에 주는 클래스 */
@@ -40,3 +42,4 @@ body {
     white-space: nowrap !important;
     border: 0 !important;
 }
+

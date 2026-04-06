@@ -15,3 +15,7 @@
 @function clamping($min, $max, $breakpoint, $unit) {
   @return clamp($min * $unit, calc($max / $breakpoint * 100vw), $max * $unit);
 }
+
+@function justify-width($count, $gap) {
+  @return calc((100% / $count) - ($gap * ($count - 1)));
+}

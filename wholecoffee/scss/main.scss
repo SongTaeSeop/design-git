@@ -27,7 +27,98 @@
         }
     }
 }
+@keyframes draw-border-horizontal {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
 
+@keyframes draw-border-vertical {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+[data-aos="draw-border"] {
+    @media screen and (min-width: 1025px) {
+        ul {
+            &::before {
+                animation-name: draw-border-horizontal;
+                animation-duration: .6s;
+                animation-timing-function: ease-out;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+                animation-play-state: paused;
+            }
+            li {
+                &:first-child::before,
+                &::after {
+                    animation-name: draw-border-vertical;
+                    animation-duration: .6s;
+                    animation-timing-function: ease-out;
+                    animation-iteration-count: 1;
+                    animation-fill-mode: forwards;
+                    animation-play-state: paused;
+                }
+                &:first-child::before {
+                    animation-delay: .8s;
+                }
+                &[data-aos-delay="1000"]::after {
+                    animation-delay: 1s;
+                }
+                &[data-aos-delay="1200"]::after {
+                    animation-delay: 1.2s;
+                }
+                &[data-aos-delay="1400"]::after {
+                    animation-delay: 1.4s;
+                }
+                &[data-aos-delay="1600"]::after {
+                    animation-delay: 1.6s;
+                }
+            }
+        }
+        &.aos-animate ul {
+            &::before {
+                animation-play-state: running;
+            }
+            li {
+                &:first-child::before {
+                    animation-play-state: running;
+                }
+                &::after {
+                    animation-play-state: running;
+                }
+            }
+        }
+        
+    }
+}        
+
+[data-aos="light-up"] {
+    opacity: .2;
+    filter: saturate(.6);
+  &.aos-animate {
+    opacity: 1;
+    filter: saturate(1);
+  }
+}
+
+[data-aos="check-up"] {
+    &::after{
+        width: 14px;
+        transform: translateX(0);   
+    }
+    &.aos-animate::after {    
+        width: 0;
+        transform: translateX(14px);
+    }
+}
 
 .visual {
     @include mixin.bg("main/visual_bg.jpg");
@@ -82,36 +173,30 @@
     }
 
     .contents_box ul {
-        @include mixin.flex-justify(flex-start);
-        @include mixin.border;
-        border-top-width: 2px;
-        border-bottom-width: 2px;
+        position: relative;
+        @include mixin.grid-justify(4, space-between, start);
         li {
-            @include mixin.border;
-            @include mixin.flex-justify;
-            @include mixin.justify-width(4);
+            position: relative;
+            @include mixin.flex-justify(flex-start, center);
             gap: 41px 0;
             flex-direction: column;
+            height: 100%;
             padding: function.clamping(20, 85, 1440, 1px) 0 function.clamping(30, 52, 1440, 1px) 0;
             .photo {
                     height: function.clamping(80, 180, 1440, 1px);
                     overflow: hidden;
                 img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
+                    @include mixin.photo_img(contain);
                 }
             }
             .txt_box {
                 font-size: var.$size-level5;
                 margin: 0 function.clamping(16, 32, 1440, 1px);
                 .tit {
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
+                    @include mixin.flex-justify(flex-start, center);
                     gap: 0 14px;
                     margin: 0 0 function.clamping(11, 14, 1024, 1px) 0;
-                    span {
+                    > span {
                         @include mixin.numbering;
                     }
                     h3 {
@@ -123,7 +208,40 @@
                 p br {
                     display: none;
                 }
+            } 
+            &:first-child::before {
+                /* 왼쪽 세로 선 */
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 2px;
+                width: 0;
+                height: 0;    
+                @include mixin.border;
+                border-width: 0 0 0 1px;
             }
+            &::after {
+                /* 오른쪽 세로 선들 */
+                content: "";
+                position: absolute;
+                left: -1px;
+                top: 2px;
+                width: 100%;
+                height: 0;    
+                @include mixin.border;
+                border-width: 0 1px 0 0;
+            }
+        }
+        &::before {
+            /* 위아래 가로 선들 */
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;    
+            @include mixin.border;
+            border-width: 2px 0 2px 0;
         }
     }
 }
@@ -131,9 +249,9 @@
 @media screen and (max-width: 1024px) {
     .speciality {
         .contents_box ul {
-            flex-direction: column;
-            li {            
-                padding: 20px 10px 30px 30px;
+            grid-template-columns: 1fr;
+            li {
+                padding: function.vw(20, 360) function.vw(10, 360) function.vw(30, 360) function.vw(30, 360);
                 flex-direction: row-reverse;
                 align-items: flex-start;
                 .photo {
@@ -147,7 +265,34 @@
                         display: none;
                     }
                 }
+                &:first-child::before {
+                    /* 위쪽 가로 선 */
+                    left: 1px;
+                    top: 0px;
+                    width: 100%;
+                    border-width: 2px 0 0 0;
+                }
+                &:last-child::after {
+                    /* 아래쪽 가로 선 */
+                    left: 1px;
+                    top: -2px;
+                    height: 100%;
+                    border-width: 0 0 2px 0;
+                }
+                &::after {
+                    /* 중간 가로 선 */
+                    left: 1px;
+                    top: 0px;
+                    height: 100%;
+                    border-width: 0 0 1px 0;
+                }
             }
+            
+        &::before {
+            /* 세로 선 */
+            width: 100%;
+            border-width: 0 1px 0 1px;
+        }
         }
     }
 }
@@ -157,3 +302,181 @@
         display: block;
     }
 }
+
+@media screen and (max-width: 320px) {
+    .speciality {
+        .contents_box ul li {
+            flex-direction: column;
+            align-items: center;
+            padding: function.vw(20, 360) function.vw(10, 360) function.vw(30, 360) function.vw(10, 360);
+            .photo {
+                align-self: center;
+            }
+        }
+    }
+}
+
+.speciality_listing {
+    @include mixin.border;
+    border-width: 1px 0 1px 0;
+    .speciality_list > li {
+        @include mixin.flex-justify(space-between, center);
+        width: 100%;
+        @include mixin.border;
+        border-width: 1px 0 1px 0;
+        .txt_box {
+            width: calc(50% - function.vw(60, 1920) - function.vw(296, 1920));
+            margin-left: function.vw(296, 1920);
+            .tit {
+                color: var.$blackish;
+                @include mixin.flex-justify(flex-start, center);
+                gap: 0 13px;
+                margin: 0 0 function.clamping(23, 39, 1024, 1px) 0;
+                > span {
+                    font-size: var.$size-level5;
+                    @include mixin.numbering;
+                }
+                h3 {
+                    font-size: var.$size-level2;
+                    font-weight: var.$weight-bold;
+                    line-height: var.$line-height-tit;
+                }
+            }
+            ul {
+                @include mixin.flex-justify(center, flex-start);
+                flex-direction: column;
+                gap: 12px 0;
+                li {
+                    font-size: var.$size-level7;
+                    margin-left: calc(var.$size-level5 * var.$line-height-normal + 13px);
+                    position: relative;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        @include mixin.pos(left, calc(-30px - 13px), top, calc(-0.25em));
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid var.$color-text;
+                        border-radius: 50%;
+                        background-image: var.$icon-check;
+                        @include mixin.icon-svg(14px);
+                    }
+                    /* 체크마크 애니메이션 */
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        @include mixin.pos(left, calc(-34px), top, .25em);
+                        height: 16px;
+                        background-color: var.$white;
+                        transition: width .5s, transform .5s;
+                    }
+                    > span {
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            @include mixin.pos(left, 0, top, 43%);
+                            width: 100%;
+                            height: 15px;
+                            background-color: var.$main-white;
+                            opacity: .16;
+                        }
+                    }
+                }
+            }
+        }
+        .photo {
+            @include mixin.border;
+            width: calc(50% + function.vw(60, 1920));
+            height: function.clamping(180, 592, 1440, 1px);
+            overflow: hidden;
+            img {
+                @include mixin.photo_img(cover);
+            }
+        }
+        &:nth-child(odd) {
+            .photo {
+                border-width: 0 0 0 1px;
+            }
+        }
+        &:nth-child(even) {
+            background-color: var.$whitish;
+            flex-direction: row-reverse;
+            justify-self: flex-start;
+            .txt_box {
+                width: calc(50% - function.vw(60, 1920) - function.vw(188, 1920));
+                margin-left: function.vw(188, 1920);
+                ul li::after {
+                    background-color: var.$whitish;
+                }
+            }
+            .photo {
+                border-width: 0 1px 0 0;
+            }
+        }
+
+    }
+}
+
+
+/* 1440px 부터는 이미지 너비 빠르게 줄임 */
+@media screen and (max-width: 1440px) {
+    .speciality_listing {
+        .speciality_list > li {
+            &:nth-child(even) {
+                .txt_box {
+                    /* 50% - function.vw(60, 1920) - function.vw(188, 1920): 1920에서의 박스 너비 */
+                    /*  + 252px - (function.vw(252, 1440)): 줄어든 이미지 너비만큼 늘이기 */
+                    width: calc(50% - function.vw(60, 1920) - function.vw(188, 1920) + 252px - function.vw(252, 1440));
+                }
+            }
+            .photo {
+                width: calc(50% + function.vw(60, 1920) - 252px + function.vw(252, 1440));
+            }
+
+        }
+    }
+
+} /* @media screen and (max-width: 1440px) */
+
+@media screen and (max-width: 1024px) {
+    .speciality_listing .speciality_list {
+        > li {
+            flex-direction: column;
+            align-items: flex-start;
+            // padding: 90px 0 59px function.vw(16, 360);
+            .txt_box {
+                @include mixin.border;
+                width: 100%;
+                padding: 90px 0 59px 0;
+                padding-left: function.vw(16, 360);
+                margin: 0;
+                border-width: 0 0 1px 0;
+                ul {
+                    gap: 15px 0;
+                }
+            }
+            .photo {
+                width: 100%;
+            }
+            &:nth-child(odd) {
+                .photo {
+                    border-width: 0;
+                }
+            }
+            &:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+                .txt_box {
+                    width: 100%;
+                    margin: 0;
+                }
+                .photo {
+                    width: 100%;
+                    border-width: 0;
+                }
+            }
+        }
+    }
+
+} /* @media screen and (max-width: 1024px) */
