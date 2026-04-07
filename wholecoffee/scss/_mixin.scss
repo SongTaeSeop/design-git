@@ -62,15 +62,15 @@
   @include pos(left, 0, top, 0);
   width: 100%;
   height: var.$header-h;
-  z-index: 1;
+  z-index: 10;
 }
 
 @mixin tabbar {
   position: fixed;
   @include pos(left, 0, bottom, 0);
   width: 100%;
-  height: var.$header-h;
-  z-index: 1;
+  height: calc(var.$header-h + 1em);
+  z-index: 10;
 }
 
 @mixin flex-justify($justify-content: space-between, $align: center) {
@@ -79,7 +79,7 @@
   align-items: $align;
 }
 
-@mixin grid-justify($count, $justify-content: space-between, $align: center) {
+@mixin grid-justify($justify-content: space-between, $align: center, $count) {
   display: grid;
   grid-template-columns: repeat($count, 1fr);
   justify-content: $justify-content;

@@ -12,24 +12,26 @@
     background-color: var.$white;
     color: var.$color-tit;
     border-top: 1px solid var.$main-brown;
-
     ul {
-        @include mixin.flex-justify;
+        @include mixin.flex-justify(center, center);
         overflow-x: auto;
-        gap: function.vw(22, 1920);
+        gap: 0 function.vw(22, 1920);
         li a {
             display: flex;
             align-items: center;
-            height: var.$header-h;
+            height: calc(var.$header-h + var.$p);
             font-size: var.$size-level7;
             font-weight: var.$weight-bold;
             padding: 0 function.em(11, 18);
         }
     }
 }
+
+/* draw-border-* 애니메이션 사용 안 함 */
 @keyframes draw-border-horizontal {
     0% {
-        width: 0;
+        width: 100%;
+        // width: 0;
     }
     100% {
         width: 100%;
@@ -38,7 +40,8 @@
 
 @keyframes draw-border-vertical {
     0% {
-        height: 0;
+        height: 100%;
+        // height: 0;
     }
     100% {
         height: 100%;
@@ -67,19 +70,24 @@
                     animation-play-state: paused;
                 }
                 &:first-child::before {
-                    animation-delay: .8s;
+                    // animation-delay: .8s;
+                    animation-delay: 0;
                 }
                 &[data-aos-delay="1000"]::after {
-                    animation-delay: 1s;
+                    // animation-delay: 1s;
+                    animation-delay: 0;
                 }
                 &[data-aos-delay="1200"]::after {
-                    animation-delay: 1.2s;
+                    // animation-delay: 1.2s;
+                    animation-delay: 0;
                 }
                 &[data-aos-delay="1400"]::after {
-                    animation-delay: 1.4s;
+                    // animation-delay: 1.4s;
+                    animation-delay: 0;
                 }
                 &[data-aos-delay="1600"]::after {
-                    animation-delay: 1.6s;
+                    // animation-delay: 1.6s;
+                    animation-delay: 0;
                 }
             }
         }
@@ -111,14 +119,24 @@
 
 [data-aos="check-up"] {
     &::after{
-        width: 14px;
+        width: function.em(21, 18);
         transform: translateX(0);   
     }
     &.aos-animate::after {    
         width: 0;
-        transform: translateX(14px);
+        transform: translateX(function.em(21, 18));
     }
 }
+
+[data-aos="blur"] {
+    opacity: 0;
+    filter: blur(1rem) brightness(1.3);
+    &.aos-animate {
+        opacity: 1;
+        filter: blur(0) brightness(1);
+    }
+}
+
 
 .visual {
     @include mixin.bg("main/visual_bg.jpg");
@@ -174,7 +192,7 @@
 
     .contents_box ul {
         position: relative;
-        @include mixin.grid-justify(4, space-between, start);
+        @include mixin.grid-justify(space-between, start, 4);
         li {
             position: relative;
             @include mixin.flex-justify(flex-start, center);
@@ -251,7 +269,7 @@
         .contents_box ul {
             grid-template-columns: 1fr;
             li {
-                padding: function.vw(20, 360) function.vw(10, 360) function.vw(30, 360) function.vw(30, 360);
+                padding: function.em(20, 16) function.vw(10, 360) function.em(30, 16) function.vw(30, 360);
                 flex-direction: row-reverse;
                 align-items: flex-start;
                 .photo {
@@ -308,13 +326,14 @@
         .contents_box ul li {
             flex-direction: column;
             align-items: center;
-            padding: function.vw(20, 360) function.vw(10, 360) function.vw(30, 360) function.vw(10, 360);
+            padding: function.em(20, 16) function.vw(10, 360) function.em(30, 16) function.vw(10, 360);
             .photo {
                 align-self: center;
             }
         }
     }
 }
+
 
 .speciality_listing {
     @include mixin.border;
@@ -326,6 +345,7 @@
         border-width: 1px 0 1px 0;
         .txt_box {
             width: calc(50% - function.vw(60, 1920) - function.vw(296, 1920));
+            // margin-left: function.vw(296, 1920);margin-left: function.vw(, 1920);
             margin-left: function.vw(296, 1920);
             .tit {
                 color: var.$blackish;
@@ -353,20 +373,21 @@
                     &::before {
                         content: "";
                         position: absolute;
-                        @include mixin.pos(left, calc(-30px - 13px), top, calc(-0.25em));
-                        width: 30px;
-                        height: 30px;
+                        @include mixin.pos(left, calc((function.em(30, 18) + function.em(13, 18)) * -1), top, calc(-0.25em));
+                        width: function.em(30, 18);
+                        height: function.em(30, 18);
                         border: 1px solid var.$color-text;
                         border-radius: 50%;
+                        
                         background-image: var.$icon-check;
-                        @include mixin.icon-svg(14px);
+                        @include mixin.icon-svg(function.em(16, 18));
                     }
                     /* 체크마크 애니메이션 */
                     &::after {
                         content: "";
                         position: absolute;
-                        @include mixin.pos(left, calc(-34px), top, .25em);
-                        height: 16px;
+                        @include mixin.pos(left, calc(function.em(40, 18) * -1), top, .25em);
+                        height: function.em(16, 18);
                         background-color: var.$white;
                         transition: width .5s, transform .5s;
                     }
@@ -377,7 +398,7 @@
                             position: absolute;
                             @include mixin.pos(left, 0, top, 43%);
                             width: 100%;
-                            height: 15px;
+                            height: function.em(15, 18);
                             background-color: var.$main-white;
                             opacity: .16;
                         }
@@ -418,7 +439,6 @@
     }
 }
 
-
 /* 1440px 부터는 이미지 너비 빠르게 줄임 */
 @media screen and (max-width: 1440px) {
     .speciality_listing {
@@ -448,7 +468,7 @@
             .txt_box {
                 @include mixin.border;
                 width: 100%;
-                padding: 90px 0 59px 0;
+                padding: function.em(90, 16) 0 function.em(59, 16) 0;
                 padding-left: function.vw(16, 360);
                 margin: 0;
                 border-width: 0 0 1px 0;
@@ -480,3 +500,439 @@
     }
 
 } /* @media screen and (max-width: 1024px) */
+
+
+.coffee_bean {
+    position: relative;
+    background-color: var.$color-tit;
+    color: var.$white;
+    padding: function.clamping(100, 157, 1024, 1px) 0 function.clamping(55, 125, 1024, 1px) 0;
+    .wrapper {
+        @include mixin.flex-justify(space-between, center);
+        flex-direction: column;
+        gap: function.clamping(56, 89, 1024, 1px);
+        .tit {
+            @include mixin.flex-justify(center, center);
+            > .photo {
+                max-width: 100%;
+                overflow: hidden;
+                img {
+                    @include mixin.photo_img(contain);
+                }
+            }
+        }
+        .list {
+            width: 100%;
+            ul {
+                @include mixin.grid-justify(space-between, start, 3);
+                gap: 24px 16px;
+                li {
+                    @include mixin.flex-justify(flex-start, center);
+                    flex-direction: column;
+                    text-align: center;
+                    height: 100%;
+                    padding: function.clamping(34, 40, 1024, 1px) 0 function.clamping(38, 40, 1024, 1px) 0;
+                    position: relative;
+                    overflow: hidden;
+                    h3 {
+                        font-size: function.vw(60, 1920);
+                        font-weight: var.$weight-bold;
+                        line-height: var.$line-height-tit;
+                        margin: 0 0 function.em(10, 60) 0;
+                    }
+                    p {
+                        margin: 0 function.vw(80, 1920) function.em(20, 16) function.vw(80, 1920);
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        @include mixin.pos(left, 0, top, 0);
+                        width: calc(100% - 2px);
+                        height: calc(100% - 2px);
+                        border: 1px solid var.$whitish;
+                        opacity: .4;
+                    }
+                }
+            }
+
+        }
+        .coffee_bean_divider {
+            position: absolute;
+            @include mixin.pos(left, 50%, bottom, 0);
+            transform: translate(-50%, 45%);
+            max-width: function.vw(256, 360);
+            img {
+                @include mixin.photo_img(contain);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .coffee_bean {
+        .wrapper {
+            flex-direction: column-reverse;
+            .list ul {
+                grid-template-columns: 1fr;
+                li {
+                    h3 {
+                        font-size: var.$size-level1;
+                        margin: 0 0 function.em(15, 32) 0;
+                    }
+                    p {
+                        word-break: normal;
+                        margin: 0 function.vw(80, 360) function.em(20, 16) function.vw(80, 360);
+                    }
+                }
+            }
+        }
+    }
+} /* @media screen and (max-width: 1024px) */
+
+
+.beverages {
+    background-color: var.$whitish;
+    text-align: center;
+    padding: function.clamping(142, 278, 1024, 0.1rem) 0 function.clamping(76, 136, 1024, 1px);
+    .wrapper {
+        @include mixin.flex-justify(space-between, center);
+        flex-direction: column;
+        .tit_box {
+            @include mixin.title;
+        }
+        .contents_box {
+            position: relative;
+            margin: 0 0 function.clamping(39, 46, 1024, 1px) 0;
+            ul {
+                @include mixin.border;
+                border-width: 2px 0 2px 0;
+                @include mixin.grid-justify(space-between, center, 1);
+                li {
+                    @include mixin.flex-justify(flex-start, center);
+                    flex-direction: column;
+                    @include mixin.border;
+                    border-width: 0 1px 1px 0;
+                    height: 100%;
+                    padding: function.clamping(13, 24, 1024, 1px) 0 function.clamping(24, 44, 1024, 1px) 0;
+                    background-image: linear-gradient(0deg, #{var.$color-tit} 0%, #{var.$color-tit} 100%);
+                    background-color: var.$whitish;
+                    // background-image: linear-gradient(0deg #fff 0%, #fff 100%);
+                    background-size: 100% 0%;
+                    background-repeat: no-repeat;
+                    background-position: left top;
+                    transition: background-size .3s;
+                    .photo {
+                        height:function.clamping(164, 360, 1024, 1px);
+                        overflow: hidden;
+                        z-index: 1;
+                        img {
+                            @include mixin.photo_img(cover);
+                            filter: drop-shadow(8px 4px 32px rgba(0, 0, 0, 0.1));
+                        }
+                    }
+
+                    h3 {
+                        font-size: var.$size-level5;
+                        font-weight: var.$weight-bold;
+                        color: var.$color-tit;
+                        z-index: 1;
+                    }
+                    span {
+                        color: var.$color-tit;
+                        z-index: 1;
+                    }
+                    &:hover {
+                        background-size: 100% 100%;
+                        h3, span {
+                            color: #FCFCE9; /* $color-tit 반대 색 */
+                            mix-blend-mode: difference;
+                        }
+                    }
+                }
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: 100%;
+                transform: translateX(calc(-50% - function.vw(171 + 81, 1920)));
+                width: function.clamping(96, 162, 1024, 1px);
+                height: function.clamping(89, 150, 1024, 1px);
+                @include mixin.icon('main/beverages_coffeecup.svg');
+            }
+        }
+        .more a {
+            display: inline-block;
+            padding: function.em(8, 20) function.em(28, 20);
+            font-size: var.$size-level6;
+            font-weight: var.$weight-bold;
+            border: 1px solid var.$color-tit;
+            &:hover {
+                background-color: var.$color-tit;
+                color: var.$white;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .beverages {
+        .wrapper .contents_box {
+            ul {
+                $count: 4;
+                grid-template-columns: repeat($count, 1fr);
+                li {
+                    &:nth-child(4n - #{$count - 1}) {
+                        /* 그리드 왼쪽 열 요소 */
+                        border-left-width: 1px;
+                    }
+                    &:nth-child(n + #{8 - $count + 1}) {
+                        /* 그리드 마지막 행 요소 */
+                        border-bottom-width: 0;
+                    }
+                }
+            }            
+        }
+    }
+
+}
+
+@media screen and (min-width: 321px) and (max-width: 1024px) {
+    .beverages {
+        .wrapper .contents_box {
+            width: 100%;
+            ul {
+                $count: 2;
+                grid-template-columns: repeat($count, 1fr);
+                li {
+                    &:nth-child(#{$count}n - #{$count - 1}) {
+                        /* 그리드 왼쪽 열 요소 */
+                        border-left-width: 1px;
+                    }
+                    &:nth-child(n + #{8 - $count + 1}) {
+                        /* 그리드 마지막 행 요소 */
+                        border-bottom-width: 0;
+                    }
+                }
+            }
+            &::before {
+                transform: translateX(calc(-50% - function.vw(54 + 48, 360)));
+            }
+            
+        }
+    }
+
+} /* @media screen and (min-width: 321px) and (max-width: 1024px) */
+
+@media screen and (max-width: 320px) {
+    .beverages {
+        .wrapper .contents_box {
+            width: 100%;
+            ul {
+                $count: 1;
+                grid-template-columns: repeat($count, 1fr);
+                li {
+                    &:nth-child(#{$count}n - #{$count - 1}) {
+                        /* 그리드 왼쪽 열 요소 */
+                        border-left-width: 1px;
+                    }
+                    &:nth-child(n + #{8 - $count + 1}) {
+                        /* 그리드 마지막 행 요소 */
+                        border-bottom-width: 0;
+                    }
+                }
+            }
+            &::before {
+                transform: translateX(calc(-50% - function.vw(27 + 48, 360)));
+            }            
+        }
+    }
+} /* @media screen and (max-width: 320px) */
+
+
+.procedure {
+    @include mixin.bg('main/procedure_bg.jpg');
+    padding: function.clamping(103, 182, 1024, 1px) 0 function.clamping(76, 139, 1024, 1px) 0;
+    .wrapper {
+        @include mixin.flex-justify(space-between, center);
+        flex-direction: column;
+        .tit_box {
+            @include mixin.title;
+        }
+        .contents_box {
+            background-color: var.$white;
+            width: 100%;
+            ul {
+                $count: 1;
+                @include mixin.flex-justify(center, stretch);
+                flex-wrap: wrap;
+                margin: function.clamping(16, 60, 1024, 1px) function.clamping(16, 80, 1024, 1px);
+                @include mixin.border;
+                border-width: 2px 0;
+                li {
+                    flex-grow: 1;
+                    @include mixin.flex-justify(flex-start, flex-start);
+                    flex-direction: column;
+                    padding: function.clamping(15, 18, 1024, 1px) function.clamping(20, 30, 1024, 1px) function.clamping(20, 49, 1024, 1px) function.clamping(7, 30, 1024, 1px);
+                    @include mixin.border;
+                    border-width: 0 1px 1px 0;
+                    position: relative;
+                    &.numbering {
+                        gap: 57px 3px;
+                    }
+                    /* 절차 숫자 */
+                    &.numbering::before {
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: function.em(38, 16);
+                        height: function.em(60, 16);
+                        margin: 31px 30px 0 0 ;
+                        background-position: right top;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                    &.numbering.one::before {
+                        background-image: url(function.img('main/procedure_numbering_01.svg'));
+                    }
+                    &.numbering.two::before {
+                        background-image: url(function.img('main/procedure_numbering_02.svg'));
+                    }
+                    &.numbering.three::before {
+                        background-image: url(function.img('main/procedure_numbering_03.svg'));
+                    }
+                    &.numbering.four::before {
+                        background-image: url(function.img('main/procedure_numbering_04.svg'));
+                    }
+                    &.numbering.five::before {
+                        background-image: url(function.img('main/procedure_numbering_05.svg'));
+                    }
+                    &.numbering.six::before {
+                        background-image: url(function.img('main/procedure_numbering_06.svg'));
+                    }
+                    &.numbering.seven::before {
+                        background-image: url(function.img('main/procedure_numbering_07.svg'));
+                    }
+                    &.numbering.eight::before {
+                        background-image: url(function.img('main/procedure_numbering_08.svg'));
+                    }
+                    /* 화살표 */
+                    &.numbering::after {
+                        content: "";
+                        display: none;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translate(50%, -50%) rotate(90deg);
+                        width: function.clamping(24, 48, 1024, 1px);
+                        height: function.clamping(24, 48, 1024, 1px);
+                        background-color: var.$white;
+                        border-radius: 50%;
+                        background-image: var.$icon-arrow;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                    &.last_box {
+                        padding: function.clamping(20, 49, 1024, 1px) function.clamping(7, 30, 1024, 1px);
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        h3 {
+                            font-size: function.em(24, 16);
+                            font-weight: var.$weight-bold;
+                            color: var.$main-brown;
+                        }
+                    }
+                    .photo, .txt_box {
+                        z-index: 1;
+                    }
+                    .photo {
+                        position: relative;
+                        @include mixin.flex-justify(center, center);
+                        height: function.clamping(40, 110, 1024, 1px);
+                        img {
+                            @include mixin.photo_img(contain);
+                        }
+                    }
+                    .txt_box {
+                        margin: 0 0 0 20px;
+                        h3 {
+                            font-size: var.$size-level5;
+                            font-weight: var.$weight-bold;
+                            color: var.$color-tit;
+                            line-height: var.$line-height-tit;
+                            margin: 0 0 function.em(9, 24);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .procedure {
+        .wrapper .contents_box ul {
+            $count: 3;
+            li {
+                width: function.justify-width($count, 0px);
+                &:nth-child(#{$count}n - #{$count - 1}) {
+                    /* 그리드 왼쪽 열 요소 */
+                    border-left-width: 1px;
+                }
+                &:nth-child(n + #{9 - $count + 1}) {
+                    /* 그리드 마지막 행 요소 */
+                    border-bottom-width: 0;
+                }
+                &:not(:nth-child(#{$count}n))::after {
+                    display: block;
+                }
+            }           
+        }
+    }
+} /* @media screen and (min-width: 1025px) */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .procedure {
+        .wrapper .contents_box ul {
+            $count: 2;
+            li {
+                width: function.justify-width($count, 0px);
+                &:nth-child(#{$count}n - #{$count - 1}) {
+                    /* 그리드 왼쪽 열 요소 */
+                    border-left-width: 1px;
+                }
+                &:nth-child(n + #{9 - $count + 2}) {
+                    /* 그리드 마지막 행 요소 */
+                    border-bottom-width: 0;
+                }
+                &:not(:nth-child(#{$count}n))::after {
+                    display: block;
+                }
+            }           
+        }
+    }
+} /* @media screen and (min-width: 769px) and (max-width: 1024px) */
+
+@media screen and (max-width: 768px) {
+    .procedure {
+        .wrapper .contents_box ul {
+            $count: 1;
+            li {
+                width: function.justify-width($count, 0px);
+                &:nth-child(#{$count}n - #{$count - 1}) {
+                    /* 그리드 왼쪽 열 요소 */
+                    border-left-width: 1px;
+                }
+                &:nth-child(n + #{9 - $count + 2}) {
+                    /* 그리드 마지막 행 요소 */
+                    border-bottom-width: 0;
+                }
+                &:not(:nth-child(#{$count}n))::after {
+                    display: block;
+                }
+            }           
+        }
+    }
+} /* @media screen and (max-width: 768px) */

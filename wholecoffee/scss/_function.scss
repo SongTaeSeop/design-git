@@ -17,5 +17,5 @@
 }
 
 @function justify-width($count, $gap) {
-  @return calc((100% / $count) - ($gap * ($count - 1)));
+  @return calc((100% / $count) - ($gap * ($count - 1) / $count));
 }
