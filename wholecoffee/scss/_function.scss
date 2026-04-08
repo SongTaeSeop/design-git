@@ -1,4 +1,6 @@
 @use "sass:string";
+@use "sass:list";
+@use "sass:map";
 
 @function img($name) {
   @return string.unquote("../images/#{$name}");
@@ -18,4 +20,15 @@
 
 @function justify-width($count, $gap) {
   @return calc((100% / $count) - ($gap * ($count - 1) / $count));
+}
+
+@function enumerate($list) {
+  $map: ();
+
+  @for $index from 1 through list.length($list) {
+    $value: list.nth($list, $index);
+    $map: map.merge($map, ($index: $value));
+  }
+
+  @return $map;
 }
