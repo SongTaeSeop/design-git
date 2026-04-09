@@ -6,23 +6,44 @@
 @use "mixin";
 @use "layout";
 
+
+
 .toc_mobile {
     @include mixin.tabbar;
     @include mixin.mobile-only;
     background-color: var.$white;
     color: var.$color-tit;
-    border-top: 1px solid var.$main-brown;
+    border-bottom: 1px solid var.$main-brown;
     ul {
-        @include mixin.flex-justify(center, center);
+        @include mixin.flex-justify(flex-start, center);
         overflow-x: auto;
+        overflow-y: hidden;
         gap: 0 function.vw(22, 1920);
-        li a {
-            display: flex;
-            align-items: center;
-            height: calc(var.$header-h);
-            font-size: var.$size-level7;
-            font-weight: var.$weight-bold;
-            padding: 0 function.em(11, 18);
+        li {
+            width: 100%;
+            a {
+                @include mixin.flex-justify(center, center);
+                height: calc(var.$header-h);
+                font-size: var.$size-level7;
+                font-weight: var.$weight-bold;
+                padding: 0 function.em(11, 18);
+                &.active {
+                    color: var.$main-green;
+                    position: relative;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        bottom: function.em(-4, 16);
+                        transform: translateX(-50%);
+                        width: function.em(8, 16);
+                        height: function.em(8, 16);
+                        border: 1px solid var.$color-tit;
+                        border-radius: 50%;
+                        background-color: var.$main-green;
+                    }
+                }
+            }
         }
     }
 }
@@ -130,7 +151,7 @@
 
 [data-aos="blur"] {
     opacity: 0;
-    filter: blur(1rem) brightness(1.3);
+    filter: blur(10px) brightness(1.3);
     &.aos-animate {
         opacity: 1;
         filter: blur(0) brightness(1);
@@ -599,7 +620,7 @@
 .beverages {
     background-color: var.$whitish;
     text-align: center;
-    padding: function.clamping(142, 278, 1024, 0.1rem) 0 function.clamping(76, 136, 1024, 1px);
+    padding: function.clamping(142, 278, 1024, 1px) 0 function.clamping(76, 136, 1024, 1px);
     .wrapper {
         @include mixin.flex-justify(space-between, center);
         flex-direction: column;
@@ -1091,7 +1112,8 @@
 
 
 .expense {
-    margin: function.clamping(103, 182, 1024, 1px) 0 function.clamping(82, 152, 1024, 1px) 0;
+    margin: 0 0 function.clamping(82, 152, 1024, 1px) 0;
+    padding-top: function.clamping(103, 182, 1024, 1px);
     .tit_box {
         @include mixin.title;
     }
@@ -1250,3 +1272,65 @@
         }
     }
 }
+
+
+.util {
+    position: fixed;
+    right: 0;
+    bottom: var.$header-h;
+    z-index: 100;
+
+    .util_wrapper {
+        @include mixin.flex-justify(flex-end, flex-end);
+        flex-direction: column;
+        margin: 0 function.clamping(16, 60, 1024, 1px);
+        gap: 12px 0;
+        .fab {
+            @include mixin.outline-active;
+            @include mixin.flex-justify(flex-start, center);
+            flex-direction: column;
+            position: relative;
+            width: function.em(56, 16);
+            height: function.em(56, 16);
+            border-radius: 50%;
+            color: var.$white;
+            font-weight: var.$weight-bold;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: function.em(34, 16);
+                width: 100%;
+                height: 100%;
+                background-size: 12px;
+                background-repeat: no-repeat;
+                background-position: center bottom;
+            }
+            &.inquiry {
+                @include mixin.mobile-only(flex);
+                background-color: var.$main-brown;
+                &::after {
+                    background-image: var.$icon-inquiry;
+                }
+            }
+            &.top {
+                background-color: var.$color-tit;
+                &::after {
+                    background-image: var.$icon-top;
+                }
+            }
+            span {
+                display: block;
+                text-align: center;
+                margin-top: function.em(26, 16);
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .util {
+        font-size: function.em(14, 16);
+    }
+} /* @media screen and (max-width: 768px) */

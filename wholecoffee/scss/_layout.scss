@@ -46,6 +46,22 @@
             font-weight: var.$weight-bold;
             color: var.$white;
             padding: 0 function.em(11, 18);
+            &.active {
+                color: var.$main-green;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: function.em(-4, 16);
+                    transform: translateX(-50%);
+                    width: function.em(8, 16);
+                    height: function.em(8, 16);
+                    border: 1px solid var.$color-tit;
+                    border-radius: 50%;
+                    background-color: var.$main-green;
+                }
+            }
         }
     }
     &.fixed .toc ul {
@@ -55,6 +71,7 @@
     }
 
     .inquiry {
+        @include mixin.outline-active;
         @include mixin.pc-only(inline-block);
         font-size: var.$size-level7;
         font-weight: var.$weight-bold;

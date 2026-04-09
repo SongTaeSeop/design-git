@@ -66,10 +66,10 @@
 }
 
 @mixin tabbar {
-  position: fixed;
-  @include pos(left, 0, bottom, 0);
+  position: sticky;
+  @include pos(left, 0, top, 0);
   width: 100%;
-  height: calc(var.$header-h + 1em);
+  height: calc(var.$header-h);
   z-index: 10;
 }
 
@@ -136,4 +136,11 @@
   height: 100%;
   object-fit: $object-fit;
   vertical-align: top;
+}
+
+@mixin outline-active {
+  &:active {
+    outline: 2px solid var.$color-tit;
+    outline-offset: 2px;
+  }
 }

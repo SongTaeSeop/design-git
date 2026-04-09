@@ -14,7 +14,7 @@
 </head>
 <body>
     <div id="wrap">
-        <header class="header fixed">
+        <header class="header">
             <div class="wrapper">
                 <h1 class="logo"><a href="index.html"><span class="sr-only">WHOLE COFFEE</span></a></h1>
                 <nav class="toc">
@@ -29,15 +29,7 @@
             </div>
         </header>
         <main class="contents">
-            <nav class="toc_mobile">
-                <ul>
-                    <li><a href="#speciality"><span>경쟁력</span></a></li>
-                    <li><a href="#beverages"><span>판매메뉴</span></a></li>
-                    <li><a href="#procedure"><span>창업정보</span></a></li>
-                    <li><a href="#expense"><span>오픈비용</span></a></li>
-                </ul>
-            </nav>
-            <section class="visual">
+            <section id="visual" class="visual">
                 <div class="wrapper">
                     <div class="txt_box">
                         <strong>성공을 위한 강력한 동반자</strong>
@@ -51,7 +43,16 @@
                     </div>
                 </div>
             </section>
-            <section id="speciality" class="speciality">
+            
+            <nav class="toc_mobile">
+                <ul>
+                    <li><a href="#speciality"><span>경쟁력</span></a></li>
+                    <li><a href="#beverages"><span>판매메뉴</span></a></li>
+                    <li><a href="#procedure"><span>창업정보</span></a></li>
+                    <li><a href="#expense"><span>오픈비용</span></a></li>
+                </ul>
+            </nav>
+            <section id="speciality" class="speciality" data-section="speciality">
                 <div class="wrapper">
                     <div class="tit_box">
                         <strong class="subtit">SPECIALITY</strong>
@@ -103,7 +104,7 @@
                     </div>
                 </div>
             </section>
-            <section class="speciality_listing">
+            <section id="speciality_listing" class="speciality_listing" data-section="speciality">
                 <h2 class="sr-only">홀커피의 경쟁력 상세 목록</h2>
                 <ul class="speciality_list">
                     <li>
@@ -163,7 +164,7 @@
                     </li>
                 </ul>
             </section>
-            <section class="coffee_bean">
+            <section id="coffee_bean" class="coffee_bean" data-section="speciality">
                 <h2 class="sr-only">홀커피 커피콩 브랜드</h2>
                 <div class="wrapper">
                     <div class="tit">
@@ -203,7 +204,7 @@
                     <div class="coffee_bean_divider"><img src="images/main/coffeebeans_coffee.png" alt="커피콩"></div>
                 </div>
             </section>
-            <section class="beverages" id="beverages">
+            <section id="beverages" class="beverages" data-section="beverages">
                 <div class="wrapper">
                     <div class="tit_box">
                         <strong class="subtit">MENU</strong>
@@ -256,7 +257,7 @@
                     <div class="more"><a href="#none">더보기</a></div>
                 </div>
             </section>
-            <section class="procedure" id="procedure">
+            <section id="procedure" class="procedure" data-section="procedure">
                 <div class="wrapper">
                     <div class="tit_box">
                         <strong class="subtit">PROCEDURE</strong>
@@ -328,7 +329,7 @@
                 </div>
                 
             </section>
-            <section class="faq">
+            <section id="faq" class="faq" data-section="procedure">
                 <div class="wrapper">
                     <div class="tit_box">
                         <strong class="subtit">FAQ</strong>
@@ -388,7 +389,7 @@
                     </div>
                 </div>
             </section>
-            <section class="expense" id="expense">
+            <section id="expense" class="expense" data-section="expense">
                 <div class="wrapper">
                     <div class="tit_box">
                         <strong class="subtit">EXPENSE</strong>
@@ -513,7 +514,14 @@
         </footer>
     </div>
     <aside class="util">
-        
+        <div class="util_wrapper">
+            <a href="#none" class="fab inquiry">
+                <span>문의</span>
+            </a>
+            <button class="fab top">
+                <span>TOP</span>
+            </button>
+        </div>
     </aside>
 </body>
 </html>

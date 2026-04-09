@@ -36,4 +36,55 @@ $(document).ready(function() {
     $(window).scroll(function() {
         check_top();
     });
+
+    /*
+    내부 링크 버튼:
+    클릭하면 아래로 스크롤
+    */
+
+    function scrollToElement(elementSelector, instance = 0) {
+        const elements = document.querySelectorAll(elementSelector);
+        if (elements.length > instance) {
+            elements[instance].scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    }
+    $('.header .toc ul li a').click(function(e) {
+        e.preventDefault();
+        scrollToElement($(this).attr('href'));
+    });
+
+    /*
+    화면 스크롤에 따른 탭 강조 갱신
+    */
+
+    const el = $('section');
+
+    let target;
+    let id;
+
+    const observer = new window.IntersectionObserver(([entry]) => {
+
+        if (entry.isIntersecting) {
+            target = entry.target;
+            old_id = id;
+            id = $(target).attr('data-section');
+            // console.log(old_id, id);
+            if (old_id != id) {
+                $('.header .toc ul li a[href="#' + old_id + '"]').removeClass('active');
+                $('.header .toc ul li a[href="#' + id + '"]').addClass('active');
+                $('.toc_mobile ul li a[href="#' + old_id + '"]').removeClass('active');
+                $('.toc_mobile ul li a[href="#' + id + '"]').addClass('active');
+            }
+        }
+        }, {
+            root: null,
+            threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+    });
+
+    el.each(function(idx, element) {
+        observer.observe(element);
+    });
+
 });
