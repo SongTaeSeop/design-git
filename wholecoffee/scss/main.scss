@@ -1305,6 +1305,7 @@
                 background-size: 12px;
                 background-repeat: no-repeat;
                 background-position: center bottom;
+                pointer-events: none;
             }
             &.inquiry {
                 @include mixin.mobile-only(flex);
@@ -1322,7 +1323,7 @@
             span {
                 display: block;
                 text-align: center;
-                margin-top: function.em(26, 16);
+                margin-top: function.em(25, 16);
             }
         }
 

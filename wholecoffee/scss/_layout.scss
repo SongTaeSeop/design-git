@@ -107,7 +107,7 @@
             @include mixin.flex-justify(center, center);
             gap: 0 function.em(38, 16);
             flex-wrap: wrap;
-            margin: 0 function.em(19, 16);
+            margin: 0 function.em(38, 16);
             li.privacy {
                 font-weight: var.$weight-bold;
             }

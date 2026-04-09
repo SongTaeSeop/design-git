@@ -306,7 +306,7 @@ body {
   align-items: center;
   gap: 0 2.375em;
   flex-wrap: wrap;
-  margin: 0 1.1875em;
+  margin: 0 2.375em;
 }
 .footer .wrapper .f_nav ul li.privacy {
   font-weight: 700;
@@ -1697,6 +1697,7 @@ body {
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: center bottom;
+  pointer-events: none;
 }
 .util .util_wrapper .fab.inquiry {
   display: none;
@@ -1721,7 +1722,7 @@ body {
 .util .util_wrapper .fab span {
   display: block;
   text-align: center;
-  margin-top: 1.625em;
+  margin-top: 1.5625em;
 }
 
 @media screen and (max-width: 768px) {
