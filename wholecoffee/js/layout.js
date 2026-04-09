@@ -93,17 +93,20 @@ $(document).ready(function() {
 
     var mut = new MutationObserver(function(mutations, mut){
         if (mutations.length > 1) {
-            target = Array.from(mutations).filter((dom) => (dom.target.className == 'active'));
-            target = $(target[0].target).parent();
-            target[0].scrollIntoView({
-                behavior: "smooth",
-                inline: 'center'
+            filtered = Array.from(mutations).filter((dom) => (dom.target.className == 'active'));
+            target = $(filtered[0].target).parent();
+            target.parent()[0].scrollTo({
+                left: target[0].offsetLeft,
+                behavior: 'smooth'
             });
         }
     });
 
     toc_items.each(function(idx, element) {
-        mut.observe(element, {'attributes': true});
+        mut.observe(element, {
+            'attributes': true,
+            'attributeFilter': ['class']
+        });
     });
 
     // 위 코드는 포커스가 이동해서 안 됨
