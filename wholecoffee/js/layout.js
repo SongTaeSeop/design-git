@@ -62,7 +62,6 @@ $(document).ready(function() {
 
     const sections = $('section');
 
-    let target;
     let id;
 
     const observer = new window.IntersectionObserver(([entry]) => {
@@ -94,7 +93,8 @@ $(document).ready(function() {
 
     var mut = new MutationObserver(function(mutations, mut){
         if (mutations.length > 1) {
-            target = $(mutations[1].target).parent();
+            target = Array.from(mutations).filter((dom) => (dom.target.className == 'active'));
+            target = $(target[0].target).parent();
             target[0].scrollIntoView({
                 behavior: "smooth",
                 inline: 'center'
@@ -105,4 +105,6 @@ $(document).ready(function() {
     toc_items.each(function(idx, element) {
         mut.observe(element, {'attributes': true});
     });
+
+    // 위 코드는 포커스가 이동해서 안 됨
 });
