@@ -52,6 +52,7 @@ $(document).ready(function() {
     }
     $('.header .toc ul li a').click(function(e) {
         e.preventDefault();
+        console.log($(this).attr('href'));
         scrollToElement($(this).attr('href'));
     });
 
@@ -59,7 +60,7 @@ $(document).ready(function() {
     화면 스크롤에 따른 탭 강조 갱신
     */
 
-    const el = $('section');
+    const sections = $('section');
 
     let target;
     let id;
@@ -83,8 +84,25 @@ $(document).ready(function() {
             threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
     });
 
-    el.each(function(idx, element) {
+    sections.each(function(idx, element) {
         observer.observe(element);
     });
 
+    /* 모바일) 강조된 탭 아이템으로 스크롤 */
+
+    const toc_items = $('.toc_mobile ul li a');
+
+    var mut = new MutationObserver(function(mutations, mut){
+        if (mutations.length > 1) {
+            target = $(mutations[1].target).parent();
+            target[0].scrollIntoView({
+                behavior: "smooth",
+                inline: 'center'
+            });
+        }
+    });
+
+    toc_items.each(function(idx, element) {
+        mut.observe(element, {'attributes': true});
+    });
 });
