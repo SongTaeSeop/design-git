@@ -65,6 +65,56 @@
     }
 }
 
+
 .footer {
-    margin: 10000px 0 0 0;
+    background-color: var.$color-tit;
+    color: #9a9aa2;
+    .wrapper {
+        padding: function.clamping(47, 57, 1024, 1px) 0 function.clamping(122, 138, 1024, 1px) 0;
+        @include mixin.flex-justify(space-between, center);
+        flex-direction: column;
+        text-align: center;
+        gap: function.clamping(12, 28, 1024, 1px) 0;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;    
+            top: function.clamping(23, 66, 1024, 1px);
+            width: 153px;
+            height: 162px;
+            @include mixin.bg("layout/favicon_footer.svg", transparent);
+            opacity: .05;
+        }
+        .f_nav ul {
+            @include mixin.flex-justify(center, center);
+            gap: 0 function.em(38, 16);
+            flex-wrap: wrap;
+            margin: 0 function.em(19, 16);
+            li.privacy {
+                font-weight: var.$weight-bold;
+            }
+        }
+        .f_info ul li {
+            strong {
+                display: inline-block;
+                position: relative;
+                margin-right: .25em;
+                &::after {
+                    content: ":";
+                    position: absolute;
+                    right: -.25em;
+                    top: 0;
+                }
+            }
+        }
+        .f_info ul > li > ul {
+            @include mixin.flex-justify(center, center);
+            gap: 0 function.em(18, 16);
+            flex-wrap: wrap;
+        }
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 }

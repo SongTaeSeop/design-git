@@ -257,7 +257,60 @@ body {
 }
 
 .footer {
-  margin: 10000px 0 0 0;
+  background-color: #030316;
+  color: #9a9aa2;
+}
+.footer .wrapper {
+  padding: clamp(47px, 5.56640625vw, 57px) 0 clamp(122px, 13.4765625vw, 138px) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: clamp(12px, 2.734375vw, 28px) 0;
+  position: relative;
+}
+.footer .wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: clamp(23px, 6.4453125vw, 66px);
+  width: 153px;
+  height: 162px;
+  background: url(../images/layout/favicon_footer.svg) transparent no-repeat center center/cover;
+  opacity: 0.05;
+}
+.footer .wrapper .f_nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 2.375em;
+  flex-wrap: wrap;
+  margin: 0 1.1875em;
+}
+.footer .wrapper .f_nav ul li.privacy {
+  font-weight: 700;
+}
+.footer .wrapper .f_info ul li strong {
+  display: inline-block;
+  position: relative;
+  margin-right: 0.25em;
+}
+.footer .wrapper .f_info ul li strong::after {
+  content: ":";
+  position: absolute;
+  right: -0.25em;
+  top: 0;
+}
+.footer .wrapper .f_info ul > li > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 1.125em;
+  flex-wrap: wrap;
+}
+.footer a:hover {
+  text-decoration: underline;
 }
 
 .toc_mobile {
@@ -289,7 +342,7 @@ body {
 .toc_mobile ul li a {
   display: flex;
   align-items: center;
-  height: calc(clamp(48px, 5.859375vw, 60px) + 1.6rem);
+  height: clamp(48px, 5.859375vw, 60px);
   font-size: clamp(1.6rem, 1.7578125vw, 1.8rem);
   font-weight: 700;
   padding: 0 0.6111111111em;
@@ -689,10 +742,8 @@ body {
   background-position: center center;
   background-size: 0.8888888889em;
 }
-.speciality_listing .speciality_list > li .txt_box ul li {
-  /* 체크마크 애니메이션 */
-}
 .speciality_listing .speciality_list > li .txt_box ul li::after {
+  /* 체크마크 애니메이션 */
   content: "";
   position: absolute;
   left: -2.2222222222em;
@@ -1110,10 +1161,8 @@ body {
 .procedure .wrapper .contents_box ul li.numbering {
   gap: 57px 3px;
 }
-.procedure .wrapper .contents_box ul li {
-  /* 절차 숫자 */
-}
 .procedure .wrapper .contents_box ul li.numbering::before {
+  /* 절차 숫자 */
   content: "";
   position: absolute;
   right: 0;
@@ -1149,10 +1198,8 @@ body {
 .procedure .wrapper .contents_box ul li.numbering.eight::before {
   background-image: url(../images/main/procedure_numbering_08.svg);
 }
-.procedure .wrapper .contents_box ul li {
-  /* 화살표 */
-}
 .procedure .wrapper .contents_box ul li.numbering::after {
+  /* 화살표 */
   content: "";
   display: none;
   position: absolute;
@@ -1324,10 +1371,8 @@ body {
   font-weight: 700;
   color: #030316;
 }
-.faq .wrapper .contents_box ul li .accordion-header .accordion-button {
-  /* 더하기 세로 선 */
-}
 .faq .wrapper .contents_box ul li .accordion-header .accordion-button::after {
+  /* 더하기 세로 선 */
   content: "";
   position: absolute;
   right: 11px;
@@ -1340,10 +1385,8 @@ body {
   background-color: #030316;
   pointer-events: none;
 }
-.faq .wrapper .contents_box ul li .accordion-header {
-  /* 더하기 가로 선 */
-}
 .faq .wrapper .contents_box ul li .accordion-header::after {
+  /* 더하기 가로 선 */
   content: "";
   position: absolute;
   right: 0;
@@ -1358,13 +1401,13 @@ body {
 .faq .wrapper .contents_box ul li .accordion-collapse {
   display: grid;
   grid-template-rows: 0fr;
-  overflow: hidden;
   height: auto;
   margin-bottom: 0;
   transition: grid-template-rows 0.3s, margin-bottom 0.3s;
   transition-timing-function: ease;
 }
 .faq .wrapper .contents_box ul li .accordion-collapse p {
+  overflow: hidden;
   font-size: clamp(1.6rem, 1.7578125vw, 1.8rem);
 }
 .faq .wrapper .contents_box ul li.active .accordion-header .accordion-button::after {
@@ -1470,6 +1513,27 @@ body {
   background-color: #4B2E26;
   color: #ffffff;
 }
+.expense .contents_box table tbody tr td:nth-of-type(4n+1),
+.expense .contents_box table tfoot tr td:nth-of-type(4n+1) {
+  /* 세부내용 */
+  padding-left: 1.5em;
+}
+.expense .contents_box table tbody tr td:nth-of-type(4n+2),
+.expense .contents_box table tfoot tr td:nth-of-type(4n+2) {
+  /* 금액(원) */
+  text-align: right;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0 2.0416666667em;
+  white-space: nowrap;
+}
+.expense .contents_box table tbody tr td:nth-of-type(4n+3),
+.expense .contents_box table tfoot tr td:nth-of-type(4n+3) {
+  /* 비고 */
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.2;
+}
 .expense .contents_box table tbody tr {
   border-style: solid;
   border-color: #030316;
@@ -1480,32 +1544,21 @@ body {
   font-size: clamp(2rem, 2.34375vw, 2.4rem);
   color: #030316;
 }
-.expense .contents_box table tbody tr td {
-  /* 금액(원) */
-}
 .expense .contents_box table tbody tr td:nth-of-type(4n+2) {
-  text-align: right;
+  /* 금액(원) */
   font-size: clamp(2rem, 2.34375vw, 2.4rem);
-  font-weight: 700;
-  line-height: 1.2;
-  padding: 0 1.6666666667vw;
-}
-.expense .contents_box table tbody tr td {
-  /* 비고 */
 }
 .expense .contents_box table tbody tr td:nth-of-type(4n+3) {
-  text-align: center;
+  /* 비고 */
   font-size: clamp(1.8rem, 1.953125vw, 2rem);
-  font-weight: 700;
-  line-height: 1.2;
 }
 .expense .contents_box table tbody tr td .price_before {
   display: inline-block;
   margin-right: 1.8333333333em;
   position: relative;
-  /* 할인 전 가격 취소선 */
 }
 .expense .contents_box table tbody tr td .price_before::before, .expense .contents_box table tbody tr td .price_before::after {
+  /* 할인 전 가격 취소선 */
   content: "";
   position: absolute;
   right: -0.0833333333em;
@@ -1523,9 +1576,9 @@ body {
 .expense .contents_box table tbody tr td .price_cut {
   display: inline-block;
   position: relative;
-  /* 화살표 */
 }
 .expense .contents_box table tbody tr td .price_cut::after {
+  /* 화살표 */
   content: "";
   position: absolute;
   right: 1.25em;
@@ -1552,23 +1605,12 @@ body {
   font-size: clamp(2.4rem, 3.125vw, 3.2rem);
   color: #4B2E26;
 }
-.expense .contents_box table tfoot tr td {
-  /* 금액(원) */
-}
 .expense .contents_box table tfoot tr td:nth-of-type(4n+2) {
-  text-align: right;
+  /* 금액(원) */
   font-size: clamp(2.2rem, 2.734375vw, 2.8rem);
-  font-weight: 700;
-  line-height: 1.2;
-  padding: 0 1.6666666667vw;
   color: #4B2E26;
 }
-.expense .contents_box table tfoot tr td {
-  /* 비고 */
-}
 .expense .contents_box table tfoot tr td:nth-of-type(4n+3) {
-  text-align: center;
+  /* 비고 */
   font-size: clamp(1.8rem, 1.953125vw, 2rem);
-  font-weight: 700;
-  line-height: 1.2;
 }

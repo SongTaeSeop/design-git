@@ -19,7 +19,7 @@
         li a {
             display: flex;
             align-items: center;
-            height: calc(var.$header-h + var.$p);
+            height: calc(var.$header-h);
             font-size: var.$size-level7;
             font-weight: var.$weight-bold;
             padding: 0 function.em(11, 18);
@@ -382,8 +382,8 @@
                         background-image: var.$icon-check;
                         @include mixin.icon-svg(function.em(16, 18));
                     }
-                    /* 체크마크 애니메이션 */
                     &::after {
+                        /* 체크마크 애니메이션 */
                         content: "";
                         position: absolute;
                         @include mixin.pos(left, calc(function.em(40, 18) * -1), top, .25em);
@@ -786,8 +786,8 @@
                     &.numbering {
                         gap: 57px 3px;
                     }
-                    /* 절차 숫자 */
                     &.numbering::before {
+                        /* 절차 숫자 */
                         content: "";
                         position: absolute;
                         right: 0;
@@ -823,8 +823,8 @@
                     &.numbering.eight::before {
                         background-image: url(function.img('main/procedure_numbering_08.svg'));
                     }
-                    /* 화살표 */
                     &.numbering::after {
+                        /* 화살표 */
                         content: "";
                         display: none;
                         position: absolute;
@@ -989,8 +989,8 @@
                                 font-weight: var.$weight-bold;
                                 color: var.$color-tit;
                             }
-                            /* 더하기 세로 선 */
                             &::after {
+                                /* 더하기 세로 선 */
                                 content: "";
                                 position: absolute;
                                 right: 11px;
@@ -1004,8 +1004,8 @@
                                 pointer-events: none;
                             }
                         }
-                        /* 더하기 가로 선 */
                         &::after {
+                            /* 더하기 가로 선 */
                             content: "";
                             position: absolute;
                             right: 0;
@@ -1021,12 +1021,12 @@
                     .accordion-collapse {
                         display: grid;
                         grid-template-rows: 0fr;
-                        overflow: hidden;
                         height: auto;
                         margin-bottom: 0;
                         transition: grid-template-rows .3s, margin-bottom .3s;
                         transition-timing-function: ease;
                         p {
+                            overflow: hidden;
                             font-size: var.$size-level7;
                         }
                     }
@@ -1134,6 +1134,34 @@
                     color: var.$white;
                 }
             }
+
+            tbody tr,
+            tfoot tr {
+                td {
+                    &:nth-of-type(#{$col_count}n+1) {
+                        /* 세부내용 */
+                        padding-left: function.em(24, 16);
+                    }
+                    &:nth-of-type(#{$col_count}n+2) {
+                        /* 금액(원) */
+                        text-align: right;
+                        // font-size: var.$size-level5;
+                        font-weight: var.$weight-bold;
+                        line-height: var.$line-height-tit;
+                        padding: 0 function.em(49, 24);
+                        white-space: nowrap;
+                    }
+                    
+                    &:nth-of-type(#{$col_count}n+3) {
+                        /* 비고 */
+                        text-align: center;
+                        // font-size: var.$size-level6;
+                        font-weight: var.$weight-bold;
+                        line-height: var.$line-height-tit;
+                    }
+                }
+            }
+
             tbody tr {
                 @include mixin.border;
                 border-width: 0 0 2px 0;
@@ -1145,29 +1173,22 @@
                     }
                 }
                 td {
-                    /* 금액(원) */
                     &:nth-of-type(#{$col_count}n+2) {
-                        text-align: right;
+                        /* 금액(원) */
                         font-size: var.$size-level5;
-                        font-weight: var.$weight-bold;
-                        line-height: var.$line-height-tit;
-                        padding: 0 function.vw(24, 1440);
                     }
                     
-                    /* 비고 */
                     &:nth-of-type(#{$col_count}n+3) {
-                        text-align: center;
+                        /* 비고 */
                         font-size: var.$size-level6;
-                        font-weight: var.$weight-bold;
-                        line-height: var.$line-height-tit;
                     }
                     .price_before {
                         display: inline-block;
                         margin-right: function.em(44, 24);
                         position: relative;
-                        /* 할인 전 가격 취소선 */
                         &::before,
                         &::after {
+                            /* 할인 전 가격 취소선 */
                             content: "";
                             position: absolute;
                             right: function.em(-2, 24);
@@ -1186,8 +1207,8 @@
                     .price_cut {
                         display: inline-block;
                         position: relative;
-                        /* 화살표 */
                         &::after {
+                            /* 화살표 */
                             content: "";
                             position: absolute;
                             right: function.em(30, 24);
@@ -1215,22 +1236,14 @@
                     color: var.$main-brown;
                 }
                 td {
-                    /* 금액(원) */
                     &:nth-of-type(#{$col_count}n+2) {
-                        text-align: right;
+                        /* 금액(원) */
                         font-size: var.$size-level4;
-                        font-weight: var.$weight-bold;
-                        line-height: var.$line-height-tit;
-                        padding: 0 function.vw(24, 1440);
                         color: var.$main-brown;
                     }
-                    
-                    /* 비고 */
                     &:nth-of-type(#{$col_count}n+3) {
-                        text-align: center;
+                        /* 비고 */
                         font-size: var.$size-level6;
-                        font-weight: var.$weight-bold;
-                        line-height: var.$line-height-tit;
                     }
                 }
             }
