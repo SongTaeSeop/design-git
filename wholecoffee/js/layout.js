@@ -50,7 +50,7 @@ $(document).ready(function() {
             });
         }
     }
-    $('.header .toc ul li a').click(function(e) {
+    $('.header .gnb ul li a').click(function(e) {
         e.preventDefault();
         console.log($(this).attr('href'));
         scrollToElement($(this).attr('href'));
@@ -61,7 +61,7 @@ $(document).ready(function() {
     */
 
     const sections = $('section');
-
+    let old_id;
     let id;
 
     const observer = new window.IntersectionObserver(([entry]) => {
@@ -72,10 +72,10 @@ $(document).ready(function() {
             id = $(target).attr('data-section');
             // console.log(old_id, id);
             if (old_id != id) {
-                $('.header .toc ul li a[href="#' + old_id + '"]').removeClass('active');
-                $('.header .toc ul li a[href="#' + id + '"]').addClass('active');
-                $('.toc_mobile ul li a[href="#' + old_id + '"]').removeClass('active');
-                $('.toc_mobile ul li a[href="#' + id + '"]').addClass('active');
+                $('.header .gnb ul li a[href="#' + old_id + '"]').removeClass('active');
+                $('.header .gnb ul li a[href="#' + id + '"]').addClass('active');
+                $('.gnb_mobile ul li a[href="#' + old_id + '"]').removeClass('active');
+                $('.gnb_mobile ul li a[href="#' + id + '"]').addClass('active');
             }
         }
         }, {
@@ -89,7 +89,7 @@ $(document).ready(function() {
 
     /* 모바일) 강조된 탭 아이템으로 스크롤 */
 
-    const toc_items = $('.toc_mobile ul li a');
+    const gnb_items = $('.gnb_mobile ul li a');
 
     var mut = new MutationObserver(function(mutations, mut){
         if (mutations.length > 1) {
@@ -102,12 +102,10 @@ $(document).ready(function() {
         }
     });
 
-    toc_items.each(function(idx, element) {
+    gnb_items.each(function(idx, element) {
         mut.observe(element, {
             'attributes': true,
             'attributeFilter': ['class']
         });
     });
-
-    // 위 코드는 포커스가 이동해서 안 됨
 });

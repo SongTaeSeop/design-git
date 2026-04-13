@@ -32,7 +32,7 @@ $(document).ready(function() {
             });
         }
     }
-    $('.toc_mobile ul li a').click(function(e) {
+    $('.gnb_mobile ul li a').click(function(e) {
         e.preventDefault();
         scrollToElement($(this).attr('href'));
     })

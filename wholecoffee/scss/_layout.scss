@@ -31,11 +31,11 @@
         }
     }
 
-    .toc {
+    .gnb {
         @include mixin.pc-only;
     }
     
-    .toc ul {
+    .gnb ul {
         @include mixin.flex-justify;
         gap: function.vw(22, 1920);
         li a {
@@ -64,7 +64,7 @@
             }
         }
     }
-    &.fixed .toc ul {
+    &.fixed .gnb ul {
         li a {
             color: var.$color-tit;
         }
@@ -110,19 +110,6 @@
             margin: 0 function.em(38, 16);
             li.privacy {
                 font-weight: var.$weight-bold;
-            }
-        }
-        .f_info ul li {
-            strong {
-                display: inline-block;
-                position: relative;
-                margin-right: .25em;
-                &::after {
-                    content: ":";
-                    position: absolute;
-                    right: -.25em;
-                    top: 0;
-                }
             }
         }
         .f_info ul > li > ul {

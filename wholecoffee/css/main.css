@@ -213,21 +213,21 @@ body {
 .header.fixed .logo a {
   background-image: url(../images/layout/logo.svg);
 }
-.header .toc {
+.header .gnb {
   display: block;
 }
 @media screen and (max-width: 768px) {
-  .header .toc {
+  .header .gnb {
     display: none;
   }
 }
-.header .toc ul {
+.header .gnb ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1.1458333333vw;
 }
-.header .toc ul li a {
+.header .gnb ul li a {
   display: flex;
   align-items: center;
   height: clamp(48px, 5.859375vw, 60px);
@@ -236,11 +236,11 @@ body {
   color: #ffffff;
   padding: 0 0.6111111111em;
 }
-.header .toc ul li a.active {
+.header .gnb ul li a.active {
   color: #393F31;
   position: relative;
 }
-.header .toc ul li a.active::after {
+.header .gnb ul li a.active::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -252,12 +252,12 @@ body {
   border-radius: 50%;
   background-color: #393F31;
 }
-.header.fixed .toc ul li a {
+.header.fixed .gnb ul li a {
   color: #030316;
 }
-.header .inquiry:active {
-  outline: 2px solid #030316;
-  outline-offset: 2px;
+.header .inquiry:active, .header .inquiry:focus-visible {
+  outline-width: 2px;
+  box-shadow: 0 0 0 6px #030316;
 }
 .header .inquiry {
   display: inline-block;
@@ -311,17 +311,6 @@ body {
 .footer .wrapper .f_nav ul li.privacy {
   font-weight: 700;
 }
-.footer .wrapper .f_info ul li strong {
-  display: inline-block;
-  position: relative;
-  margin-right: 0.25em;
-}
-.footer .wrapper .f_info ul li strong::after {
-  content: ":";
-  position: absolute;
-  right: -0.25em;
-  top: 0;
-}
 .footer .wrapper .f_info ul > li > ul {
   display: flex;
   justify-content: center;
@@ -333,7 +322,7 @@ body {
   text-decoration: underline;
 }
 
-.toc_mobile {
+.gnb_mobile {
   position: sticky;
   left: 0;
   top: 0;
@@ -343,16 +332,16 @@ body {
   display: none;
 }
 @media screen and (max-width: 768px) {
-  .toc_mobile {
+  .gnb_mobile {
     display: block;
   }
 }
-.toc_mobile {
+.gnb_mobile {
   background-color: #ffffff;
   color: #030316;
   border-bottom: 1px solid #4B2E26;
 }
-.toc_mobile ul {
+.gnb_mobile ul {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -360,10 +349,10 @@ body {
   overflow-y: hidden;
   gap: 0 1.1458333333vw;
 }
-.toc_mobile ul li {
+.gnb_mobile ul li {
   width: 100%;
 }
-.toc_mobile ul li a {
+.gnb_mobile ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -372,11 +361,11 @@ body {
   font-weight: 700;
   padding: 0 0.6111111111em;
 }
-.toc_mobile ul li a.active {
+.gnb_mobile ul li a.active {
   color: #393F31;
   position: relative;
 }
-.toc_mobile ul li a.active::after {
+.gnb_mobile ul li a.active::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -589,6 +578,7 @@ body {
   text-align: center;
   width: 1.5em;
   font-variant-numeric: tabular-nums;
+  padding-left: 0.1em;
 }
 .speciality .contents_box ul li .txt_box .tit > span::after {
   content: "";
@@ -741,6 +731,7 @@ body {
   text-align: center;
   width: 1.5em;
   font-variant-numeric: tabular-nums;
+  padding-left: 0.1em;
 }
 .speciality_listing .speciality_list > li .txt_box .tit > span::after {
   content: "";
@@ -933,7 +924,7 @@ body {
   flex-direction: column;
   text-align: center;
   height: 100%;
-  padding: clamp(34px, 3.90625vw, 40px) 0 clamp(38px, 3.90625vw, 40px) 0;
+  padding: clamp(34px, 3.90625vw, 40px) 0 1.09375vw 0;
   position: relative;
   overflow: hidden;
 }
@@ -976,6 +967,9 @@ body {
   }
   .coffee_bean .wrapper .list ul {
     grid-template-columns: 1fr;
+  }
+  .coffee_bean .wrapper .list ul li {
+    padding-bottom: 2.375em;
   }
   .coffee_bean .wrapper .list ul li h3 {
     font-size: clamp(3.2rem, 5.859375vw, 6rem);
@@ -1177,7 +1171,7 @@ body {
   background-color: #ffffff;
   width: 100%;
 }
-.procedure .wrapper .contents_box ul {
+.procedure .wrapper .contents_box ol {
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -1187,7 +1181,7 @@ body {
   border-color: #030316;
   border-width: 2px 0;
 }
-.procedure .wrapper .contents_box ul li {
+.procedure .wrapper .contents_box ol li {
   flex-grow: 1;
   display: flex;
   justify-content: flex-start;
@@ -1199,10 +1193,10 @@ body {
   border-width: 0 1px 1px 0;
   position: relative;
 }
-.procedure .wrapper .contents_box ul li.numbering {
+.procedure .wrapper .contents_box ol li.numbering {
   gap: 57px 3px;
 }
-.procedure .wrapper .contents_box ul li.numbering::before {
+.procedure .wrapper .contents_box ol li.numbering::before {
   /* 절차 숫자 */
   content: "";
   position: absolute;
@@ -1215,31 +1209,31 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.procedure .wrapper .contents_box ul li.numbering.one::before {
+.procedure .wrapper .contents_box ol li.numbering.one::before {
   background-image: url(../images/main/procedure_numbering_01.svg);
 }
-.procedure .wrapper .contents_box ul li.numbering.two::before {
+.procedure .wrapper .contents_box ol li.numbering.two::before {
   background-image: url(../images/main/procedure_numbering_02.svg);
 }
-.procedure .wrapper .contents_box ul li.numbering.three::before {
+.procedure .wrapper .contents_box ol li.numbering.three::before {
   background-image: url(../images/main/procedure_numbering_03.svg);
 }
-.procedure .wrapper .contents_box ul li.numbering.four::before {
+.procedure .wrapper .contents_box ol li.numbering.four::before {
   background-image: url(../images/main/procedure_numbering_04.svg);
 }
-.procedure .wrapper .contents_box ul li.numbering.five::before {
+.procedure .wrapper .contents_box ol li.numbering.five::before {
   background-image: url(../images/main/procedure_numbering_05.svg);
 }
-.procedure .wrapper .contents_box ul li.numbering.six::before {
+.procedure .wrapper .contents_box ol li.numbering.six::before {
   background-image: url(../images/main/procedure_numbering_06.svg);
 }
-.procedure .wrapper .contents_box ul li.numbering.seven::before {
+.procedure .wrapper .contents_box ol li.numbering.seven::before {
   background-image: url(../images/main/procedure_numbering_07.svg);
 }
-.procedure .wrapper .contents_box ul li.numbering.eight::before {
+.procedure .wrapper .contents_box ol li.numbering.eight::before {
   background-image: url(../images/main/procedure_numbering_08.svg);
 }
-.procedure .wrapper .contents_box ul li.numbering::after {
+.procedure .wrapper .contents_box ol li.numbering::after {
   /* 화살표 */
   content: "";
   display: none;
@@ -1256,100 +1250,100 @@ body {
   background-position: center center;
   background-size: clamp(12px, 2.44140625vw, 25px);
 }
-.procedure .wrapper .contents_box ul li.last_box {
+.procedure .wrapper .contents_box ol li.last_box {
   padding: clamp(20px, 4.78515625vw, 49px) clamp(7px, 2.9296875vw, 30px);
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.procedure .wrapper .contents_box ul li.last_box h3 {
+.procedure .wrapper .contents_box ol li.last_box p {
   font-size: 1.5em;
   font-weight: 700;
   color: #4B2E26;
 }
-.procedure .wrapper .contents_box ul li .photo, .procedure .wrapper .contents_box ul li .txt_box {
+.procedure .wrapper .contents_box ol li .photo, .procedure .wrapper .contents_box ol li .txt_box {
   z-index: 1;
 }
-.procedure .wrapper .contents_box ul li .photo {
+.procedure .wrapper .contents_box ol li .photo {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: clamp(40px, 10.7421875vw, 110px);
 }
-.procedure .wrapper .contents_box ul li .photo img {
+.procedure .wrapper .contents_box ol li .photo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   vertical-align: top;
 }
-.procedure .wrapper .contents_box ul li .txt_box {
+.procedure .wrapper .contents_box ol li .txt_box {
   margin: 0 0 0 20px;
 }
-.procedure .wrapper .contents_box ul li .txt_box h3 {
+.procedure .wrapper .contents_box ol li .txt_box h3 {
   font-size: clamp(2rem, 2.34375vw, 2.4rem);
   font-weight: 700;
   color: #030316;
   line-height: 1.2;
   margin: 0 0 0.375em;
 }
-.procedure .wrapper .contents_box ul li:hover {
+.procedure .wrapper .contents_box ol li:hover {
   background-color: rgba(219, 204, 179, 0.1);
 }
 
 @media screen and (min-width: 1025px) {
-  .procedure .wrapper .contents_box ul li {
+  .procedure .wrapper .contents_box ol li {
     width: calc(33.3333333333% - 0px);
   }
-  .procedure .wrapper .contents_box ul li:nth-child(3n-2) {
+  .procedure .wrapper .contents_box ol li:nth-child(3n-2) {
     /* 그리드 왼쪽 열 요소 */
     border-left-width: 1px;
   }
-  .procedure .wrapper .contents_box ul li:nth-child(n+7) {
+  .procedure .wrapper .contents_box ol li:nth-child(n+7) {
     /* 그리드 마지막 행 요소 */
     border-bottom-width: 0;
   }
-  .procedure .wrapper .contents_box ul li:not(:nth-child(3n))::after {
+  .procedure .wrapper .contents_box ol li:not(:nth-child(3n))::after {
     display: block;
   }
 } /* @media screen and (min-width: 1025px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .procedure .wrapper .contents_box ul li {
+  .procedure .wrapper .contents_box ol li {
     width: calc(50% - 0px);
   }
-  .procedure .wrapper .contents_box ul li:nth-child(2n-1) {
+  .procedure .wrapper .contents_box ol li:nth-child(2n-1) {
     /* 그리드 왼쪽 열 요소 */
     border-left-width: 1px;
   }
-  .procedure .wrapper .contents_box ul li:nth-child(n+9) {
+  .procedure .wrapper .contents_box ol li:nth-child(n+9) {
     /* 그리드 마지막 행 요소 */
     border-bottom-width: 0;
   }
-  .procedure .wrapper .contents_box ul li:not(:nth-child(2n))::after {
+  .procedure .wrapper .contents_box ol li:not(:nth-child(2n))::after {
     display: block;
   }
 } /* @media screen and (min-width: 769px) and (max-width: 1024px) */
 @media screen and (max-width: 768px) {
-  .procedure .wrapper .contents_box ul li {
+  .procedure .wrapper .contents_box ol li {
     flex-direction: row;
     width: calc(100% - 0px);
     border-width: 0 0 1px 0;
   }
-  .procedure .wrapper .contents_box ul li:nth-child(n+10) {
+  .procedure .wrapper .contents_box ol li:nth-child(n+10) {
     /* 그리드 마지막 행 요소 */
     border-bottom-width: 0;
   }
-  .procedure .wrapper .contents_box ul li.numbering::before {
+  .procedure .wrapper .contents_box ol li.numbering::before {
     display: none;
   }
-  .procedure .wrapper .contents_box ul li.numbering::after {
+  .procedure .wrapper .contents_box ol li.numbering::after {
     display: block;
     right: 50%;
     top: auto;
     bottom: 0;
     transform: translate(50%, 50%) rotate(180deg);
   }
-  .procedure .wrapper .contents_box ul li .txt_box {
+  .procedure .wrapper .contents_box ol li .txt_box {
     width: 100%;
     margin: 2.2222222222vw 0 0 0;
   }
@@ -1606,7 +1600,7 @@ body {
   right: -0.0833333333em;
   transform: translateY(-50%);
   width: calc(100% + 0.1666666667em);
-  height: 2px;
+  height: 0.0833333333em;
   background-color: #9A3837;
 }
 .expense .contents_box table tbody tr td .price_before::before {
@@ -1671,9 +1665,9 @@ body {
   margin: 0 clamp(16px, 5.859375vw, 60px);
   gap: 12px 0;
 }
-.util .util_wrapper .fab:active {
-  outline: 2px solid #030316;
-  outline-offset: 2px;
+.util .util_wrapper .fab:active, .util .util_wrapper .fab:focus-visible {
+  outline-width: 2px;
+  box-shadow: 0 0 0 6px #030316;
 }
 .util .util_wrapper .fab {
   display: flex;
@@ -1693,7 +1687,7 @@ body {
   left: 0;
   bottom: 2.125em;
   width: 100%;
-  height: 100%;
+  height: 1em;
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: center bottom;

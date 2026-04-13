@@ -8,7 +8,7 @@
 
 
 
-.toc_mobile {
+.gnb_mobile {
     @include mixin.tabbar;
     @include mixin.mobile-only;
     background-color: var.$white;
@@ -558,7 +558,7 @@
                     flex-direction: column;
                     text-align: center;
                     height: 100%;
-                    padding: function.clamping(34, 40, 1024, 1px) 0 function.clamping(38, 40, 1024, 1px) 0;
+                    padding: function.clamping(34, 40, 1024, 1px) 0 function.vw(21, 1920) 0;
                     position: relative;
                     overflow: hidden;
                     h3 {
@@ -602,6 +602,7 @@
             .list ul {
                 grid-template-columns: 1fr;
                 li {
+                    padding-bottom: function.em(38, 16);
                     h3 {
                         font-size: var.$size-level1;
                         margin: 0 0 function.em(15, 32) 0;
@@ -789,7 +790,7 @@
         .contents_box {
             background-color: var.$white;
             width: 100%;
-            ul {
+            ol {
                 $count: 1;
                 @include mixin.flex-justify(center, stretch);
                 flex-wrap: wrap;
@@ -866,7 +867,7 @@
                         justify-content: center;
                         align-items: center;
                         text-align: center;
-                        h3 {
+                        p {
                             font-size: function.em(24, 16);
                             font-weight: var.$weight-bold;
                             color: var.$main-brown;
@@ -904,7 +905,7 @@
 
 @media screen and (min-width: 1025px) {
     .procedure {
-        .wrapper .contents_box ul {
+        .wrapper .contents_box ol {
             $count: 3;
             li {
                 width: function.justify-width($count, 0px);
@@ -926,7 +927,7 @@
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .procedure {
-        .wrapper .contents_box ul {
+        .wrapper .contents_box ol {
             $count: 2;
             li {
                 width: function.justify-width($count, 0px);
@@ -948,7 +949,7 @@
 
 @media screen and (max-width: 768px) {
     .procedure {
-        .wrapper .contents_box ul {
+        .wrapper .contents_box ol {
             $count: 1;
             li {
                 flex-direction: row;
@@ -1216,7 +1217,7 @@
                             right: function.em(-2, 24);
                             transform: translateY(-50%);
                             width: calc(100% + function.em(4, 24));
-                            height: 2px;
+                            height: function.em(2, 24);
                             background-color: var.$tomato;
                         }
                         &::before {
@@ -1301,7 +1302,7 @@
                 left: 0;
                 bottom: function.em(34, 16);
                 width: 100%;
-                height: 100%;
+                height: 1em;
                 background-size: 12px;
                 background-repeat: no-repeat;
                 background-position: center bottom;

@@ -118,6 +118,7 @@
   text-align: center;
   width: calc(1em * var.$line-height-normal);
   font-variant-numeric: tabular-nums;
+  padding-left: .1em;
   
   &::after {
     content: "";
@@ -139,8 +140,9 @@
 }
 
 @mixin outline-active {
-  &:active {
-    outline: 2px solid var.$color-tit;
-    outline-offset: 2px;
+  &:active,
+  &:focus-visible {
+    outline-width: 2px;
+    box-shadow: 0 0 0 6px var.$color-tit;
   }
 }
