@@ -259,9 +259,12 @@ body {
 .header.fixed .gnb ul li a {
   color: #030316;
 }
-.header .inquiry:active, .header .inquiry:focus-visible {
+.header .inquiry:focus-visible {
   outline-width: 2px;
   box-shadow: 0 0 0 6px #030316;
+}
+.header .inquiry:active {
+  box-shadow: 0 0 0 2px currentColor, 0 0 0 4px #030316;
 }
 .header .inquiry {
   display: inline-block;
@@ -1669,9 +1672,12 @@ body {
   margin: 0 clamp(16px, 5.859375vw, 60px);
   gap: 12px 0;
 }
-.util .util_wrapper .fab:active, .util .util_wrapper .fab:focus-visible {
+.util .util_wrapper .fab:focus-visible {
   outline-width: 2px;
   box-shadow: 0 0 0 6px #030316;
+}
+.util .util_wrapper .fab:active {
+  box-shadow: 0 0 0 2px currentColor, 0 0 0 4px #030316;
 }
 .util .util_wrapper .fab {
   display: flex;

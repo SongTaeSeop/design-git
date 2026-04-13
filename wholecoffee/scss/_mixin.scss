@@ -140,9 +140,11 @@
 }
 
 @mixin outline-active {
-  &:active,
   &:focus-visible {
     outline-width: 2px;
     box-shadow: 0 0 0 6px var.$color-tit;
+  }
+  &:active {
+    box-shadow: 0 0 0 2px currentColor, 0 0 0 4px var.$color-tit;   
   }
 }
