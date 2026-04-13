@@ -91,6 +91,10 @@ select {
   cursor: pointer;
 }
 
+del {
+  text-decoration: inherit;
+}
+
 /*
     common.css (layout.css 라고도 함)
     홈페이지 전체에 적용되는 공통스타일
@@ -413,19 +417,19 @@ body {
     animation-play-state: paused;
   }
   [data-aos=draw-border] ul li:first-child::before {
-    animation-delay: 0;
+    animation-delay: 0s;
   }
   [data-aos=draw-border] ul li[data-aos-delay="1000"]::after {
-    animation-delay: 0;
+    animation-delay: 0s;
   }
   [data-aos=draw-border] ul li[data-aos-delay="1200"]::after {
-    animation-delay: 0;
+    animation-delay: 0s;
   }
   [data-aos=draw-border] ul li[data-aos-delay="1400"]::after {
-    animation-delay: 0;
+    animation-delay: 0s;
   }
   [data-aos=draw-border] ul li[data-aos-delay="1600"]::after {
-    animation-delay: 0;
+    animation-delay: 0s;
   }
   [data-aos=draw-border].aos-animate ul::before {
     animation-play-state: running;

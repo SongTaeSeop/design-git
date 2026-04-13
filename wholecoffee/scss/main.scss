@@ -92,23 +92,23 @@
                 }
                 &:first-child::before {
                     // animation-delay: .8s;
-                    animation-delay: 0;
+                    animation-delay: 0s;
                 }
                 &[data-aos-delay="1000"]::after {
                     // animation-delay: 1s;
-                    animation-delay: 0;
+                    animation-delay: 0s;
                 }
                 &[data-aos-delay="1200"]::after {
                     // animation-delay: 1.2s;
-                    animation-delay: 0;
+                    animation-delay: 0s;
                 }
                 &[data-aos-delay="1400"]::after {
                     // animation-delay: 1.4s;
-                    animation-delay: 0;
+                    animation-delay: 0s;
                 }
                 &[data-aos-delay="1600"]::after {
                     // animation-delay: 1.6s;
-                    animation-delay: 0;
+                    animation-delay: 0s;
                 }
             }
         }
