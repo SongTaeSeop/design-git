@@ -1,0 +1,178 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+strong, th {
+  font-weight: inherit;
+}
+
+em, address {
+  font-style: normal; /*기울어진 글자를 바르게*/
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  /* 오버했을때 마우스 포인터를
+     a와 동일한 스타일로 변경 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+}
+
+/* 자동완성 스타일 제거 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 9999s ease-out 0s;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  display: none;
+}
+
+caption {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* border 병합 */
+}
+
+select {
+  border: none;
+  border-radius: 0;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+del {
+  text-decoration: inherit;
+}
+
+/*
+    common.css (layout.css 라고도 함)
+    홈페이지 전체에 적용되는 공통스타일
+    프로젝트마다 변경됨 - 이 css에 있는 속성을 수정하면 프로젝트 전체가 바뀜
+*/
+/* 65px */
+/* 48px */
+/* 32px */
+/* 28px */
+/* 24px */
+/* 20px */
+/* 18px */
+/* 16px */
+/*
+    common.css (layout.css 라고도 함)
+    홈페이지 전체에 적용되는 공통스타일
+    프로젝트마다 변경됨 - 이 css에 있는 속성을 수정하면 프로젝트 전체가 바뀜
+*/
+body {
+  font-size: 1.7rem;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333333;
+  word-break: keep-all; /* 단어 단위로 줄바꿈 */
+  word-wrap: break-word; /* 단어가 제한된 넓이보다 길면 강제 줄바꿈 */
+}
+
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1248px) {
+  .wrapper {
+    /* 1200 + 24 + 24 */
+    width: auto;
+    margin: 0 24px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    margin: 0 16px;
+  }
+}
+
+#wrap {
+  position: relative;
+}
+
+/* html 표준때문에 입력해야하는 태그이지만 홈페이지에 나오지 않는
+   태그에 주는 클래스 */
+.sr-only, .skip, .blind {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-display: swap;
+  src: local("Pretendard ExtraBold"), url(../fonts/Pretendard-ExtraBold.woff2) format("woff2"), url(../fonts/Pretendard-ExtraBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"), url(../fonts/Pretendard-Regular.woff2) format("woff2"), url(../fonts/Pretendard-Regular.woff) format("woff");
+}
+h1 {
+  color: #313037;
+  font-size: clamp(32px, 6.34765625vw, 65px);
+  font-weight: 800;
+  line-height: 1.2;
+}

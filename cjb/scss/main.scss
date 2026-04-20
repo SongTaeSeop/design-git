@@ -1,0 +1,15 @@
+@use "default";
+@use "common";
+@use "fonts";
+@use "var";
+@use "function";
+@use "mixin";
+@use "layout";
+
+
+h1 {
+    color: var.$color-tit;
+    font-size: var.$size-level1;
+    font-weight: var.$weight-bold;
+    line-height: var.$line-height-tit;
+}

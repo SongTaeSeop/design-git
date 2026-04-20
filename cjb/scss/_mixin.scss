@@ -1,0 +1,94 @@
+@use "var";
+@use "function";
+
+@mixin wrapper {
+  width: var.$wrapper-w;
+  margin: 0 auto;
+  
+  @media screen and (max-width:1248px) { /* 1200 + 24 + 24 */
+    width: auto;
+    margin: 0 24px;
+  }
+  
+  @media screen and (max-width:768px) {
+    margin: 0 16px;
+  }
+}
+
+@mixin bg($name, $color: #222) {
+  background: url(function.img($name)) $color no-repeat center center / cover;
+}
+
+@mixin change_img($name) {
+  background-image: url(function.img($name));
+}
+
+@mixin icon($name) {
+  background: url(function.img($name)) no-repeat center center / contain;
+}
+
+@mixin icon-svg($size) {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: $size;
+}
+
+@mixin pc-only($display: block, $breakpoint: 768px) {
+  display: $display;
+  @media screen and (max-width: $breakpoint) {
+      display: none;
+  }
+}
+
+@mixin mobile-only($display: block, $breakpoint: 768px) {
+  display: none;
+  @media screen and (max-width: $breakpoint) {
+      display: $display;
+  }
+}
+
+@mixin pos($lr: left, $lr-pos: 0, $tb: top, $tb-pos: 0) {
+  #{$lr}: $lr-pos;
+  #{$tb}: $tb-pos;
+}
+
+@mixin header {
+  position: fixed;
+  @media screen and (max-width: 768px) {
+      position: absolute;
+  }
+  @include pos(left, 0, top, 0);
+  width: 100%;
+  height: var.$header-h;
+  z-index: 10;
+}
+
+@mixin flex-justify($justify-content: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align;
+}
+
+@mixin grid-justify($justify-content: space-between, $align: center, $count) {
+  display: grid;
+  grid-template-columns: repeat($count, 1fr);
+  justify-content: $justify-content;
+  align-items: $align;
+}
+
+@mixin title {
+  .subtit {
+  }
+
+  h2 {
+    font-size: var.$size-level1;
+    font-weight: var.$weight-bold;
+  }
+}
+
+@mixin photo_img($object-fit:cover) {
+  width: 100%;
+  height: 100%;
+  object-fit: $object-fit;
+  vertical-align: top;
+}

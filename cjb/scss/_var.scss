@@ -1,0 +1,35 @@
+@use "function";
+
+$wrapper-w: 1200px;
+$p: 1.7rem;
+$header-h: function.clamping(48, 72, 1024, 1px);
+$weight-normal: 400;
+$weight-bold: 800;
+$line-height-normal: 1.5;
+$line-height-tit: 1.2;
+$size-level1: function.clamping(32, 65, 1024, 1px); /* 65px */
+$size-level1-1: function.clamping(30, 48, 1024, 1px); /* 48px */
+$size-level2: function.clamping(28, 32, 1024, 1px); /* 32px */
+$size-level3: function.clamping(24, 28, 1024, 1px); /* 28px */
+$size-level4: function.clamping(20, 24, 1024, 1px); /* 24px */
+$size-level5: function.clamping(18, 20, 1024, 1px); /* 20px */
+$size-level6: function.clamping(17, 18, 1024, 1px); /* 18px */
+$size-small: function.clamping(14, 16, 1024, 1px); /* 16px */
+$color-tit: #313037;
+$color-text: #333333;
+$whitish: #F0E6FF;
+$blackish: #00072C;
+$main-blue: #002365;
+$main-blue2: #003399;
+$main-blue3: #1642A1;
+$main-purple: #2D2362;
+$emphasis: #4239C7;
+$emphasis-white: #C1A7E4;
+$main-red: #530201;
+$main-red2: #9C000D;
+$tomato: #FF0137;
+$gray: #525252;
+$gray2: #757575;
+$kakao: #FFE812;
+$white: #ffffff;
+$black: #000;

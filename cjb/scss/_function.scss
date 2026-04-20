@@ -1,0 +1,34 @@
+@use "sass:string";
+@use "sass:list";
+@use "sass:map";
+
+@function img($name) {
+  @return string.unquote("../images/#{$name}");
+}
+
+@function em($px, $base-size) {
+  @return calc($px / $base-size * 1em);
+}
+
+@function vw($px, $base-size) {
+  @return calc($px / $base-size * 100vw);
+}
+
+@function clamping($min, $max, $breakpoint, $unit) {
+  @return clamp($min * $unit, calc($max / $breakpoint * 100vw), $max * $unit);
+}
+
+@function justify-width($count, $gap) {
+  @return calc((100% / $count) - ($gap * ($count - 1) / $count));
+}
+
+@function enumerate($list) {
+  $map: ();
+
+  @for $index from 1 through list.length($list) {
+    $value: list.nth($list, $index);
+    $map: map.merge($map, ($index: $value));
+  }
+
+  @return $map;
+}
