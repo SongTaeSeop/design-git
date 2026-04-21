@@ -12,17 +12,215 @@
     <title>CJB 청주방송</title>
 </head>
 <body>
-    <header class="header">
-        <div class="swiper_box">
-            
+    <div class="skip-link">
+        <a href="#main">본문 바로가기</a>
+    </div>
+    <!-- 스크롤을 내리면 scroll 상태-->
+    <header class="header scroll">
+        <div class="wrapper">
+            <div class="left">
+                <h1 class="logo">
+                    <a href="index.html"><span class="sr-only">CJB 청주방송</span></a>
+                </h1>
+                <nav class="gnb">                        
+                    <button class="sitemap_open"><span class="sr-only">전체 메뉴 열기</span></button>
+                    <ul>
+                        <li class="onair"><a href="#none"><span>ON AIR</span></a></li>
+                        <li><a href="#none"><span>뉴스</span></a></li>
+                        <li><a href="#none"><span>프로그램</span></a></li>
+                        <li><a href="#none"><span>라디오</span></a></li>
+                        <li><a href="#none"><span>공지 및 행사</span></a></li>
+                        <li><a href="#none"><span>시청자 의견</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right">
+                <div class="util">
+                    <div class="weather partial_cloud"><span>24.0℃</span></div>
+                    <button class="search"><span class="sr-only">검색창 열기</span></button>
+                    <button class="login"><span class="sr-only">로그인</span></button>
+                    <button class="sitemap_open"><span class="sr-only">전체 메뉴 열기</span></button>
+                </div>
+            </div>
+            <div class="sitemap_wrap">
+                <button class="sitemap_close"><span>전체 메뉴 닫기</span></button>
+                <div class="sitemap_box">
+                    <ul class="depth1">
+                        <li class="onair">
+                            <a href="#none"><span>ON AIR</span></a>
+                        </li>
+                        <li>
+                            <a href="#none"><span>뉴스</span></a>
+                            <ul class="depth2">
+                                <li><a href="#none"><span>최신 뉴스</span></a></li>
+                                <li><a href="#none"><span>다시보기</span></a></li>
+                                <li><a href="#none"><span>뉴스 제보</span></a></li>
+                                <li><a href="#none"><span>뉴스 검색</span></a></li>
+                                <li><a href="#none"><span>CJB 기자/아나운서</span></a></li>
+                                <li><a href="#none"><span>언론윤리강령</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#none"><span>프로그램</span></a>
+                            <ul class="depth2">
+                                <li><a href="#none"><span>다시보기</span></a></li>
+                                <li><a href="#none"><span>종/방영 프로그램</span></a></li>
+                                <li><a href="#none"><span>특집 프로그램</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#none"><span>라디오</span></a>
+                            <ul class="depth2">
+                                <li><a href="#none"><span>Live</span></a></li>
+                                <li><a href="#none"><span>사연 신청</span></a></li>
+                                <li><a href="#none"><span>선곡 기록</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#none"><span>공지 및 행사</span></a>
+                            <ul class="depth2">
+                                <li><a href="#none"><span>공지사항</span></a></li>
+                                <li><a href="#none"><span>CJB 모집안내</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#none"><span>시청자 의견</span></a>
+                            <ul class="depth2">
+                                <li><a href="#none"><span>의견 보내기</span></a></li>
+                                <li><a href="#none"><span>의견 게시판</span></a></li>
+                                <li><a href="#none"><span>고충처리</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#none"><span>정보공개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#none"><span>시청자 위원회</span></a></li>
+                                <li><a href="#none"><span>의견 접수 현황</span></a></li>
+                                <li><a href="#none"><span>고충처리 접수 현황</span></a></li>
+                                <li><a href="#none"><span>시청자 평가원 의견 활용 현황</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="onair_box">
-
-        </div>
+       
     </header>
-    <main class="contents">
+    
+    <main id="main" class="contents">
         <section class="visual">
+            <h2 class="sr-only">팝업</h2>
+            <div class="swiper_box">
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide bg1">
+                            <div class="wrapper">
+                                <strong>충북의 소식을 전합니다</strong>
+                                <h3><div class="photo"><img src="images/main/cjg_w.svg" alt="CJB"></div>8시 뉴스</h3>
+                                <span>저녁 20:35</span>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg2">
+                            <div class="wrapper">
+                                <strong>충북 지역의 새로운 소식과 알찬 정보</strong>
+                                <h3><div class="photo"><img src="images/main/cjg_w.svg" alt="CJB"></div>모닝와이드</h3>
+                                <span>목, 금 아침 7:50</span>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg3">
+                            <div class="wrapper">
+                                <strong>한 시대를 주름잡은 그때 그 노래</strong>
+                                <h3>전국 TOP10 가요쇼</h3>
+                                <span>토요일 오전 11:00</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ctrl">
+                    <div class="wrapper">
+                        <div class="swiper-pagination"></div>
+                        <button class="stop"><span class="sr-only">일시정지</span></button>
+                        <button class="play"><span class="sr-only">재생</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="onair_box">
+                    <div class="wrapper">    
+                        <div class="tab_wrapper">
+                            <div class="tab">
+                                <ul role="tablist">
+                                    <li id="tv" role="tab" aria-selected="true" aria-controls="tv_onair" class="active">
+                                        <button class="tab-item"><span class="tab-item-name">TV</span><span class="sr-only"> 선택됨</span></button>
+                                    </li>
+                                    <li id="radio" role="tab" aria-selected="false" aria-controls="radio_onair">
+                                        <button class="tab-item"><span class="tab-item-name">라디오</span></button>
+                                    </li>
+                                </ul>
+                            </div>
 
+                            <div class="tab-conts">
+                                <div id="tv_onair" role="tabpanel" aria-labelledby="tv" class="tab-contents active" data-quick-nav="false">
+                                    <div class="now_circle"><span>NOW</span></div>
+                                    <ul>
+                                        <li class="program_box now">
+                                            <a href="#none" class="txt_box">
+                                                <strong class="program_time"><span>20:35 - 21:00</span></strong>
+                                                <h4><span>CJB 8시 뉴스</span></h4>
+                                            </a>
+                                            <div class="bar"><div class="gauge"></div></div>
+                                        </li>
+                                        <li class="program_box">
+                                            <div class="txt_box">
+                                                <strong class="program_time"><span>21:00 - 22:15</span></strong>
+                                                <h4><span>틈만 나면,</span></h4>
+                                            </div>
+                                            <div class="bar"><div class="gauge"></div></div>
+                                        </li>
+                                        <li class="program_box">
+                                            <div class="txt_box">
+                                                <strong class="program_time"><span>22:15 - 23:45</span></strong>
+                                                <h4><span>신이랑 법률사무소[재]</span></h4>
+                                            </div>
+                                            <div class="bar"><div class="gauge"></div></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="radio_onair" role="tabpanel" aria-labelledby="radio" class="tab-contents" data-quick-nav="false">
+                                    <div class="now_circle"><span>NOW</span></div>
+                                    <ul>
+                                        <li class="program_box now">
+                                            <a href="#none" class="txt_box">
+                                                <strong class="program_time"><span>20:35 - 21:00</span></strong>
+                                                <h4><span>CJB 8시 뉴스</span></h4>
+                                            </a>
+                                            <div class="bar"><div class="gauge"></div></div>
+                                        </li>
+                                        <li class="program_box">
+                                            <div class="txt_box">
+                                                <strong class="program_time"><span>21:00 - 22:15</span></strong>
+                                                <h4><span>틈만 나면,</span></h4>
+                                            </div>
+                                            <div class="bar"><div class="gauge"></div></div>
+                                        </li>
+                                        <li class="program_box">
+                                            <div class="txt_box">
+                                                <strong class="program_time"><span>22:15 - 23:45</span></strong>
+                                                <h4><span>신이랑 법률사무소[재]</span></h4>
+                                            </div>
+                                            <div class="bar"><div class="gauge"></div></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                
+            </div>
+            <div class="scroll_down">
+                <span class="arrow first"></span>
+                <span class="arrow second"></span>
+            </div>
         </section>
         <section class="news">
 

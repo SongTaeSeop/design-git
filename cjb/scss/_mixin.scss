@@ -54,13 +54,10 @@
 
 @mixin header {
   position: fixed;
-  @media screen and (max-width: 768px) {
-      position: absolute;
-  }
   @include pos(left, 0, top, 0);
   width: 100%;
   height: var.$header-h;
-  z-index: 10;
+  z-index: 100;
 }
 
 @mixin flex-justify($justify-content: space-between, $align: center) {
@@ -74,6 +71,12 @@
   grid-template-columns: repeat($count, 1fr);
   justify-content: $justify-content;
   align-items: $align;
+}
+
+
+@mixin border($color: var.$color-tit) {
+  border-style: solid;
+  border-color: $color;
 }
 
 @mixin title {
@@ -91,4 +94,52 @@
   height: 100%;
   object-fit: $object-fit;
   vertical-align: top;
+}
+
+
+@mixin skip-link {
+  position: fixed;
+  display: block;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: var.$color-tit;
+  color: var.$white;
+  width: 100%;
+  height: 2em;
+  text-align: center;
+  padding-top: .25em;
+  opacity: 0;
+  pointer-events: none;
+  &:focus {
+      opacity: 1;
+  }
+}
+
+@mixin flex-gap($divider: 1) {
+  gap: calc(var.$gap / $divider);
+  @media screen and (max-width:768px) {
+    gap: calc(var.$gap_mobile / $divider);
+  }
+}
+
+@mixin one-liner {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin bar($height: 4px) {
+  height: 4px;
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 100vh;
+}
+
+@mixin gauge($gauge-width: 40%) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: $gauge-width;
+  height: 100%;
+  border-radius: 100vh;
 }
