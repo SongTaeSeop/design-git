@@ -7,29 +7,42 @@
     color: var.$white;
     .wrapper {
         @include mixin.flex-justify(space-between, center);
+        position: relative; /* sitemap_wrap 용*/
         .left {
             @include mixin.flex-justify(space-between, center);
             gap: 0 function.vw(20, 1920);;
             .logo a {
                 display: block;
-                width: 149px;
+                width: calc(var.$header-h / 3 * 6.208);
                 height: calc(var.$header-h / 3);
                 @include mixin.icon("layout/logo_w.svg");
-                // background-clip: text;
-                // color:transparent;
-                // background-image: linear-gradient(90deg, tomato 0%,  cyan 100%);
-                // 0% 12% 13% 22% 23% 36% 37% 100%
             }
             .gnb {
                 @include mixin.flex-justify(space-between, center);
                 gap: 0 function.vw(16, 1920);
                 .sitemap_open {
+                    /* PC 모바일 겸용 사이트맵 버튼 */
                     display: block;
+                    position: relative;
                     width: 48px;
                     height: 48px;
                     background-image: var.$icon-sitemap;
                     @include mixin.icon-svg(21px);
                     filter: brightness(0) invert(1);
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: var.$gray2;
+                        border-radius: 50%;
+                        opacity: 0;
+                    }
+                    &:hover::after {
+                        opacity: .2;
+                    }
                 }
                 ul {
                     @include mixin.flex-justify(space-between, center);
@@ -44,6 +57,7 @@
                             position: relative;
                             
                             &::after {
+                                /* 호버 밑줄 */
                                 content: "";
                                 position: absolute;
                                 @include mixin.pos(left, 50%, bottom, 17px);
@@ -61,6 +75,7 @@
                             }
                         }
                         &.onair a span {
+                            /* onair 붉은 원 */
                             position: relative;
                             display: block;
                             &::after {
@@ -112,32 +127,24 @@
                     &.login {
                         background-image: var.$icon-profile;
                     }
-                    &.sitemap_open {
-                        background-image: var.$icon-sitemap;
-                        display: none;
-                    }
                     &::after {
                         content: "";
                         position: absolute;
-                        left: 0;
-                        top: 0;
+                        @include mixin.pos(left, 0, top, 0);
                         width: 100%;
                         height: 100%;
                         background-color: var.$gray2;
                         border-radius: 50%;
-                        opacity: .2;
-                        display: none;
+                        opacity: 0;
                     }
                     &:hover::after {
-                        display: block;
+                        opacity: .2;
                     }
                 }
             }
         }
     }
-    .sitemap_wrap {
-        display: none;
-    }
+
     &.scroll {
         background-color: var.$white;
         color: var.$color-tit;
@@ -155,6 +162,259 @@
 
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .header .wrapper {
+        margin-right: 0;
+        .left {
+            width: 100%;
+            gap: 0;
+            .gnb {
+                .sitemap_open {
+                    width: var.$header-h;
+                    height: var.$header-h;
+                    &::after {
+                        @include mixin.pos(left, 50%, top, 50%);
+                        transform: translate(-50%, -50%);
+                        width: 80%;
+                        height: 80%;
+                    }
+                }
+                
+                ul {
+                    display: none;
+                }
+            }
+            
+        }
+        .right {
+            display: none;
+        }
+    }
+
+} /* @media screen and (max-width: 1024px) */
+
+/* sitemap 차례 */
+.header {
+    .sitemap_wrap {
+        z-index: 101;
+        background-color: var.$white;
+        color: var.$color-tit;
+        flex-direction: column-reverse;
+        display: none;
+        &.open {
+            display: flex;
+        }
+        .sitemap_box {
+            ul.depth1 {
+                > li {
+                    > a {
+                        display: block;
+                        font-size: var.$size-level4;
+                    }
+                    &.onair a {
+                        span {
+                            /* onair 붉은 원 */
+                            position: relative;
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                display: block;
+                                @include mixin.pos(left, 100%, top, calc(50% - .65em));
+                                width: 4px;
+                                height: 4px;
+                                border-radius: 50%;
+                                background-color: var.$tomato;
+                            }
+                        }
+                    }
+
+                    > ul.depth2 {
+                        > li > a {
+                            display: block;
+                            font-size: var.$size-level6;
+                        }
+                    }
+                    
+                }
+                
+                a:hover {
+                    color: var.$blackish;
+                    text-decoration: underline;
+                }
+
+            }
+        }
+    }
+    .util {
+        @include mixin.flex-justify(flex-start, center);
+        align-self: flex-end;
+        .weather {
+            position: relative;
+            font-size: var.$size-small;
+            margin: 0 function.em(5, 16) 0 function.em(12, 16);
+            &::before {
+                content: "";
+                position: absolute;
+                right: calc(100% + function.em(5, 16));
+                top: function.em(4, 16);
+                width: function.em(17, 16);
+                height: function.em(15, 16);
+                @include mixin.icon-svg(contain);
+            }
+            &.partial_cloud::before {
+                background-image: var.$icon-weather-partial_cloud;
+            }
+        }
+        button {
+            display: block;
+            position: relative;
+            width: 48px;
+            height: 48px;
+            @include mixin.icon-svg(20px);
+            &.search {
+                background-image: var.$icon-search;
+            }
+            &.login {
+                background-image: var.$icon-profile;
+            }
+            &.sitemap_close {
+                background-image: var.$icon-close;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                @include mixin.pos(left, 0, top, 0);
+                width: 100%;
+                height: 100%;
+                background-color: var.$gray2;
+                border-radius: 50%;
+                opacity: 0;
+            }
+            &:hover::after {
+                opacity: .2;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .header {
+        .sitemap_wrap {
+            position: absolute;
+            @include mixin.pos(left, 0, top, var.$header-h);
+            width: 100%;
+            .sitemap_box {
+                margin: 0 0 30px 20px;
+                ul.depth1 {
+                    @include mixin.flex-justify(flex-start, flex-start);
+                    flex-direction: column;
+                    gap: function.em(38, 32) 0;
+                    > li {
+                        @include mixin.flex-justify(flex-start, center);
+                        gap: 0 24px;
+                        > a {
+                            /* 1차 메뉴 */
+                            padding: function.em(4, 32) 0;
+                            min-width: function.em(180, 32);
+                        }
+                        
+                        > ul.depth2 {
+                            @include mixin.flex-justify(flex-start, flex-start);
+                            gap: 0 function.em(18, 32);
+                            flex-wrap: wrap;
+                            > li a {
+                                /* 2차 메뉴 */
+                                font-size: var.$size-level6;
+                                padding: 0 function.em(9, 32);
+                            }
+                        }
+                    }
+                }
+
+            }
+            .util {
+                margin: 30px 20px 0 0;
+                .weather,
+                .search,
+                .login {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1024px) {
+    .header {
+        .sitemap_wrap {
+            position: fixed;
+            width: 100%;
+            max-width: 500px;
+            @include mixin.pos(right, 0, top, 0);
+            .sitemap_box {
+                ul.depth1 {
+                    height: calc(100vh - var.$header-h);
+                    overflow: hidden auto;
+                    overscroll-behavior-y: contain;
+                    padding: 8px 0 16px 0;
+                    > li {
+                        > a {
+                            position: relative;
+                            padding: function.em(17, 24) function.em(16, 24);
+                        }
+                        &:has(ul.depth2) > a::after {
+                            content: "";
+                            position: absolute;
+                            @include mixin.pos(right, 16px, top, 50%);
+                            transform: translateY(-50%) rotate(180deg);
+                            width: calc(function.em(16, 24) * 1.6);
+                            height: function.em(16, 24);
+                            background-image: var.$icon-arrow;
+                            @include mixin.icon-svg(contain);
+                        }
+                        &.open:has(ul.depth2) > a::after {
+                            transform: translateY(-50%) rotate(0);
+
+                        }
+
+                        > ul.depth2 {
+                            display: none;
+                            margin: 0 function.em(16, 18);
+                            background-color: var.$whitish;
+                            > li > a {
+                                padding: function.em(17, 18) function.em(16, 18);
+                            }
+                        }
+                        
+                        &.open > ul.depth2 {
+                            display: block;
+                        }
+                    }
+
+                }
+
+            }
+        }
+        .util {
+            height: var.$header-h;
+            button {
+                width: var.$header-h;
+                height: var.$header-h;
+                &::after {
+                    @include mixin.pos(left, 50%, top, 50%);
+                    transform: translate(-50%, -50%);
+                    width: 80%;
+                    height: 80%;
+                }
+            }
+            
+        }
+    }
+    
+} /* @media screen and (max-width: 1024px) */
 
 .footer {
     margin: 100vh 0 0 0;

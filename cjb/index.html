@@ -16,13 +16,14 @@
         <a href="#main">본문 바로가기</a>
     </div>
     <!-- 스크롤을 내리면 scroll 상태-->
-    <header class="header scroll">
+    <header class="header">
         <div class="wrapper">
             <div class="left">
                 <h1 class="logo">
                     <a href="index.html"><span class="sr-only">CJB 청주방송</span></a>
                 </h1>
                 <nav class="gnb">                        
+                    <!-- PC 전용 -->
                     <button class="sitemap_open"><span class="sr-only">전체 메뉴 열기</span></button>
                     <ul>
                         <li class="onair"><a href="#none"><span>ON AIR</span></a></li>
@@ -39,18 +40,20 @@
                     <div class="weather partial_cloud"><span>24.0℃</span></div>
                     <button class="search"><span class="sr-only">검색창 열기</span></button>
                     <button class="login"><span class="sr-only">로그인</span></button>
-                    <button class="sitemap_open"><span class="sr-only">전체 메뉴 열기</span></button>
                 </div>
             </div>
+            <!-- open 클래스로 열기 -->
             <div class="sitemap_wrap">
-                <button class="sitemap_close"><span>전체 메뉴 닫기</span></button>
                 <div class="sitemap_box">
                     <ul class="depth1">
                         <li class="onair">
                             <a href="#none"><span>ON AIR</span></a>
                         </li>
-                        <li>
+                        
+                        <!-- 모바일) open 클래스로 열기 -->
+                        <li class="open">
                             <a href="#none"><span>뉴스</span></a>
+                            
                             <ul class="depth2">
                                 <li><a href="#none"><span>최신 뉴스</span></a></li>
                                 <li><a href="#none"><span>다시보기</span></a></li>
@@ -101,6 +104,12 @@
                             </ul>
                         </li>
                     </ul>
+                </div>
+                <div class="util">
+                    <div class="weather partial_cloud"><span>24.0℃</span></div>
+                    <button class="search"><span class="sr-only">검색창 열기</span></button>
+                    <button class="login"><span class="sr-only">로그인</span></button>
+                    <button class="sitemap_close"><span class="sr-only">전체 메뉴 닫기</span></button>
                 </div>
             </div>
         </div>
@@ -223,10 +232,734 @@
             </div>
         </section>
         <section class="news">
+            <div class="wrapper">
+                <div class="tit_box">
+                    <strong class="subtit">NEWS</strong>
+                    <h2>오늘의 충북 뉴스</h2>
+                </div>
+                <div class="contents_box">
+                    <div class="tab">
+                        <ul role="tablist">
+                            <li id="main_news" role="tab" aria-selected="true" aria-controls="main_news_contents" class="active">
+                                <button class="tab-item"><span class="tab-item-name">주요 뉴스</span><span class="sr-only"> 선택됨</span></button>
+                            </li>
+                            <li id="deep_report" role="tab" aria-selected="true" aria-controls="deep_report_contents">
+                                <button class="tab-item"><span class="tab-item-name">더 세종</span></button>
+                            </li>
+                            <li id="politic" role="tab" aria-selected="true" aria-controls="politic_contents">
+                                <button class="tab-item"><span class="tab-item-name">정치</span></button>
+                            </li>
+                            <li id="economy" role="tab" aria-selected="true" aria-controls="economy_contents">
+                                <button class="tab-item"><span class="tab-item-name">경제</span></button>
+                            </li>
+                            <li id="social" role="tab" aria-selected="true" aria-controls="social_contents">
+                                <button class="tab-item"><span class="tab-item-name">사회</span></button>
+                            </li>
+                            <li id="breaking" role="tab" aria-selected="true" aria-controls="breaking_contents">
+                                <button class="tab-item"><span class="tab-item-name">속보</span></button>
+                            </li>
+                            <li id="outdate" role="tab" aria-selected="true" aria-controls="outdate_contents">
+                                <button class="tab-item"><span class="tab-item-name">지난 뉴스</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-conts">
+                        <div id="main_news_contents" role="tabpanel" aria-labelledby="main_news" class="tab-contents active" data-quick-nav="false">
+                            <ul>
+                                <li class="primary">
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_01.jpg" alt="국힘, 단체장 경선 속도..민주, 경선 내홍 지속"></div>
+                                        <div class="txt_box">
+                                            <h3>국힘, 단체장 경선 속도..민주, 경선 내홍 지속</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_02.jpg" alt="음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사"></div>
+                                        <div class="txt_box">
+                                            <h3>음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_03.jpg" alt="청주시선 가입자 늘어"></div>
+                                        <div class="txt_box">
+                                            <h3>청주시선 가입자 늘어</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_04.jpg" alt="지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령"></div>
+                                        <div class="txt_box">
+                                            <h3>지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo"><img src="images/main/news_05.jpg" alt="종전 협상 기대 속 코스피, 6100선 상승 출발"></div>
+                                        <div class="txt_box">
+                                            <h3>종전 협상 기대 속 코스피, 6100선 상승 출발</h3>
+                                            <span class="time">2026-04-16</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="deep_report_contents" role="tabpanel" aria-labelledby="deep_report" class="tab-contents" data-quick-nav="false">
+                            <ul>
+                                <li class="primary">
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_01.jpg" alt="국힘, 단체장 경선 속도..민주, 경선 내홍 지속"></div>
+                                        <div class="txt_box">
+                                            <h3>국힘, 단체장 경선 속도..민주, 경선 내홍 지속</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_02.jpg" alt="음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사"></div>
+                                        <div class="txt_box">
+                                            <h3>음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_03.jpg" alt="청주시선 가입자 늘어"></div>
+                                        <div class="txt_box">
+                                            <h3>청주시선 가입자 늘어</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_04.jpg" alt="지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령"></div>
+                                        <div class="txt_box">
+                                            <h3>지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo"><img src="images/main/news_05.jpg" alt="종전 협상 기대 속 코스피, 6100선 상승 출발"></div>
+                                        <div class="txt_box">
+                                            <h3>종전 협상 기대 속 코스피, 6100선 상승 출발</h3>
+                                            <span class="time">2026-04-16</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="politic_contents" role="tabpanel" aria-labelledby="politic" class="tab-contents" data-quick-nav="false">
+                            <ul>
+                                <li class="primary">
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_01.jpg" alt="국힘, 단체장 경선 속도..민주, 경선 내홍 지속"></div>
+                                        <div class="txt_box">
+                                            <h3>국힘, 단체장 경선 속도..민주, 경선 내홍 지속</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_02.jpg" alt="음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사"></div>
+                                        <div class="txt_box">
+                                            <h3>음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_03.jpg" alt="청주시선 가입자 늘어"></div>
+                                        <div class="txt_box">
+                                            <h3>청주시선 가입자 늘어</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_04.jpg" alt="지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령"></div>
+                                        <div class="txt_box">
+                                            <h3>지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo"><img src="images/main/news_05.jpg" alt="종전 협상 기대 속 코스피, 6100선 상승 출발"></div>
+                                        <div class="txt_box">
+                                            <h3>종전 협상 기대 속 코스피, 6100선 상승 출발</h3>
+                                            <span class="time">2026-04-16</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="economy_contents" role="tabpanel" aria-labelledby="economy" class="tab-contents" data-quick-nav="false">
+                            <ul>
+                                <li class="primary">
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_01.jpg" alt="국힘, 단체장 경선 속도..민주, 경선 내홍 지속"></div>
+                                        <div class="txt_box">
+                                            <h3>국힘, 단체장 경선 속도..민주, 경선 내홍 지속</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_02.jpg" alt="음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사"></div>
+                                        <div class="txt_box">
+                                            <h3>음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_03.jpg" alt="청주시선 가입자 늘어"></div>
+                                        <div class="txt_box">
+                                            <h3>청주시선 가입자 늘어</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_04.jpg" alt="지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령"></div>
+                                        <div class="txt_box">
+                                            <h3>지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo"><img src="images/main/news_05.jpg" alt="종전 협상 기대 속 코스피, 6100선 상승 출발"></div>
+                                        <div class="txt_box">
+                                            <h3>종전 협상 기대 속 코스피, 6100선 상승 출발</h3>
+                                            <span class="time">2026-04-16</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="social_contents" role="tabpanel" aria-labelledby="social" class="tab-contents" data-quick-nav="false">
+                            <ul>
+                                <li class="primary">
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_01.jpg" alt="국힘, 단체장 경선 속도..민주, 경선 내홍 지속"></div>
+                                        <div class="txt_box">
+                                            <h3>국힘, 단체장 경선 속도..민주, 경선 내홍 지속</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_02.jpg" alt="음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사"></div>
+                                        <div class="txt_box">
+                                            <h3>음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_03.jpg" alt="청주시선 가입자 늘어"></div>
+                                        <div class="txt_box">
+                                            <h3>청주시선 가입자 늘어</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_04.jpg" alt="지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령"></div>
+                                        <div class="txt_box">
+                                            <h3>지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo"><img src="images/main/news_05.jpg" alt="종전 협상 기대 속 코스피, 6100선 상승 출발"></div>
+                                        <div class="txt_box">
+                                            <h3>종전 협상 기대 속 코스피, 6100선 상승 출발</h3>
+                                            <span class="time">2026-04-16</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="breaking_contents" role="tabpanel" aria-labelledby="breaking" class="tab-contents" data-quick-nav="false">
+                            <ul>
+                                <li class="primary">
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_01.jpg" alt="국힘, 단체장 경선 속도..민주, 경선 내홍 지속"></div>
+                                        <div class="txt_box">
+                                            <h3>국힘, 단체장 경선 속도..민주, 경선 내홍 지속</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_02.jpg" alt="음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사"></div>
+                                        <div class="txt_box">
+                                            <h3>음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_03.jpg" alt="청주시선 가입자 늘어"></div>
+                                        <div class="txt_box">
+                                            <h3>청주시선 가입자 늘어</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_04.jpg" alt="지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령"></div>
+                                        <div class="txt_box">
+                                            <h3>지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo"><img src="images/main/news_05.jpg" alt="종전 협상 기대 속 코스피, 6100선 상승 출발"></div>
+                                        <div class="txt_box">
+                                            <h3>종전 협상 기대 속 코스피, 6100선 상승 출발</h3>
+                                            <span class="time">2026-04-16</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="outdate_contents" role="tabpanel" aria-labelledby="outdate" class="tab-contents" data-quick-nav="false">
+                            <ul>
+                                <li class="primary">
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_01.jpg" alt="국힘, 단체장 경선 속도..민주, 경선 내홍 지속"></div>
+                                        <div class="txt_box">
+                                            <h3>국힘, 단체장 경선 속도..민주, 경선 내홍 지속</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_02.jpg" alt="음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사"></div>
+                                        <div class="txt_box">
+                                            <h3>음식점 업주 “가스 냄새 난다”...‘부실시공’ 가능성 조사</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_03.jpg" alt="청주시선 가입자 늘어"></div>
+                                        <div class="txt_box">
+                                            <h3>청주시선 가입자 늘어</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo thumbnail"><img src="images/main/news_04.jpg" alt="지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령"></div>
+                                        <div class="txt_box">
+                                            <h3>지자체 경고 비웃는 ‘알박기 텐트’...물가 따라 캠핑장 점령</h3>
+                                            <span class="time">2026-04-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="photo"><img src="images/main/news_05.jpg" alt="종전 협상 기대 속 코스피, 6100선 상승 출발"></div>
+                                        <div class="txt_box">
+                                            <h3>종전 협상 기대 속 코스피, 6100선 상승 출발</h3>
+                                            <span class="time">2026-04-16</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
         </section>
         <section class="vod">
-            
+            <div class="wrapper">
+                <div class="tit_box">
+                    <strong class="subtit">VOD</strong>
+                    <h2>CJB 편성 다시보기</h2>
+                </div>
+                <div class="contents_box">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                            
+                            <!-- swiper slide -->
+                            <li class="swiper-slide">
+                                <ul class="vod_grid">
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_01.jpg" alt="탑클래스"></div>
+                                                <span class="play-time">12:34</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">탑클래스</strong>
+                                                <h3>41화</h3>
+                                                <span class="time">2026-04-14</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_02.jpg" alt="맛과 건강을 한번에! 진천 가루쌀의 재발견"></div>
+                                                <span class="play-time">3:07</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>맛과 건강을 한번에! 진천 가루쌀의 재발견</h3>
+                                                <span class="time">2026-04-14</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_03.jpg" alt="전국 TOP 10 가요쇼"></div>
+                                                <span class="play-time">45:59</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">전국 TOP 10 가요쇼</strong>
+                                                <h3>1089회</h3>
+                                                <span class="time">2026-04-14</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_04.jpg" alt="긴급점검 아르바이트생의 내 권리 사수법"></div>
+                                                <span class="play-time">9:30</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>긴급점검 아르바이트생의 내 권리 사수법</h3>
+                                                <span class="time">2026-04-13</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_05.jpg" alt="봄을담은청주 with 청주맨"></div>
+                                                <span class="play-time">9:05</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>봄을담은청주 with 청주맨</h3>
+                                                <span class="time">2026-04-13</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_06.jpg" alt="질문 있습니다 거장의 품격"></div>
+                                                <span class="play-time">27:18</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">질문 있습니다</strong>
+                                                <h3>39회</h3>
+                                                <span class="time">2026-04-11</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_07.jpg" alt="'삶'을 준비하는 특수교육"></div>
+                                                <span class="play-time">21:59</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>'삶'을 준비하는 특수교육</h3>
+                                                <span class="time">2026-04-10</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_08.jpg" alt="이슈 인사이트"></div>
+                                                <span class="play-time">15:00</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">이슈 인사이트</strong>
+                                                <h3>84회</h3>
+                                                <span class="time">2026-04-05</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- swiper slide -->
+                            <!-- swiper slide -->
+                            <li class="swiper-slide">
+                                <ul class="vod_grid">
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_01.jpg" alt="탑클래스"></div>
+                                                <span class="play-time">12:34</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">탑클래스</strong>
+                                                <h3>41화</h3>
+                                                <span class="time">2026-04-14</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_02.jpg" alt="맛과 건강을 한번에! 진천 가루쌀의 재발견"></div>
+                                                <span class="play-time">3:07</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>맛과 건강을 한번에! 진천 가루쌀의 재발견</h3>
+                                                <span class="time">2026-04-14</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_03.jpg" alt="전국 TOP 10 가요쇼"></div>
+                                                <span class="play-time">45:59</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">전국 TOP 10 가요쇼</strong>
+                                                <h3>1089회</h3>
+                                                <span class="time">2026-04-14</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_04.jpg" alt="긴급점검 아르바이트생의 내 권리 사수법"></div>
+                                                <span class="play-time">9:30</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>긴급점검 아르바이트생의 내 권리 사수법</h3>
+                                                <span class="time">2026-04-13</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_05.jpg" alt="봄을담은청주 with 청주맨"></div>
+                                                <span class="play-time">9:05</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>봄을담은청주 with 청주맨</h3>
+                                                <span class="time">2026-04-13</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_06.jpg" alt="질문 있습니다 거장의 품격"></div>
+                                                <span class="play-time">27:18</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">질문 있습니다</strong>
+                                                <h3>39회</h3>
+                                                <span class="time">2026-04-11</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_07.jpg" alt="'삶'을 준비하는 특수교육"></div>
+                                                <span class="play-time">21:59</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>'삶'을 준비하는 특수교육</h3>
+                                                <span class="time">2026-04-10</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_08.jpg" alt="이슈 인사이트"></div>
+                                                <span class="play-time">15:00</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">이슈 인사이트</strong>
+                                                <h3>84회</h3>
+                                                <span class="time">2026-04-05</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- swiper slide -->
+                            <!-- swiper slide -->
+                            <li class="swiper-slide">
+                                <ul class="vod_grid">
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_01.jpg" alt="탑클래스"></div>
+                                                <span class="play-time">12:34</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">탑클래스</strong>
+                                                <h3>41화</h3>
+                                                <span class="time">2026-04-14</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_02.jpg" alt="맛과 건강을 한번에! 진천 가루쌀의 재발견"></div>
+                                                <span class="play-time">3:07</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>맛과 건강을 한번에! 진천 가루쌀의 재발견</h3>
+                                                <span class="time">2026-04-14</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_03.jpg" alt="전국 TOP 10 가요쇼"></div>
+                                                <span class="play-time">45:59</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">전국 TOP 10 가요쇼</strong>
+                                                <h3>1089회</h3>
+                                                <span class="time">2026-04-14</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_04.jpg" alt="긴급점검 아르바이트생의 내 권리 사수법"></div>
+                                                <span class="play-time">9:30</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>긴급점검 아르바이트생의 내 권리 사수법</h3>
+                                                <span class="time">2026-04-13</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_05.jpg" alt="봄을담은청주 with 청주맨"></div>
+                                                <span class="play-time">9:05</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>봄을담은청주 with 청주맨</h3>
+                                                <span class="time">2026-04-13</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_06.jpg" alt="질문 있습니다 거장의 품격"></div>
+                                                <span class="play-time">27:18</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">질문 있습니다</strong>
+                                                <h3>39회</h3>
+                                                <span class="time">2026-04-11</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_07.jpg" alt="'삶'을 준비하는 특수교육"></div>
+                                                <span class="play-time">21:59</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">CJB 모닝와이드</strong>
+                                                <h3>'삶'을 준비하는 특수교육</h3>
+                                                <span class="time">2026-04-10</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="vod-item">
+                                        <a href="#none">
+                                            <div class="photo_box">
+                                                <div class="photo"><img src="images/main/vod_thumbnail_08.jpg" alt="이슈 인사이트"></div>
+                                                <span class="play-time">15:00</span>
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong class="category">이슈 인사이트</strong>
+                                                <h3>84회</h3>
+                                                <span class="time">2026-04-05</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- swiper slide -->
+                        </ul>
+                        <button class="prev"><span>이전 영상 목록</span></button>
+                        <button class="next"><span>다음 영상 목록</span></button>
+                        <button class="more"><span>영상 더 보기</span></button>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="program">
             
