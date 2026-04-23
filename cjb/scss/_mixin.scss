@@ -80,9 +80,10 @@
 }
 
 @mixin title {
-  margin: function.clamping(88, 197, 1024, 1px) 0 function.clamping(60, 73, 1024, 1px) 0;
+  margin: 0 0 function.clamping(60, 73, 1024, 1px) 0;
   .subtit {
     font-size: var.$size-level6;
+    color: var.$emphasis;
     margin: 0 0 3px 0;
   }
 
@@ -90,6 +91,7 @@
     font-size: var.$size-level1;
     font-weight: var.$weight-bold;
     line-height: var.$line-height-tit;
+    color: var.$color-tit;
   }
 }
 
@@ -157,5 +159,12 @@
   background-color: function.rgba-mix(var.$color-tit, .8);
   background-image: var.$icon-play;
   @include icon-svg(10px);
+}
 
+@mixin line-clamp($line-count, $line-height: var.$line-height-normal) {
+  max-height: calc($line-count * 1em * $line-height);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line-count;
+  overflow-y: hidden;
 }

@@ -9,11 +9,17 @@
     <script src="js/main.js"></script>
     <script src="js/layout.js"></script>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>CJB 청주방송</title>
 </head>
 <body>
     <div class="skip-link">
         <a href="#main">본문 바로가기</a>
+    </div>
+    <div class="cursor">
+        <div class="arrow left"></div>
+        <span>드래그</span>
+        <div class="arrow right"></div>
     </div>
     <!-- 스크롤을 내리면 scroll 상태-->
     <header class="header">
@@ -51,7 +57,7 @@
                         </li>
                         
                         <!-- 모바일) open 클래스로 열기 -->
-                        <li class="open">
+                        <li>
                             <a href="#none"><span>뉴스</span></a>
                             
                             <ul class="depth2">
@@ -243,22 +249,22 @@
                             <li id="main_news" role="tab" aria-selected="true" aria-controls="main_news_contents" class="active">
                                 <button class="tab-item"><span class="tab-item-name">주요 뉴스</span><span class="sr-only"> 선택됨</span></button>
                             </li>
-                            <li id="deep_report" role="tab" aria-selected="true" aria-controls="deep_report_contents">
+                            <li id="deep_report" role="tab" aria-selected="false" aria-controls="deep_report_contents">
                                 <button class="tab-item"><span class="tab-item-name">더 세종</span></button>
                             </li>
-                            <li id="politic" role="tab" aria-selected="true" aria-controls="politic_contents">
+                            <li id="politic" role="tab" aria-selected="false" aria-controls="politic_contents">
                                 <button class="tab-item"><span class="tab-item-name">정치</span></button>
                             </li>
-                            <li id="economy" role="tab" aria-selected="true" aria-controls="economy_contents">
+                            <li id="economy" role="tab" aria-selected="false" aria-controls="economy_contents">
                                 <button class="tab-item"><span class="tab-item-name">경제</span></button>
                             </li>
-                            <li id="social" role="tab" aria-selected="true" aria-controls="social_contents">
+                            <li id="social" role="tab" aria-selected="false" aria-controls="social_contents">
                                 <button class="tab-item"><span class="tab-item-name">사회</span></button>
                             </li>
-                            <li id="breaking" role="tab" aria-selected="true" aria-controls="breaking_contents">
+                            <li id="breaking" role="tab" aria-selected="false" aria-controls="breaking_contents">
                                 <button class="tab-item"><span class="tab-item-name">속보</span></button>
                             </li>
-                            <li id="outdate" role="tab" aria-selected="true" aria-controls="outdate_contents">
+                            <li id="outdate" role="tab" aria-selected="false" aria-controls="outdate_contents">
                                 <button class="tab-item"><span class="tab-item-name">지난 뉴스</span></button>
                             </li>
                         </ul>
@@ -614,17 +620,21 @@
 
         </section>
         <section class="vod">
-            <div class="wrapper">
-                <div class="tit_box">
+            <div class="tit_box">
+                <div class="wrapper">
                     <strong class="subtit">VOD</strong>
                     <h2>CJB 편성 다시보기</h2>
                 </div>
-                <div class="contents_box">
+            </div>
+            <div class="contents_box">
+                <div class="wrapper">                    
+                    <button class="swiper_nav prev"><span class="sr-only">이전 영상 목록</span></button>
                     <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                         <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
                             
                             <!-- swiper slide -->
                             <li class="swiper-slide">
+                                <!-- open으로 더 많은 내용 표시 -->
                                 <ul class="vod_grid">
                                     <li class="vod-item">
                                         <a href="#none">
@@ -954,18 +964,179 @@
                             </li>
                             <!-- swiper slide -->
                         </ul>
-                        <button class="prev"><span>이전 영상 목록</span></button>
-                        <button class="next"><span>다음 영상 목록</span></button>
-                        <button class="more"><span>영상 더 보기</span></button>
                     </div>
+                    <button class="swiper_nav next"><span class="sr-only">다음 영상 목록</span></button>
+                    <button class="more"><span class="sr-only">영상 더 보기</span></button>
+                
                 </div>
             </div>
         </section>
         <section class="program">
+            <div class="wrapper">
+                <div class="tit_box">
+                    <strong class="subtit">PROGRAM</strong>
+                    <h2>편성 프로그램</h2>
+                </div>
+                <div class="contents_box">
+                    <div class="tab">
+                        <ul role="radiogroup">
+                            <li id="all" role="radio" aria-pressed="true" aria-controls="program_contents" class="active">
+                                <button class="tab-item"><span class="tab-item-name">전체</span><span class="sr-only"> 선택됨</span></button>
+                            </li>
+                            <li id="tue" role="radio" aria-pressed="false" aria-controls="program_contents">
+                                <button class="tab-item"><span class="tab-item-name">화</span></button>
+                            </li>
+                            <li id="wed" role="radio" aria-pressed="false" aria-controls="program_contents">
+                                <button class="tab-item"><span class="tab-item-name">수</span></button>
+                            </li>
+                            <li id="thu" role="radio" aria-pressed="false" aria-controls="program_contents">
+                                <button class="tab-item"><span class="tab-item-name">목</span></button>
+                            </li>
+                            <li id="fri" role="radio" aria-pressed="false" aria-controls="program_contents">
+                                <button class="tab-item"><span class="tab-item-name">금</span></button>
+                            </li>
+                            <li id="sat" role="radio" aria-pressed="false" aria-controls="program_contents">
+                                <button class="tab-item"><span class="tab-item-name">토</span></button>
+                            </li>
+                            <li id="sun" role="radio" aria-pressed="false" aria-controls="program_contents">
+                                <button class="tab-item"><span class="tab-item-name">일</span></button>
+                            </li>
+                            <li id="special" role="radio" aria-pressed="false" aria-controls="program_contents">
+                                <button class="tab-item"><span class="tab-item-name">특집</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-conts">
+                        <div id="program_contents" role="region" aria-label="프로그램 목록" aria-live="polite">
+                            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                    <li class="swiper-slide" data-day="sat">
+                                        <a href="#none">
+                                            <div class="photo"><img src="images/main/program_01.gif" alt="질문 있습니다"></div>
+                                            <h3>질문 있습니다</h3>
+                                            <span class="time">토요일 오전 9:00 격주</span>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide" data-day="sun">
+                                        <a href="#none">
+                                            <div class="photo"><img src="images/main/program_02.gif" alt="CJB 교양강좌"></div>
+                                            <h3>CJB 스페셜 교양강좌</h3>
+                                            <span class="time">일요일 아침 8:30</span>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide" data-day="thu fri">
+                                        <a href="#none">
+                                            <div class="photo"><img src="images/main/program_03.gif" alt="CJB 모닝와이드"></div>
+                                            <h3>CJB 모닝와이드</h3>
+                                            <span class="time">목, 금 저녁 19:50</span>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide" data-day="thu">
+                                        <a href="#none">
+                                            <div class="photo"><img src="images/main/program_04.gif" alt="이슈 인사이트"></div>
+                                            <h3>이슈 인사이트</h3>
+                                            <span class="time">목요일 오후 18:50</span>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide" data-day="tue">
+                                        <a href="#none">
+                                            <div class="photo"><img src="images/main/program_05.gif" alt="네모 세모 네가 모르는 세상의 모든 정보 "></div>
+                                            <h3>네모 세모</h3>
+                                            <span class="time">화요일 새벽 00:20</span>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide" data-day="wed">
+                                        <a href="#none">
+                                            <div class="photo"><img src="images/main/program_06.gif" alt="탑클래스"></div>
+                                            <h3>탑클래스</h3>
+                                            <span class="time">수요일 오후 17:50</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="swiper_nav">
+                                <button class="prev"><span class="sr-only">이전 프로그램 목록</span></button>
+                                <button class="next"><span class="sr-only">다음 프로그램 목록</span></button>
+                            </div>
+                            <button class="more"><span class="sr-only">프로그램 더 보기</span></button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
             
         </section>
         <section class="radio">
-            
+            <div class="wrapper">
+                <div class="tit_box">
+                    <strong class="subtit">RADIO</strong>
+                    <h2>청주방송 FM 101.5</h2>
+                </div>
+                <div class="contents_box">
+                    <div class="onair">
+                        <a href="#none" class="onair_cover">
+                            <div class="photo">
+                                <img src="images/main/radio_01.jpg" alt="CJB 라디오살롱">
+                            </div>
+                        </a>
+                        <div class="txt_box">
+                            <h3><span>CJB 라디오살롱</span></h3>
+                            <p>&lt;CJB 라디오살롱&gt;은 퇴근길 청취자들에게 하루의 시간을 정리하고 오늘의 의미를 찾을 수 있도록 다양한 문화 예술적 콘텐츠를 제공합니다.</p>
+                            <span class="time">저녁 18:00 - 20:00</span>
+                            <div class="bar"><div class="gauge"></div></div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <!-- over 클래스로 txt_box 표시-->
+                            <li class="over">
+                                <a href="#none" class="radio_cover">
+                                    <div class="photo">
+                                        <img src="images/main/radio_02.jpg" alt="굿모닝 JOY FM">
+                                    </div>
+                                    <div class="txt_box">
+                                        <h4><span>굿모닝 JOY FM</span></h4>
+                                        <p>&lt;굿모닝 JOY FM&gt;은 아침을 깨우는 뉴스 소식, 노래와 함께 활기찬 하루를 시작할 수 있도록 노력합니다.</p>
+                                        <span class="time">오전 6:00 - 7:00</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#none" class="radio_cover">
+                                    <div class="photo">
+                                        <img src="images/main/radio_03.jpg" alt="최지현의 11시엔 OST">
+                                    </div>
+                                    <div class="txt_box">
+                                        <h4><span>최지현의 11시엔 OST</span></h4>
+                                        <p>&lt;최지현의 11시엔 OST&gt;에서는 영화의 숨결을 더하는 영화의 숨은 보석, 영화 OST를 전달합니다.</p>
+                                        <span class="time">오전 11:00 - 12:00</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#none" class="radio_cover">
+                                    <div class="photo">
+                                        <img src="images/main/radio_04.jpg" alt="CJB JOY FM 의학상식">
+                                    </div>
+                                    <div class="txt_box">
+                                        <h4><span>CJB JOY FM 의학상식</span></h4>
+                                        <p>&lt;CJB JOY FM 의학상식&gt;은 청취자 여러분께 다양한 의학 정보와 일상에서 접할 수 있는 건강 문제에 대한 정보를 제공합니다.</p>
+                                        <span class="time">비정기</span>
+                                        
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#none" class="more">
+                                    <span>더보기</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="notice">
             

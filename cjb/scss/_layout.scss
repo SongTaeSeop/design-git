@@ -8,6 +8,8 @@
     .wrapper {
         @include mixin.flex-justify(space-between, center);
         position: relative; /* sitemap_wrap 용*/
+        overflow-x: auto;
+        gap: 0 var.$gap;
         .left {
             @include mixin.flex-justify(space-between, center);
             gap: 0 function.vw(20, 1920);;
@@ -304,8 +306,9 @@
             position: absolute;
             @include mixin.pos(left, 0, top, var.$header-h);
             width: 100%;
+            border-radius: 8px;
             .sitemap_box {
-                margin: 0 0 30px 20px;
+                margin: 0 0 48px 48px;
                 ul.depth1 {
                     @include mixin.flex-justify(flex-start, flex-start);
                     flex-direction: column;
@@ -334,7 +337,7 @@
 
             }
             .util {
-                margin: 30px 20px 0 0;
+                margin: 24px 24px 0 0;
                 .weather,
                 .search,
                 .login {
