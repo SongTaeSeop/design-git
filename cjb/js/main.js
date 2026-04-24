@@ -119,7 +119,7 @@ $(document).ready(function() {
     });
 
     /* 모바일) 강조된 탭 아이템으로 스크롤 */
-    const tab_list = $('.news .contents_box .tab ul li');
+    const news_tab_list = $('.news .contents_box .tab ul li');
 
     var mut = new MutationObserver(function(mutations, mut){
         if (mutations.length > 1) {
@@ -132,7 +132,7 @@ $(document).ready(function() {
         }
     });
 
-    tab_list.each(function(idx, element) {
+    news_tab_list.each(function(idx, element) {
         mut.observe(element, {
             'attributes': true,
             'attributeFilter': ['class']
@@ -141,6 +141,8 @@ $(document).ready(function() {
 
     const vod_swiper = new Swiper('.vod .swiper', { /* 팝업을 감싼는 요소의 class명 */
         // effect: "fade", /* fade 효과 */
+        slidesOffsetBefore: 12,
+        slidesOffsetAfter: 12,
         spaceBetween: 24,
         navigation: {
             nextEl: '.vod .contents_box .next',
@@ -197,6 +199,7 @@ $(document).ready(function() {
     program_more_btn.click(function() {
         if (!isTablet && !program_list.hasClass('open')) {
             program_list.addClass('open');
+            program_list.find(':visible:nth-child(n+5) a').show();
             program_more_btn.hide();
         }
     });
@@ -230,18 +233,37 @@ $(document).ready(function() {
         $(this).attr('aria-pressed', 'true');
 
         selected_filter = $(this).attr('id');
+        program_list.removeClass('open');
         if (selected_filter == 'all') {
             program_list.children().show();
-            if (!isTablet) {
-                program_list.removeClass('open');
-                program_more_btn.show();
-            }
+            // if (!isTablet) {
+            //     program_list.removeClass('open');
+            //     program_more_btn.show();
+            // }
         } else {
             program_list.children().hide(); // 전체 숨기기
             program_list.children('[data-day~="' + selected_filter + '"]').show();
         }
         program_swiper.update();
         swiper_overflow_check(program_swiper, $('.program .swiper'), 'drag');
+        if (program_list.children(':visible').length > 0) {
+            program_list.find(':visible a').first().focus();
+            if (program_list.children(':visible').length > 4) {
+                if (!isTablet) {
+                    program_list.find(':visible:nth-child(n+5) a').hide();
+                    program_more_btn.show();
+                }
+            } else {
+                program_more_btn.hide();
+            }
+        }
+    });
+    
+    program_tab_btn.each(function(idx, element) {
+        mut.observe(element, {
+            'attributes': true,
+            'attributeFilter': ['class']
+        });
     });
 
     swiper_overflow_check(program_swiper, $('.program .swiper'), 'drag');
@@ -255,6 +277,47 @@ $(document).ready(function() {
         if (isTablet && $(this).hasClass('drag')) {
             $('.cursor').toggleClass('on');
         }
+    });
+
+    /***
+     * .notice Swiper
+     ***/
+
+    const notice_swiper = new Swiper('.notice .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: "auto", /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            769: {
+                spaceBetween: 24,
+            },
+        },
+        navigation: {
+            nextEl: '.notice .contents_box .next',
+            prevEl: '.notice .contents_box .prev',
+        },
+        pagination: {
+            el: ".notice .swiper-pagination",
+            type: "progressbar",
+        },
+    });
+
+    /***
+     * .advertise Swiper
+     ***/
+
+    const advertise_swiper = new Swiper('.advertise .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+        loopPreventsSliding: false, /* loop 적용 시 딜레이가 추가됨 */
+        navigation: {
+            nextEl: '.advertise .swiper_nav .next',
+            prevEl: '.advertise .swiper_nav .prev',
+        },
+        pagination: {
+            el: ".advertise .swiper-pagination",
+            type: "fraction",
+        },
     });
 
 });

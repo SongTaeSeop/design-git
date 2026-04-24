@@ -8,7 +8,6 @@
     .wrapper {
         @include mixin.flex-justify(space-between, center);
         position: relative; /* sitemap_wrap 용*/
-        overflow-x: auto;
         gap: 0 var.$gap;
         .left {
             @include mixin.flex-justify(space-between, center);
@@ -42,7 +41,7 @@
                         border-radius: 50%;
                         opacity: 0;
                     }
-                    &:hover::after {
+                    &:hover::after,&:focus::after {
                         opacity: .2;
                     }
                 }
@@ -139,7 +138,7 @@
                         border-radius: 50%;
                         opacity: 0;
                     }
-                    &:hover::after {
+                    &:hover::after,&:focus::after {
                         opacity: .2;
                     }
                 }
@@ -158,8 +157,10 @@
         .right .util button {
             filter: brightness(1) invert(0);
         }
-        .left .gnb ul li a:hover {
-            color: var.$blackish;
+        .left .gnb ul li a {
+            &:hover,&:focus {
+                color: var.$blackish;
+            }
         }
 
     }
@@ -204,9 +205,6 @@
         color: var.$color-tit;
         flex-direction: column-reverse;
         display: none;
-        &.open {
-            display: flex;
-        }
         .sitemap_box {
             ul.depth1 {
                 > li {
@@ -240,13 +238,16 @@
                     
                 }
                 
-                a:hover {
+                a:hover,a:focus {
                     color: var.$blackish;
                     text-decoration: underline;
                 }
 
             }
         }
+    }
+    &.open .sitemap_wrap {
+        display: flex;
     }
     .util {
         @include mixin.flex-justify(flex-start, center);
@@ -293,10 +294,24 @@
                 border-radius: 50%;
                 opacity: 0;
             }
-            &:hover::after {
+            &:hover::after,&:focus::after {
                 opacity: .2;
             }
         }
+    }
+    .dim {
+        position: absolute;
+        @include mixin.pos(left, 0, top, 0);
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        background-color: var.$black;
+        opacity: 0;
+        pointer-events: none;
+    }
+    &.open .dim {
+        opacity: .4;
+        pointer-events: auto;
     }
 }
 
@@ -304,7 +319,7 @@
     .header {
         .sitemap_wrap {
             position: absolute;
-            @include mixin.pos(left, 0, top, var.$header-h);
+            @include mixin.pos(left, 0, top, calc(var.$header-h + var.$gap));
             width: 100%;
             border-radius: 8px;
             .sitemap_box {
@@ -420,5 +435,7 @@
 } /* @media screen and (max-width: 1024px) */
 
 .footer {
-    margin: 100vh 0 0 0;
+    padding: function.clamping(21, 25, 1024, 1px) 0 41px 0;
+    @include mixin.border(function.rgba-mix(var.$gray2, .2));
+    border-width: 1px 0 0 0;
 }

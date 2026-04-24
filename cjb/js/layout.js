@@ -49,16 +49,17 @@ $(document).ready(function() {
 
     const sitemap_open_btn = $('.header .left .gnb .sitemap_open');
     const sitemap_close_btn = $('.header .sitemap_wrap .util .sitemap_close');
-    const sitemap_wrap = $('.header .sitemap_wrap');
+    const header = $('.header');
 
     sitemap_open_btn.click(function() {
-        if (!sitemap_wrap.hasClass('open')) {
-            sitemap_wrap.addClass('open');
+        if (!header.hasClass('open')) {
+            header.addClass('open');
+            $('.header .sitemap_wrap .onair a').focus();
         }
     });
     sitemap_close_btn.click(function() {
-        if (sitemap_wrap.hasClass('open')) {
-            sitemap_wrap.removeClass('open');
+        if (header.hasClass('open')) {
+            header.removeClass('open');
         }
     });
 
@@ -74,5 +75,13 @@ $(document).ready(function() {
             }
         }
     });
+
+    /***
+     * 자동 포커스 아웃으로 닫기
+     ***/
+
+    sitemap_close_btn.on('focusout', function() {
+        header.removeClass('open');
+    })
 
 });

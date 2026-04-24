@@ -15,6 +15,10 @@
   @return calc($px / $base-size * 100vw);
 }
 
+@function vw-acc($px, $base-size, $speed) {
+  @return calc(($px * 1px) + (($px / $base-size * 100vw) - ($px * 1px)) * $speed);
+}
+
 @function clamping($min, $max, $breakpoint, $unit) {
   @return clamp($min * $unit, calc($max / $breakpoint * 100vw), $max * $unit);
 }

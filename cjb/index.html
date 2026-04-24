@@ -22,6 +22,7 @@
         <div class="arrow right"></div>
     </div>
     <!-- 스크롤을 내리면 scroll 상태-->
+    <!-- open 클래스로 sitemap_wrap 열기 -->
     <header class="header">
         <div class="wrapper">
             <div class="left">
@@ -48,7 +49,6 @@
                     <button class="login"><span class="sr-only">로그인</span></button>
                 </div>
             </div>
-            <!-- open 클래스로 열기 -->
             <div class="sitemap_wrap">
                 <div class="sitemap_box">
                     <ul class="depth1">
@@ -119,6 +119,7 @@
                 </div>
             </div>
         </div>
+        <div class="dim"></div>
        
     </header>
     
@@ -627,7 +628,7 @@
                 </div>
             </div>
             <div class="contents_box">
-                <div class="wrapper">                    
+                <div class="wrapper">
                     <button class="swiper_nav prev"><span class="sr-only">이전 영상 목록</span></button>
                     <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                         <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
@@ -1053,6 +1054,20 @@
                                             <span class="time">수요일 오후 17:50</span>
                                         </a>
                                     </li>
+                                    <li class="swiper-slide" data-day="special">
+                                        <a href="#none">
+                                            <div class="photo"><img src="images/main/program_07.gif" alt="오송 첨단 바이오 컨퍼런스"></div>
+                                            <h3>오송 첨단 바이오 컨퍼런스</h3>
+                                            <span class="time">2026-01-15</span>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide" data-day="special">
+                                        <a href="#none">
+                                            <div class="photo"><img src="images/main/program_08.gif" alt="충청북도의회 11월의 기록"></div>
+                                            <h3>다큐멘터리 충청북도의회 11월의 기록</h3>
+                                            <span class="time">2025-12-31</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="swiper_nav">
@@ -1138,13 +1153,171 @@
             </div>
         </section>
         <section class="notice">
-            
+            <div class="wrapper">
+                <div class="tit_box">
+                    <strong class="subtit">NOTICE</strong>
+                    <h2>공지사항</h2>
+                </div>
+                <div class="contents_box">
+                    <div class="swiper">
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide recruit">
+                                <a href="#none">
+                                    <strong>RECRUIT</strong>
+                                    <h3>CJB 청주방송 육아휴직 대체자 채용 모집 안내</h3>
+                                    <p>4월 13일부터 CJB 청주방송 육아휴직 대체자를 모집합니다.</p>
+                                    <span class="time">2026-04-10</span>
+                                </a>
+                            </li>
+                            <li class="swiper-slide event">
+                                <a href="#none">
+                                    <strong>EVENT</strong>
+                                    <h3>2026 대니초 로맨틱 코미디 청주공연 안내</h3>
+                                    <p>스탠드업 코미디언 대니초의 단독공연 &lt;로맨틱 코메디&gt;가 청주 CJB미디어센터 에덴 아트홀에서 5월 16일과 17일, 이틀간 진행합니다.</p>
+                                    <span class="time">2026-04-10</span>
+                                </a>
+                            </li>
+                            <li class="swiper-slide event">
+                                <a href="#none">
+                                    <strong>EVENT</strong>
+                                    <h3>2026 청남대 재즈토닉 페스티벌</h3>
+                                    <p>5월 23일부터 24일까지 청남대에서 2026 청남대 재즈토닉 페스티벌을 진행합니다.</p>
+                                    <span class="time">2026-04-10</span>
+                                </a>
+                            </li>
+                            <li class="swiper-slide recruit">
+                                <a href="#none">
+                                    <strong>RECRUIT</strong>
+                                    <h3>CJB 청주방송 주조정실 전문MD 및 광고직 모집안내</h3>
+                                    <p>12월 24일부터 CJB 주조정실 전문 MD 및 광고직 인원을 모집합니다.</p>
+                                    <span class="time">2025-12-23</span>
+                                </a>
+                            </li>
+                            <li class="swiper-slide event">
+                                <a href="#none">
+                                    <strong>EVENT</strong>
+                                    <h3>2025 송년음악회 행사 안내</h3>
+                                    <p>12월 11일, CJB미디어센터에서 &lt;청주시민을 위한 2025송년음악회&gt;를 진행합니다. 주요 출연진은 손빈아, 추혁진, 남궁진, 장혜리입니다.</p>
+                                    <span class="time">2025-11-27</span>
+                                </a>
+                            </li>
+                            <li class="swiper-slide event">
+                                <a href="#none">
+                                    <strong>EVENT</strong>
+                                    <h3>Super concert - X : 레전드의 귀환 행사 안내</h3>
+                                    <p>12월 20일 오후 3시 청주 오스코에서 90·00년대 레전드들의 무대, &lt;Super concert - X : 레전드의 귀환 행사&gt; 콘서트를 진행합니다.</p>
+                                    <span class="time">2025-11-05</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper_nav">
+                        <button class="prev"><span class="sr-only">이전 공지사항 목록</span></button>
+                        <button class="next"><span class="sr-only">다음 공지사항 목록</span></button>
+                    </div>
+                </div>
+                <button class="more"><span>더보기</span></button>
+
+            </div>
         </section>
         <section class="banner">
-            
+            <h2 class="sr-only">배너 구간</h2>
+            <div class="wrapper">
+                <div class="report">
+                    <h3>CJB뉴스는 여러분과 함께 만들어갑니다.</h3>
+                    <ul>
+                        <li class="report_link">
+                            <a href="#none"><span>제보하기</span></a>
+                        </li>
+                        <li class="sms_report">
+                            <a href="#none"><span>문자 제보</span></a>
+                        </li>
+                        <li class="kakao_report">
+                            <a href="#none"><span>카카오톡</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li><a href="#none"><span>네이버 뉴스</span></a></li>
+                        <li class="youtube"><a href="#none"><span>CJB NEWS</span></a></li>
+                        <li><a href="#none"><span>다음 뉴스</span></a></li>
+                        <li class="youtube"><a href="#none"><span>CJB 엔터</span></a></li>
+                    </ul>
+                </div>
+                <a href="#none" class="media_center">
+                    <img src="images/main/banner_media_center.jpg" alt="문화와 예술이 살아 숨쉬는 곳! CJB 미디어센터 바로가기">
+                </a>
+                <div class="advertise">
+                    <div class="advertise_swiper">
+                        <div class="swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="#none" class="photo">
+                                        <img src="images/main/banner_ad_01.gif" alt="한국전기공사협회">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#none" class="photo">
+                                        <img src="images/main/banner_ad_02.gif" alt="CHEONGJU TECHNOPOLIS (주)청주테크노폴리스">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#none" class="photo">
+                                        <img src="images/main/banner_ad_03.gif" alt="신한은행">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#none" class="photo">
+                                        <img src="images/main/banner_ad_04.gif" alt="광고·협찬 안내 043-279-3940">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper_util">
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper_nav">
+                            <button class="prev"><span class="sr-only">이전 광고</span></button>
+                            <button class="next"><span class="sr-only">다음 광고</span></button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="footer">
+        <div class="wrapper">
+            <div class="f_nav">
+                <ul>
+                    <li><a href="#none">CJB소개</a></li>
+                    <li><a href="#none">편성표</a></li>
+                    <li><a href="#none">방송편성규약</a></li>
+                    <li><a href="#none">윤리경영</a></li>
+                    <li><a href="#none">주요재무사항</a></li>
+                    <li><a href="#none">이용약관</a></li>
+                    <li><a href="#none">광고안내</a></li>
+                    <li><a href="#none">사내게시판</a></li>
+                    <li class="privacy"><a href="#none">개인정보처리방침</a></li>
+                </ul>
+            </div>
+            <div class="f_info">
+                <ul>
+                    <li><address>[28654] 충청북도 청주시 서원구 사운로 59-1</address></li>
+                    <li><span>대표 황현구</span></li>
+                    <li><span>대표전화: <a href="tel:0432657000">043-265-7000</a></span></li>
+                    <li><span>제보전화: <a href="tel:0432712000">043-271-2000~1</a></span></li>
+                    <li><span>FAX: <a href="tel:0432657012">043-265-7012</a></span></li>
+                </ul>
+
+            </div>
+            <div class="copyright">
+                © CJB.CO.KR All rights reserved.<br>
+                본 웹사이트에 게시된 이메일 주소가 자동수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의해 처벌됨을 유념하시기 바랍니다.
+            </div>
+        </div>
 
     </footer>
 </body>
