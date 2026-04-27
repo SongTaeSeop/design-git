@@ -2044,6 +2044,7 @@ body {
 }
 .radio .contents_box .list ul li a.radio_cover {
   position: relative;
+  display: block;
 }
 .radio .contents_box .list ul li a.radio_cover .photo {
   overflow: hidden;
@@ -2178,9 +2179,14 @@ body {
     padding: 0 5px;
   }
   .radio .contents_box .list ul li a.radio_cover .txt_box p {
-    display: none;
+    margin: 2.8645833333vw 0;
   }
 } /* @media screen and (max-width:768px) */
+@media screen and (max-width: 380px) {
+  .radio .contents_box .list ul li a.radio_cover .txt_box p {
+    display: none;
+  }
+} /* @media screen and (max-width:380px) */
 /* .notice */
 .notice {
   padding: clamp(97px, 19.53125vw, 200px) 0 clamp(70px, 12.59765625vw, 129px) 0;

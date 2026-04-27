@@ -1305,6 +1305,7 @@ $tab-btn-right-pad: 12px;
                 }
                 &.radio_cover {
                     position: relative;
+                    display: block;
                     .photo {
                         overflow: hidden;
                         border-radius: 8px;
@@ -1444,13 +1445,29 @@ $tab-btn-right-pad: 12px;
                 li a.radio_cover .txt_box {
                     padding: 0 5px;
                     p {
-                        display: none;
+                        margin: function.vw(22, 768) 0;
                     }
                 }
             }   
         }
     }
 } /* @media screen and (max-width:768px) */
+
+@media screen and (max-width:380px) {
+    .radio {
+        .contents_box {
+            .list ul {
+                li a.radio_cover .txt_box {
+                    p {
+                        display: none;
+                    }
+                }
+            }   
+        }
+    }
+
+
+} /* @media screen and (max-width:380px) */
 
 
 /* .notice */
