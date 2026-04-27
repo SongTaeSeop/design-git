@@ -417,6 +417,17 @@ $tab-btn-right-pad: 12px;
 
 @media screen and (max-width:768px) {
     .onair_box {
+        .tab {
+            ul {
+                li {
+                    button {
+                        &:hover {
+                            background-color: none;
+                        }
+                    }
+                }
+            }
+        }
         .program_box {
             &:nth-child(n+2) {
                 display: none;
@@ -461,10 +472,10 @@ $tab-btn-right-pad: 12px;
                             background-color: var.$emphasis;
                             transition: all .3s;
                         }
-                        &:not(.active):hover::before,&:not(.active):focus-visible::before {
-                            width: calc(100% - $tab-btn-right-pad);
-                        }
-
+                    }
+                    
+                    &:not(.active):hover button::before,&:not(.active):focus-visible button::before {
+                        width: calc(100% - $tab-btn-right-pad);
                     }
                     &.active {
                         color: var.$emphasis;
@@ -700,9 +711,10 @@ $tab-btn-right-pad: 12px;
                             &::before {
                                 right: 0;
                             }
-                            &:not(.active):hover::before,&:not(.active):focus-visible::before {
-                                width: 100%;
-                            }
+                        }
+                        button
+                        &:not(.active):hover button::before,&:not(.active):focus-visible button::before {
+                            width: 0%;
                         }
                         &.active button::before {
                             animation: none;
@@ -1001,10 +1013,9 @@ $tab-btn-right-pad: 12px;
                             background-color: var.$emphasis-white;
                             transition: all .3s;
                         }
-                        &:not(.active):hover::before,&:not(.active):focus-visible::before {
-                            width: calc(100% - $tab-btn-right-pad);
-                        }
-
+                    }
+                    &:not(.active):hover button::before,&:not(.active):focus-visible button::before {
+                        width: calc(100% - $tab-btn-right-pad);
                     }
                     &.active {
                         color: var.$emphasis-white;
@@ -1123,9 +1134,9 @@ $tab-btn-right-pad: 12px;
                                 &::before {
                                     right: 0;
                                 }
-                                &:not(.active):hover::before,&:not(.active):focus-visible::before {
-                                    width: 100%;
-                                }
+                            }
+                            &:not(.active):hover button::before,&:not(.active):focus-visible button::before {
+                                width: 0;
                             }
                             &.active button::before {
                                 animation: none;

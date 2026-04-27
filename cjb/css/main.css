@@ -1129,6 +1129,9 @@ body {
   }
 } /* @media screen and (max-width:1024px) */
 @media screen and (max-width: 768px) {
+  .onair_box .tab ul li button:hover {
+    background-color: none;
+  }
   .onair_box .program_box:nth-child(n+2) {
     display: none;
   }
@@ -1191,7 +1194,7 @@ body {
   background-color: #4239C7;
   transition: all 0.3s;
 }
-.news .contents_box .tab ul li button:not(.active):hover::before, .news .contents_box .tab ul li button:not(.active):focus-visible::before {
+.news .contents_box .tab ul li:not(.active):hover button::before, .news .contents_box .tab ul li:not(.active):focus-visible button::before {
   width: calc(100% - 12px);
 }
 .news .contents_box .tab ul li.active {
@@ -1405,8 +1408,8 @@ body {
   .news .contents_box .tab ul li button::before {
     right: 0;
   }
-  .news .contents_box .tab ul li button:not(.active):hover::before, .news .contents_box .tab ul li button:not(.active):focus-visible::before {
-    width: 100%;
+  button .news .contents_box .tab ul li:not(.active):hover button::before, .news .contents_box .tab ul li:not(.active):focus-visible button::before {
+    width: 0%;
   }
   .news .contents_box .tab ul li.active button::before {
     animation: none;
@@ -1715,7 +1718,7 @@ body {
   background-color: #C1A7E4;
   transition: all 0.3s;
 }
-.program .contents_box .tab ul li button:not(.active):hover::before, .program .contents_box .tab ul li button:not(.active):focus-visible::before {
+.program .contents_box .tab ul li:not(.active):hover button::before, .program .contents_box .tab ul li:not(.active):focus-visible button::before {
   width: calc(100% - 12px);
 }
 .program .contents_box .tab ul li.active {
@@ -1845,8 +1848,8 @@ body {
   .program .wrapper .contents_box .tab ul li button::before {
     right: 0;
   }
-  .program .wrapper .contents_box .tab ul li button:not(.active):hover::before, .program .wrapper .contents_box .tab ul li button:not(.active):focus-visible::before {
-    width: 100%;
+  .program .wrapper .contents_box .tab ul li:not(.active):hover button::before, .program .wrapper .contents_box .tab ul li:not(.active):focus-visible button::before {
+    width: 0;
   }
   .program .wrapper .contents_box .tab ul li.active button::before {
     animation: none;
