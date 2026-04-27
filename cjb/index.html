@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <script src="js/main.js"></script>
     <script src="js/layout.js"></script>
@@ -245,11 +247,11 @@
         </section>
         <section class="news">
             <div class="wrapper">
-                <div class="tit_box">
+                <div class="tit_box" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <strong class="subtit">NEWS</strong>
                     <h2>오늘의 충북 뉴스</h2>
                 </div>
-                <div class="contents_box">
+                <div class="contents_box" data-aos="fade-up" data-aos-delay="150" data-aos-anchor-placement="top-center">
                     <div class="tab">
                         <ul role="tablist">
                             <li id="main_news" role="tab" aria-selected="true" aria-controls="main_news_contents" class="active">
@@ -626,13 +628,13 @@
 
         </section>
         <section class="vod">
-            <div class="tit_box">
+            <div class="tit_box" data-aos="fade-up" data-aos-anchor-placement="top-center">
                 <div class="wrapper">
                     <strong class="subtit">VOD</strong>
                     <h2>CJB 편성 다시보기</h2>
                 </div>
             </div>
-            <div class="contents_box">
+            <div class="contents_box" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top-center">
                 <div class="wrapper">
                     <button class="swiper_nav prev"><span class="sr-only">이전 영상 목록</span></button>
                     <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
@@ -979,11 +981,11 @@
         </section>
         <section class="program">
             <div class="wrapper">
-                <div class="tit_box">
+                <div class="tit_box" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <strong class="subtit">PROGRAM</strong>
                     <h2>편성 프로그램</h2>
                 </div>
-                <div class="contents_box">
+                <div class="contents_box" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top-center">
                     <div class="tab">
                         <ul role="radiogroup">
                             <li id="all" role="radio" aria-pressed="true" aria-controls="program_contents" class="active">
@@ -1090,12 +1092,12 @@
         </section>
         <section class="radio">
             <div class="wrapper">
-                <div class="tit_box">
+                <div class="tit_box" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <strong class="subtit">RADIO</strong>
                     <h2>청주방송 FM 101.5</h2>
                 </div>
                 <div class="contents_box">
-                    <div class="onair">
+                    <div class="onair" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top-center">
                         <a href="#none" class="onair_cover">
                             <div class="photo">
                                 <img src="images/main/radio_01.jpg" alt="CJB 라디오살롱">
@@ -1108,7 +1110,7 @@
                             <div class="bar"><div class="gauge"></div></div>
                         </div>
                     </div>
-                    <div class="list">
+                    <div class="list" data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="top-center">
                         <ul>
                             <li>
                                 <a href="#none" class="radio_cover">
@@ -1222,7 +1224,7 @@
                         <button class="next"><span class="sr-only">다음 공지사항 목록</span></button>
                     </div>
                 </div>
-                <button class="more"><span>더보기</span></button>
+                <button class="more" data-aos="fade-up" data-aos-anchor-placement="top-center"><span>더보기</span></button>
 
             </div>
         </section>
