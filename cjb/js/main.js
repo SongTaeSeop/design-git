@@ -15,14 +15,6 @@ $(document).ready(function() {
     $(window).resize(function() {
         check_desktop();
     });
-
-    function swiper_pc_only(s, target_device) {
-        if (target_device) {
-            s.enable();
-        } else {
-            s.disable();
-        }
-    }
     
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
@@ -37,7 +29,7 @@ $(document).ready(function() {
 
         loopPreventsSliding: false, /* loop 적용 시 딜레이가 추가됨 */
         pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-            el: '.swiper-pagination', /* 해당 요소의 class명 */
+            el: '.visual .swiper-pagination', /* 해당 요소의 class명 */
             clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
         },
     });
@@ -125,6 +117,7 @@ $(document).ready(function() {
         if (mutations.length > 1) {
             filtered = Array.from(mutations).filter((dom) => (dom.target.className == 'active'));
             target = $(filtered[0].target);
+            
             target.parent()[0].scrollTo({
                 left: target[0].offsetLeft - 16,
                 behavior: 'smooth'
@@ -144,16 +137,16 @@ $(document).ready(function() {
         slidesOffsetBefore: 12,
         slidesOffsetAfter: 12,
         spaceBetween: 24,
+        enabled: false,
+        breakpoints: {
+            1025: {
+                enabled: true
+            },
+        },
         navigation: {
             nextEl: '.vod .contents_box .next',
             prevEl: '.vod .contents_box .prev',
         },
-    });
-
-    swiper_pc_only(vod_swiper, isDesktop);
-
-    $(window).resize(function() {
-        swiper_pc_only(vod_swiper, isDesktop);
     });
 
     const vod_more_btn = $('.vod .contents_box .more');
@@ -174,11 +167,13 @@ $(document).ready(function() {
     const program_swiper = new Swiper('.program .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: "auto", /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
-        observeSlideChildren: true, 
+        observeSlideChildren: true,
+        enabled: false,
         breakpoints: {
             769: {
                 slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 24,
+                enabled: true
             },
         },
         navigation: {
@@ -187,19 +182,20 @@ $(document).ready(function() {
         },
     });
 
-    swiper_pc_only(program_swiper, isTablet);
-
-    $(window).resize(function() {
-        swiper_pc_only(program_swiper, isTablet);
-    });
-
     const program_more_btn = $('.program .contents_box .more');
     const program_list = $('.program .contents_box .swiper-wrapper');
+    const program_tab_btn = $('.program .tab li');
     
     program_more_btn.click(function() {
+        selected_filter = $('.program .tab li.active').attr('id');
         if (!isTablet && !program_list.hasClass('open')) {
             program_list.addClass('open');
-            program_list.find(':visible:nth-child(n+5) a').show();
+            if (selected_filter == 'all') {
+                program_list.children().show();
+            } else {
+                program_list.children().hide(); // 전체 숨기기
+                program_list.children('[data-day~="' + selected_filter + '"]').show();
+            }
             program_more_btn.hide();
         }
     });
@@ -220,7 +216,6 @@ $(document).ready(function() {
      * 4. 선택한 날짜에 맞는 program_list 내 li을 show하고 나머지는 hide
      * ***/
 
-    const program_tab_btn = $('.program .tab li');
 
     program_tab_btn.click(function() {
         program_tab_btn.removeClass('active');
@@ -236,26 +231,23 @@ $(document).ready(function() {
         program_list.removeClass('open');
         if (selected_filter == 'all') {
             program_list.children().show();
-            // if (!isTablet) {
-            //     program_list.removeClass('open');
-            //     program_more_btn.show();
-            // }
         } else {
             program_list.children().hide(); // 전체 숨기기
             program_list.children('[data-day~="' + selected_filter + '"]').show();
         }
         program_swiper.update();
         swiper_overflow_check(program_swiper, $('.program .swiper'), 'drag');
+
         if (program_list.children(':visible').length > 0) {
-            program_list.find(':visible a').first().focus();
             if (program_list.children(':visible').length > 4) {
                 if (!isTablet) {
-                    program_list.find(':visible:nth-child(n+5) a').hide();
+                    program_list.children(':visible').slice(4).hide();
                     program_more_btn.show();
                 }
             } else {
                 program_more_btn.hide();
             }
+            program_list.find(':visible a').first().focus();
         }
     });
     
@@ -284,10 +276,15 @@ $(document).ready(function() {
      ***/
 
     const notice_swiper = new Swiper('.notice .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: "auto", /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
+            328: {
+                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 16,
+            },
             769: {
+                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 24,
             },
         },

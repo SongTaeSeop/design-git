@@ -60,6 +60,7 @@ $(document).ready(function() {
     sitemap_close_btn.click(function() {
         if (header.hasClass('open')) {
             header.removeClass('open');
+            $('.header .util .search').focus();
         }
     });
 
@@ -80,8 +81,13 @@ $(document).ready(function() {
      * 자동 포커스 아웃으로 닫기
      ***/
 
-    sitemap_close_btn.on('focusout', function() {
-        header.removeClass('open');
+    const visual_pagination_bullet = $('.visual .swiper_box .ctrl .swiper-pagination .swiper-pagination-bullet');
+
+    visual_pagination_bullet.on('focusin', function() {
+        if (header.hasClass('open')) {
+            header.removeClass('open');
+            $('.header .util .search').focus();
+        }
     })
 
 });

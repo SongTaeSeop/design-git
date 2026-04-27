@@ -53,13 +53,15 @@
     }
 }
 
+$tab-btn-right-pad: 12px;
+
 @keyframes news_tab_bar {
     0% {
-        width: 100%;
+        width: calc(100% - $tab-btn-right-pad);
         height: 2px;
         bottom: 0;
         transform: translateY(0);
-        right: 0;
+        right: $tab-btn-right-pad;
     }
     50% {
         width: 2px;
@@ -79,7 +81,7 @@
 
 .visual {
     position: relative;
-    .swiper_box {     
+    .swiper_box {
         .swiper {
             height: 100vh;
             .swiper-slide {
@@ -390,8 +392,8 @@
             position: absolute;
             left: 50%;
             top: 0;
-            width: 8px;
-            height: 5px;
+            width: 16px;
+            height: 10px;
             transform: translateX(-50%) rotate(180deg);
             background-image: var.$icon-arrow;
             @include mixin.icon-svg(contain);
@@ -453,17 +455,18 @@
                     font-size: var.$size-level4;
                     color: var.$color-tit;
                     button {
+                        padding: 0 $tab-btn-right-pad 0 0;
                         &::before {
                             content: "";
                             position: absolute;
-                            @include mixin.pos(right, 0, bottom, 0);
+                            @include mixin.pos(right, $tab-btn-right-pad, bottom, 0);
                             width: 0;
                             height: 2px;
                             background-color: var.$emphasis;
                             transition: all .3s;
                         }
                         &:not(.active):hover::before,&:not(.active):focus-visible::before {
-                            width: 100%;
+                            width: calc(100% - $tab-btn-right-pad);
                         }
 
                     }
@@ -501,6 +504,7 @@
                         flex-direction: row-reverse;
                         padding: var.$gap;
                         gap: var.$gap;
+                        transition: background-color .3s;
 
                         .photo {
                             width: 135px;
@@ -697,6 +701,12 @@
                         button {
                             white-space: nowrap;
                             padding: function.em(13, 20) function.em(8, 20);
+                            &::before {
+                                right: 0;
+                            }
+                            &:not(.active):hover::before,&:not(.active):focus-visible::before {
+                                width: 100%;
+                            }
                         }
                         &.active button::before {
                             animation: none;
@@ -793,7 +803,7 @@
                         }
                         &:hover {
                             .photo_box .photo img {
-                                transform: scale3d(1.125, 1.125, 1);
+                                transform: scale3d(1.0625, 1.0625, 1);
                             }
                         }
                         
@@ -900,11 +910,11 @@
                 .swiper_nav {
                     &.prev {
                         right: auto;
-                        left: -20px;
+                        left: -14px;
                     }
                     &.next {
                         left: auto;
-                        right: -20px;
+                        right: -14px;
 
                     }
                 }
@@ -985,17 +995,18 @@
                     position: relative;
                     font-size: var.$size-level4;
                     button {
+                        padding: 0 $tab-btn-right-pad 0 0;
                         &::before {
                             content: "";
                             position: absolute;
-                            @include mixin.pos(right, 0, bottom, 0);
+                            @include mixin.pos(right, $tab-btn-right-pad, bottom, 0);
                             width: 0;
                             height: 2px;
                             background-color: var.$emphasis-white;
                             transition: all .3s;
                         }
                         &:not(.active):hover::before,&:not(.active):focus-visible::before {
-                            width: 100%;
+                            width: calc(100% - $tab-btn-right-pad);
                         }
 
                     }
@@ -1113,6 +1124,12 @@
                             button {
                                 white-space: nowrap;
                                 padding: function.em(13, 20) function.em(8, 20);
+                                &::before {
+                                    right: 0;
+                                }
+                                &:not(.active):hover::before,&:not(.active):focus-visible::before {
+                                    width: 100%;
+                                }
                             }
                             &.active button::before {
                                 animation: none;
@@ -1151,10 +1168,9 @@
                     .swiper {
                         margin: 0 0 var.$gap_mobile 0;
                         ul {
-                            
                             @include mixin.grid-justify(space-between, stretch, 2);
                             @include mixin.flex-gap;
-                            transform: none;
+                            transform: none !important;
                                 
                             .swiper-slide {
                                 .photo {
@@ -1241,7 +1257,7 @@
                     word-break: normal;
                     max-width: calc(462 / 666 * 100%);
                     margin: 0 0 function.em(25, 18) 0;
-                    overflow-x: hidden;
+                    overflow: hidden;
                 }
                 .time {
                     display: block;
@@ -1315,6 +1331,7 @@
                             font-size: var.$size-level6;
                             @include mixin.line-clamp(3);
                             margin: 22px 0;
+                            overflow-x: hidden;
                         }
                         .time {
                             font-size: var.$size-level6;
@@ -1702,8 +1719,6 @@
                 $col_count: 2;
                 @include mixin.grid-justify(space-between, stretch, $col_count);
                 height: 100%;
-                border-radius: 8px;
-                overflow: hidden;
                 li {
                     a {
                         @include mixin.flex-justify(center, center); 
@@ -1750,6 +1765,18 @@
                                 @include mixin.icon-svg(contain);
                             }
                         }
+                    }
+                    &:nth-child(1) a {
+                        border-radius: 8px 0 0 0;
+                    }
+                    &:nth-child(2) a {
+                        border-radius: 0 8px 0 0;
+                    }
+                    &:nth-child(3) a {
+                        border-radius: 0 0 0 8px;
+                    }
+                    &:nth-child(4) a {
+                        border-radius: 0 0 8px 0;
                     }
                 }
             }
@@ -1807,6 +1834,7 @@
                         width: 100%;
                         font-size: var.$size-small;
                         color: var.$gray;
+                        font-variant-numeric: tabular-nums;
                         .swiper-pagination-current {
                             font-weight: var.$weight-bold;
                             color: var.$color-text; 
@@ -1872,7 +1900,7 @@
 }
 /* @media screen and (max-width:1440px) */
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1024px) {
     .banner {
         .wrapper {
             grid-template-areas:
@@ -1888,9 +1916,23 @@
                 }
             }
             .social {
-                border-radius: 4px;
                 ul {
                     height: 170px;
+                    li {
+                        
+                        &:nth-child(1) a {
+                            border-radius: 4px 0 0 0;
+                        }
+                        &:nth-child(2) a {
+                            border-radius: 0 4px 0 0;
+                        }
+                        &:nth-child(3) a {
+                            border-radius: 0 0 0 4px;
+                        }
+                        &:nth-child(4) a {
+                            border-radius: 0 0 4px 0;
+                        }
+                    }
                 }
             }
             .media_center {
@@ -1902,21 +1944,22 @@
         }
     }
 
-} /* @media screen and (max-width:768px) */
+} /* @media screen and (max-width:1024px) */
 
 @media screen and (max-width:540px) {
     .banner {
         .wrapper {
             .report {
-                background-image: linear-gradient(105deg, var.$main-blue2 30%, function.rgba-mix(var.$main-blue2, 0) 100%), url(../images/main/banner_report_bg.jpg);
+                background-image: linear-gradient(105deg, var.$main-blue2 20%, function.rgba-mix(var.$main-blue2, 0) 100%), url(../images/main/banner_report_bg.jpg);
                 background-size: cover;
+                background-position-x: 30vw;
             }
         }
     }
     
 }   /* @media screen and (max-width:540px) */
 
-/* .social 보더 효과 */
+/* .social 보더 2줄 */
 @media screen and (min-width:341px) {
     .banner {
         .wrapper {
@@ -1936,6 +1979,8 @@
         }
     }
 }
+
+/* .social 보더 1줄 */
 @media screen and (max-width:340px) {
     .banner {
         .wrapper {
@@ -1949,6 +1994,18 @@
                         }
                         &:nth-last-child(-n + #{$col_count}) a {
                             border-bottom-width: 0;
+                        }
+                        &:nth-child(1) a {
+                            border-radius: 4px 4px 0 0;
+                        }
+                        &:nth-child(2) a {
+                            border-radius: 0;
+                        }
+                        &:nth-child(3) a {
+                            border-radius: 0;
+                        }
+                        &:nth-child(4) a {
+                            border-radius: 0 0 4px 4px;
                         }
                     }
                 }
