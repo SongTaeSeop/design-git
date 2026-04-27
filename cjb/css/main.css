@@ -533,7 +533,7 @@ body {
   }
   .header .sitemap_wrap .sitemap_box ul.depth1 > li > a {
     /* 1차 메뉴 */
-    padding: 0.25em 0 0.25em 0.5em;
+    padding: 0.5em 0 0.5em 0.5em;
     min-width: 5.625em;
     font-weight: 800;
     background-color: #F0E6FF;
@@ -543,6 +543,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     justify-content: start;
     align-items: start;
+    grid-template-rows: repeat(2, 1fr);
     gap: 0.5625em 0.5625em;
     width: 100%;
   }

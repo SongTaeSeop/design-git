@@ -355,7 +355,7 @@
                         width: 100%;
                         > a {
                             /* 1차 메뉴 */
-                            padding: function.em(8, 32) 0 function.em(8, 32) function.em(16, 32);
+                            padding: function.em(16, 32) 0 function.em(16, 32) function.em(16, 32);
                             min-width: function.em(180, 32);
                             font-weight: var.$weight-bold;
                             background-color: var.$whitish;
@@ -363,6 +363,7 @@
                         
                         > ul.depth2 {
                             @include mixin.grid-justify(start, start, 4);
+                            grid-template-rows: repeat(2, 1fr);
                             gap: function.em(18, 32) function.em(18, 32);
                             width: 100%;
                             > li a {
