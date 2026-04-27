@@ -834,7 +834,7 @@ body {
 .visual .swiper_box .ctrl {
   position: absolute;
   left: 0;
-  top: clamp(302px, 44.3359375vw, 454px);
+  top: calc(1.2941176471em + clamp(280px, 42.1875vw, 432px));
   width: 100%;
   color: #ffffff;
 }

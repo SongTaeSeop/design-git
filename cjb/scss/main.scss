@@ -120,7 +120,7 @@ $tab-btn-right-pad: 12px;
         }
         .ctrl {
             position: absolute;
-            @include mixin.pos(left, 0, top, function.clamping(302, 454, 1024, 1px));
+            @include mixin.pos(left, 0, top, calc(function.em(22, 17) + function.clamping(280, 432, 1024, 1px)));
             width: 100%;
             color: var.$white;
             .wrapper {
