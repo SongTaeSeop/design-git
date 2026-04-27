@@ -712,9 +712,8 @@ $tab-btn-right-pad: 12px;
                                 right: 0;
                             }
                         }
-                        button
                         &:not(.active):hover button::before,&:not(.active):focus-visible button::before {
-                            width: 0%;
+                            width: 0;
                         }
                         &.active button::before {
                             animation: none;

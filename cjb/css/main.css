@@ -1408,8 +1408,8 @@ body {
   .news .contents_box .tab ul li button::before {
     right: 0;
   }
-  button .news .contents_box .tab ul li:not(.active):hover button::before, .news .contents_box .tab ul li:not(.active):focus-visible button::before {
-    width: 0%;
+  .news .contents_box .tab ul li:not(.active):hover button::before, .news .contents_box .tab ul li:not(.active):focus-visible button::before {
+    width: 0;
   }
   .news .contents_box .tab ul li.active button::before {
     animation: none;
