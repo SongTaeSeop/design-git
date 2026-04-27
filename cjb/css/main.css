@@ -256,7 +256,7 @@ body {
   transform: translateX(-50%);
   width: 0;
   height: 4px;
-  border-radius: 100vh;
+  border-radius: 100dvh;
   background-color: currentColor;
   transition: width 0.3s;
 }

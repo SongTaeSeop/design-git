@@ -3,7 +3,8 @@ $(document).ready(function() {
     let isTablet;
 
     const breakpoint1 = 1024;
-    const breakpoint2 = 768;
+    const breakpoint2 = 580;
+
 
     function check_desktop() {
         isDesktop = ($(window).width() > breakpoint1);
@@ -242,15 +243,16 @@ $(document).ready(function() {
         swiper_overflow_check(program_swiper, $('.program .swiper'), 'drag');
 
         if (program_list.children(':visible').length > 0) {
-            if (program_list.children(':visible').length > 4) {
+            program_list.find(':visible a').first().focus();
+        }
+        console.log(program_list.children(':visible'))
+        if (program_list.children(':visible').length > 4) {
                 if (!isTablet) {
                     program_list.children(':visible').slice(4).hide();
                     program_more_btn.show();
                 }
             } else {
                 program_more_btn.hide();
-            }
-            program_list.find(':visible a').first().focus();
         }
     });
     
