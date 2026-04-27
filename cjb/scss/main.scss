@@ -1321,6 +1321,7 @@ $tab-btn-right-pad: 12px;
                         pointer-events: none;
                         opacity: 0;
                         transition: opacity .3s;
+                        overflow: hidden;
                         h4 {
                             font-size: var.$size-level5;
                             font-weight: var.$weight-bold;
@@ -1422,19 +1423,23 @@ $tab-btn-right-pad: 12px;
                     text-align: center;
                     margin: 0 var.$gap_mobile;
                     p {
-                        // max-width: 508px;
-                        display: none;
+                        max-width: 508px;
                     }
                     .bar {
-                        // max-width: 508px;
-                        // margin-bottom: calc(var.$gap_mobile * 6);
-                        display: none;
+                        max-width: 508px;
+                        margin-bottom: calc(var.$gap_mobile * 6);
                     }
                 }
 
             }
             .list ul {
                 grid-template-columns: repeat(2, 1fr);
+                li a.radio_cover .txt_box {
+                    padding: 0 5px;
+                    p {
+                        display: none;
+                    }
+                }
             }   
         }
     }

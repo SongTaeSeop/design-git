@@ -2077,6 +2077,7 @@ body {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s;
+  overflow: hidden;
 }
 .radio .contents_box .list ul li a.radio_cover .txt_box h4 {
   font-size: clamp(1.8rem, 1.953125vw, 2rem);
@@ -2168,13 +2169,20 @@ body {
     margin: 0 16px;
   }
   .radio .contents_box .onair .txt_box p {
-    display: none;
+    max-width: 508px;
   }
   .radio .contents_box .onair .txt_box .bar {
-    display: none;
+    max-width: 508px;
+    margin-bottom: 96px;
   }
   .radio .contents_box .list ul {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .radio .contents_box .list ul li a.radio_cover .txt_box {
+    padding: 0 5px;
+  }
+  .radio .contents_box .list ul li a.radio_cover .txt_box p {
+    display: none;
   }
 } /* @media screen and (max-width:768px) */
 /* .notice */
