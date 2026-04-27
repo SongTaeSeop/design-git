@@ -767,7 +767,7 @@ $tab-btn-right-pad: 12px;
 
 
 .vod {
-    margin: function.clamping(88, 197, 1024, 1px) 0 function.clamping(70, 147, 1024, 1px) 0;
+    margin: function.clamping(88, 197, 1024, 1px) 0 function.clamping(131, 147, 1024, 1px) 0;
     .tit_box {
         @include mixin.title;
     }
@@ -971,7 +971,7 @@ $tab-btn-right-pad: 12px;
 
 /* .program */
 .program {
-    padding: function.clamping(97, 194, 1024, 1px) 0 function.clamping(70, 140, 1024, 1px);
+    padding: function.clamping(97, 194, 1024, 1px) 0 function.clamping(134, 140, 1024, 1px);
     background-color: var.$blackish;
     color: var.$white;
     .tit_box {
@@ -1165,7 +1165,7 @@ $tab-btn-right-pad: 12px;
 } /* @media screen and (max-width:1024px) */
 
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:580px) {
     .program {
         .wrapper {
             .contents_box {
@@ -1205,7 +1205,7 @@ $tab-btn-right-pad: 12px;
         
     }
 
-} /* @media screen and (max-width:768px) */
+} /* @media screen and (max-width:580px) */
 
 
 /* .radio */
@@ -1414,7 +1414,7 @@ $tab-btn-right-pad: 12px;
 
 } /* @media screen and (max-width:1024px) */
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:580px) {
     .radio {
         .contents_box {
             .onair {
@@ -1450,7 +1450,7 @@ $tab-btn-right-pad: 12px;
             }   
         }
     }
-} /* @media screen and (max-width:768px) */
+} /* @media screen and (max-width:580px) */
 
 @media screen and (max-width:380px) {
     .radio {

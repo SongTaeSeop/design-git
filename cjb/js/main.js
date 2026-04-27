@@ -168,6 +168,11 @@ $(document).ready(function() {
         observeSlideChildren: true,
         enabled: false,
         breakpoints: {
+            581: {
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 16,
+                enabled: true
+            },
             769: {
                 slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 24,

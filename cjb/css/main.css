@@ -1445,7 +1445,7 @@ body {
   }
 }
 .vod {
-  margin: clamp(88px, 19.23828125vw, 197px) 0 clamp(70px, 14.35546875vw, 147px) 0;
+  margin: clamp(88px, 19.23828125vw, 197px) 0 clamp(131px, 14.35546875vw, 147px) 0;
 }
 .vod .tit_box {
   margin: 0 0 clamp(60px, 7.12890625vw, 73px) 0;
@@ -1652,7 +1652,7 @@ body {
 }
 /* .program */
 .program {
-  padding: clamp(97px, 18.9453125vw, 194px) 0 clamp(70px, 13.671875vw, 140px);
+  padding: clamp(97px, 18.9453125vw, 194px) 0 clamp(134px, 13.671875vw, 140px);
   background-color: #00072C;
   color: #ffffff;
 }
@@ -1869,7 +1869,7 @@ body {
     bottom: calc(100% + 16px + 10px);
   }
 } /* @media screen and (max-width:1024px) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 580px) {
   .program .wrapper .contents_box .tab-conts {
     border-width: 0;
   }
@@ -1885,12 +1885,12 @@ body {
     transform: none !important;
   }
 }
-@media screen and (max-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 580px) and (max-width: 1024px) {
   .program .wrapper .contents_box .tab-conts .swiper ul {
     gap: 16px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 580px) {
   .program .wrapper .contents_box .tab-conts .swiper ul .swiper-slide .photo {
     border-radius: 4px;
   }
@@ -1906,7 +1906,7 @@ body {
   .program .wrapper .contents_box .more {
     display: block;
   }
-} /* @media screen and (max-width:768px) */
+} /* @media screen and (max-width:580px) */
 /* .radio */
 .radio {
   margin: clamp(88px, 18.9453125vw, 194px) 0 clamp(70px, 13.76953125vw, 141px) 0;
@@ -2150,7 +2150,7 @@ body {
     border-radius: 4px;
   }
 } /* @media screen and (max-width:1024px) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 580px) {
   .radio .contents_box .onair {
     flex-direction: column;
   }
@@ -2181,7 +2181,7 @@ body {
   .radio .contents_box .list ul li a.radio_cover .txt_box p {
     margin: 2.8645833333vw 0;
   }
-} /* @media screen and (max-width:768px) */
+} /* @media screen and (max-width:580px) */
 @media screen and (max-width: 380px) {
   .radio .contents_box .list ul li a.radio_cover .txt_box p {
     display: none;
