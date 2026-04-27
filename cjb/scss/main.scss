@@ -1422,11 +1422,13 @@ $tab-btn-right-pad: 12px;
                     text-align: center;
                     margin: 0 var.$gap_mobile;
                     p {
-                        max-width: 508px;
+                        // max-width: 508px;
+                        display: none;
                     }
                     .bar {
-                        max-width: 508px;
-                        margin-bottom: calc(var.$gap_mobile * 6);
+                        // max-width: 508px;
+                        // margin-bottom: calc(var.$gap_mobile * 6);
+                        display: none;
                     }
                 }
 

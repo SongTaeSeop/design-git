@@ -2168,11 +2168,10 @@ body {
     margin: 0 16px;
   }
   .radio .contents_box .onair .txt_box p {
-    max-width: 508px;
+    display: none;
   }
   .radio .contents_box .onair .txt_box .bar {
-    max-width: 508px;
-    margin-bottom: 96px;
+    display: none;
   }
   .radio .contents_box .list ul {
     grid-template-columns: repeat(2, 1fr);
