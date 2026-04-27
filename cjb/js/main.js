@@ -212,7 +212,7 @@ $(document).ready(function() {
      * .program .tab 버튼으로 Swiper 필터링
      * 1. 선택한 li에 active를 주고 나머지는 제거
      * 2. 선택한 li 버튼 내용 뒤로 <span class="sr-only"> 선택됨</span> 추가하고 나머지는 제거
-     * 3. 선택한 li의 aria-pressed true로 하고 나머지는 false로 설정
+     * 3. 선택한 li의 aria-checked true로 하고 나머지는 false로 설정
      * 4. 선택한 날짜에 맞는 program_list 내 li을 show하고 나머지는 hide
      * ***/
 
@@ -224,8 +224,8 @@ $(document).ready(function() {
         program_tab_btn.find('.sr-only').remove();
         $(this).find('.tab-item').append(sr_only_selected);
 
-        program_tab_btn.attr('aria-pressed', 'false');
-        $(this).attr('aria-pressed', 'true');
+        program_tab_btn.attr('aria-checked', 'false');
+        $(this).attr('aria-checked', 'true');
 
         selected_filter = $(this).attr('id');
         program_list.removeClass('open');

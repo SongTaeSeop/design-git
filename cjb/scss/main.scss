@@ -108,14 +108,10 @@ $tab-btn-right-pad: 12px;
                         font-size: var.$size-level1;
                         font-weight: var.$weight-bold;
                         margin: function.em(14, 65) 0 function.em(21, 65) 0;
-                        .photo {
-                            display: inline-block;
-                            height: 1em;
+                        img {
                             margin: 0 function.em(11.5, 65) 0 0;
                             transform: translateY(function.em(7, 65));
-                            img {
-                                @include mixin.photo_img(contain);
-                            }
+                            height: 1em;
                         }
                     }
 
