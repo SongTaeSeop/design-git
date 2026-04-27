@@ -2019,6 +2019,7 @@ $tab-btn-right-pad: 12px;
                     $col_count: 1;
                     grid-template-columns: 1fr;
                     li {
+                        border-width: 0 0 1px 0;
                         &:nth-child(#{$col_count}n) a {
                             border-right-width: 0;
                         }

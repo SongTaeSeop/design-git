@@ -2749,6 +2749,9 @@ body {
   .banner .wrapper .social ul {
     grid-template-columns: 1fr;
   }
+  .banner .wrapper .social ul li {
+    border-width: 0 0 1px 0;
+  }
   .banner .wrapper .social ul li:nth-child(1n) a {
     border-right-width: 0;
   }
