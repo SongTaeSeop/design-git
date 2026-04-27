@@ -134,8 +134,6 @@ $(document).ready(function() {
 
     const vod_swiper = new Swiper('.vod .swiper', { /* 팝업을 감싼는 요소의 class명 */
         // effect: "fade", /* fade 효과 */
-        slidesOffsetBefore: 12,
-        slidesOffsetAfter: 12,
         spaceBetween: 24,
         enabled: false,
         breakpoints: {
