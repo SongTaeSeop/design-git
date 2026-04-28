@@ -1,0 +1,13 @@
+@use "default";
+@use "common";
+@use "fonts";
+@use "var";
+@use "function";
+@use "mixin";
+
+h1 {
+    font-size: var.$size-level1;
+    font-weight: var.$weight-bold;
+    color: var.$color-text;
+    line-height: var.$line-height-tit;
+}

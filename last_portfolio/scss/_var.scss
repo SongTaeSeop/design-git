@@ -1,0 +1,23 @@
+@use "function";
+
+$wrapper-w: 1440px;
+$p: 1.6rem;
+$header-h: function.clamping(48, 60, 1024, 1px);
+$weight-normal: 400;
+$weight-bold: 800;
+$line-height-normal: 1.5;
+$line-height-tit: 1.2;
+$size-level1: function.clamping(32, 60, 1024, 0.1rem); /* 60px */
+$size-level1-1: function.clamping(36, 48, 1024, 0.1rem); /* 48px */
+$size-level2: function.clamping(24, 32, 1024, 0.1rem); /* 32px */
+$size-level3: function.clamping(16, 24, 1024, 0.1rem); /* 24px */
+$color-text: #2C2C2B;
+$blackish: #071427;
+$main-blue: #0D2950;
+$main-blue2: #1A5FA0;
+$emphasis_white: #C8E8F5;
+$whitish: #E5F4F9;
+$tomato: #CE2939;
+$gray: #B8B8B7;
+$black: #000;
+$white: #fff;
