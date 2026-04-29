@@ -95,18 +95,23 @@
 @mixin title {
   @include head;
   font-size: var.$size-level1;
-  &::after {
-    @include head;
-    font-size: function.clamping(80, 120, 1024, 0.1rem);
-    position: absolute;
-    right: 0;
-    top: 0;
+  span {
+    position: relative;
+    &::after {
+      @include head;
+      font-size: function.clamping(80, 120, 1024, 0.1rem);
+      position: absolute;
+      right: -0.75em;
+      top: -0.8em;
+      z-index: -1;
+    }
   }
+  
 }
 
-@mixin border {
+@mixin border($color: var.$color-text) {
   border-style: solid;
-  border-color: var.$color-tit;
+  border-color: $color;
 }
 
 
@@ -138,6 +143,35 @@
 
 @mixin emphasis {
   .emphasis {
-    color: tomato;
+    position: relative;
+    display: inline-block;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -.15em;
+      width: 100%;
+      height: .65em;
+      background-color: function.rgba-mix(var.$tomato, .2);
+    }
   }
+}
+
+@mixin text-stroke($stroke-color) {
+  text-shadow: $stroke-color 3px 0px 0px, $stroke-color 2.83487px 0.981584px 0px, $stroke-color 2.35766px 1.85511px 0px, $stroke-color 1.62091px 2.52441px 0px, $stroke-color 0.705713px 2.91581px 0px, $stroke-color -0.287171px 2.98622px 0px, $stroke-color -1.24844px 2.72789px 0px, $stroke-color -2.07227px 2.16926px 0px, $stroke-color -2.66798px 1.37182px 0px, $stroke-color -2.96998px 0.42336px 0px, $stroke-color -2.94502px -0.571704px 0px, $stroke-color -2.59586px -1.50383px 0px, $stroke-color -1.96093px -2.27041px 0px, $stroke-color -1.11013px -2.78704px 0px, $stroke-color -0.137119px -2.99686px 0px, $stroke-color 0.850987px -2.87677px 0px, $stroke-color 1.74541px -2.43999px 0px, $stroke-color 2.44769px -1.73459px 0px, $stroke-color 2.88051px -0.838247px 0px;
+}
+
+@mixin button($bcolor,
+  $url,
+  $x1,
+  $y1,
+  $bor,
+  $col) {
+  background: $bcolor;
+  -webkit-mask: url($url);
+  mask: url($url);
+  -webkit-mask-size: $x1 $y1;
+  mask-size: $x1 $y1;
+  border: $bor;
+  color: $col;
 }

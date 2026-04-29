@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/type-hangul.bundle.js"></script>
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -11,20 +12,199 @@
 </head>
 <body>
     <div id="wrap">
-        <main class="contents">
-            <section class="visual">
+        <section class="visual">
+            <div class="wrapper">
+                <div class="bg"></div>
+                <div class="fg">
+                    <div class="photo"><img src="images/visual_bg.jpg" alt="책상 위 노트북과 커피"></div>
+                    <div class="tit_box">
+                        <h1>송태섭의<br>
+                            포트폴리오
+                        </h1>
+                        <p><span class="visual_text">나를 위한</span><br>
+                            웹페이지를 설계합니다
+                        </p>
+                    </div>
+                </div>
+                <span class="bg_tit">PORTFOLIO</span>
+                <span class="scroll">아래로 스크롤</span>
+            </div>
+        </section>
+        <section class="spec">
+            <div class="wrapper">
+                <div class="tit_box">
+                    <h2>
+                        변화에 두려움 없이 <br>
+                        늘 <span class="emphasis">새로움에 도전</span>하며 <br>
+                        <span class="emphasis">모두에게 동일한</span> 웹 경험을 전달하겠습니다
+                    </h2>
+                </div>
+                <div class="list">
+                    <ul class="depth1">
+                        <h3>자격증</h3>
+                        <li>
+                            <ul class="depth2">
+                                <li>
+                                    <strong>2020</strong>
+                                    <span class="item">컴퓨터활용능력 1급</span>
+                                </li>
+                                <li>
+                                    <strong>2021</strong>
+                                    <span class="item">운전면허자격증 1급</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="depth1">
+                        <h3>교육</h3>
+                        <li>
+                            <ul class="depth2">
+                                <li>
+                                    <strong>2026</strong>
+                                    <span class="item">순천향대학교 <br>AI·빅데이터학과 졸업
+                                    </span>
+                                </li>
+                                <li>
+                                    <strong>2026</strong>
+                                    <span class="item">이지디자인컴퓨터학원 UI/UX 반응형웹디자인 & 웹퍼블리셔 수료</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="depth1">
+                        <h3>스킬</h3>
+                        <li>
+                            <ul class="depth2">
+                                <li>
+                                    <strong>WEB</strong>
+                                    <span class="item">HTML5/CSS/<br>Javascript</span>
+                                    <span class="item">jQuery, Sass</span>
+                                </li>
+                                <li>
+                                    <strong>DESIGN</strong>
+                                    <span class="item">Adobe Photoshop/<br>Illustrator</span>
+                                    <span class="item">Figma</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <span class="bg_tit">SPECIFICATION</span>
+            </div>
+        </section>
+        <section class="showcase">
+            <nav class="local_nav">
+                <ol>
+                    <!-- active 클래스로 활성화 -->
+                    <li class="active"><a href="#kahm"><span>한국미술역사관</span></a></li>
+                    <li><a href="#wholecoffee"><span>홀커피</span></a></li>
+                    <li><a href="#cjb"><span>CJB 청주방송</span></a></li>
+                </ol>
+            </nav>
+            <div id="kahm" class="showcase_item">
+                <div class="showcase_wrapper">
+                    <div class="txt_box">
+                        <h2><span>한국미술역사관</span></h2>
+                        <div class="list">
+                            <div class="item">
+                                <h3>개요</h3>
+                                <p>한국미술역사관은 한국의 다양한 미술가들의 작품을 온라인에 전시하는 사이버 전시장으로, <span class="emphasis">단순하고 절제된 환경</span>에서 다양한 형태의 작품을 전면으로 내세울 수 있도록 개편하였다.</p>
+                            </div>
+                            <div class="item">
+                                <h3>작업 기간</h3>
+                                <p>15일, 개인 제작</p>
+                            </div>
+                            <div class="item">
+                                <h3>주요 색상</h3>
+                                <div class="color_list">
+                                    <button data-color="#111111"><span class="sr-only">색상 복사 버튼</span></button>
+                                    <button data-color="#EFEFEF"><span class="sr-only">색상 복사 버튼</span></button>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <a href="#none">웹페이지 바로가기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="images/showcase_mockup_01.png" alt="한국미술역사관 목업">
+                    </div>
+                </div>
+            </div>
+            <div id="wholecoffee" class="showcase_item">
+                <div class="showcase_wrapper">
+                    <div class="txt_box">
+                        <h2><span>홀커피</span></h2>
+                        <div class="list">
+                            <div class="item">
+                                <h3>개요</h3>
+                                <p>홀커피는 카페 창업을 원하는 예비 점주들에게 
+                                    홀커피 프렌차이즈에 대한 소개와 창업 문의를 받는 
+                                    목적의 웹페이지이다. <span class="emphasis">한 페이지</span>에서 창업에 관련된 
+                                    정보를 찾을 수 있도록 개편하였으며, 탐색이 쉽도록 
+                                    주요 <span class="emphasis">섹션별 바로가기</span>를 헤더로 구현하였다.</p>
+                            </div>
+                            <div class="item">
+                                <h3>작업 기간</h3>
+                                <p>16일, 개인 제작</p>
+                            </div>
+                            <div class="item">
+                                <h3>주요 색상</h3>
+                                <div class="color_list">
+                                    <button data-color="#4B2E26"><span class="sr-only">색상 복사 버튼</span></button>
+                                    <button data-color="#DBCCB3"><span class="sr-only">색상 복사 버튼</span></button>
+                                    <button data-color="#393F31"><span class="sr-only">색상 복사 버튼</span></button>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <a href="#none">웹페이지 바로가기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="images/showcase_mockup_02.png" alt="홀커피 목업">
+                    </div>
+                </div>
+            </div>
+            <div id="cjb" class="showcase_item">
+                <div class="showcase_wrapper">
+                    <div class="txt_box">
+                        <h2><span>CJB 청주방송</span></h2>
+                        <div class="list">
+                            <div class="item">
+                                <h3>개요</h3>
+                                <p>CJB 청주방송은 청주를 포함한 충북의 소식을 전달하는 뉴스와 
+                                    자체 편성 프로그램을 제작하는 방송사이다. 
+                                    기존 웹페이지의 다시보기 콘텐츠를, 사용자에게 <span class="emphasis">익숙한 
+                                    뉴스와 동영상 사이트의 디자인</span>으로 개편하였다.</p>
+                            </div>
+                            <div class="item">
+                                <h3>작업 기간</h3>
+                                <p>14일, 개인 제작</p>
+                            </div>
+                            <div class="item">
+                                <h3>주요 색상</h3>
+                                <div class="color_list">
+                                    <button data-color="#00072C"><span class="sr-only">색상 복사 버튼</span></button>
+                                    <button data-color="#003399"><span class="sr-only">색상 복사 버튼</span></button>
+                                    <button data-color="#4239C7"><span class="sr-only">색상 복사 버튼</span></button>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <a href="#none">웹페이지 바로가기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="images/showcase_mockup_01.png" alt="한국미술역사관 목업">
+                    </div>
+                </div>
+            </div>
 
-            </section>
-            <section class="spec">
+        </section>
+        <section class="thankyou">
 
-            </section>
-            <section class="showcase">
-
-            </section>
-            <section class="thankyou">
-
-            </section>
-        </main>
+        </section>
     </div>
 </body>
 </html>

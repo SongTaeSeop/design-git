@@ -1,68 +1,27 @@
 $(document).ready(function() {
-    AOS.init({
-        offset: ($(window).height() / 2),
-        duration: 500,
-        once: true
-    });
-    function toggleClass($target, className) {
-        if (!className || typeof className !== 'string') return;
+    const visual_text_list = ['사용자의 Needs를 만족하는', '고객의 요구 사항을 들어주는', '모두를 위한'];
+    const visual_text_delay = 1500;
+    const visual_text_intervalType = 30;
+    let visual_text_idx = 0;
 
-        const $els = ($target instanceof jQuery) ? $target : $($target);
-        $els.each(function() {
-            const $el = $(this);
-            if ($el.hasClass(className)) {
-            $el.removeClass(className);
-            } else {
-            $el.addClass(className);
-            }
-        });
-    }
 
-    /*
-    내부 링크 버튼:
-    클릭하면 아래로 스크롤
-    탭 강조 효과는 layout.js에서
-    */
-
-    function scrollToElement(elementSelector, instance = 0) {
-        const elements = document.querySelectorAll(elementSelector);
-        if (elements.length > instance) {
-            elements[instance].scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    }
-    $('.gnb_mobile ul li a').click(function(e) {
-        e.preventDefault();
-        scrollToElement($(this).attr('href'));
-    })
-    
-    /*
-    faq 아코디언
-    버튼을 클릭하면:
-    */
-    $('.faq .contents_box .item .accordion-button').click(function() {
-        // 1. active 클래스 줌
-        toggleClass($(this), 'active');
-        toggleClass($(this).parent().parent(), 'active');
-        // 2. aria-expanded를 True로
-        if ($(this).attr('aria-expanded') == 'true') {
-            $(this).attr('aria-expanded', 'false');            
-        } else {
-            $(this).attr('aria-expanded', 'true');
-        }
-        // 3. 내용 표시 또는 숨김
-        
+    const visual_text = $('.visual .tit_box .visual_text')[0];
+    visual_text.addEventListener('th.endType', function (e) {
+        setTimeout(() => {
+            visual_text_idx = (visual_text_idx + 1);
+            TypeHangul.type('.visual .tit_box .visual_text', {text: visual_text_list[visual_text_idx % 3], intervalType: visual_text_intervalType});
+        }, visual_text_delay); // 밀리초 (1초)
     });
 
-    /*
-    Top 버튼
-    */
-   $('.util .top').click(function() {
-        $('html,body').stop().animate({
-            scrollTop: 0
-        }, 300);
-   });
+    TypeHangul.type('.visual .tit_box .visual_text', {text: visual_text_list[visual_text_idx % 3], intervalType: visual_text_intervalType});
 
-   
+
+    /*** 
+    * .showcase color_list 버튼색
+    ***/
+    const showcase_color_list_btn = $('.showcase .showcase_item .color_list button');
+
+    $.each(showcase_color_list_btn, function(_, el) {
+        el.style.backgroundColor = el.dataset.color;
+    });
 });

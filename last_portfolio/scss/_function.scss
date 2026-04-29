@@ -1,6 +1,7 @@
 @use "sass:string";
 @use "sass:list";
 @use "sass:map";
+@use 'sass:color';
 
 @function img($name) {
   @return string.unquote("../images/#{$name}");
@@ -31,4 +32,12 @@
   }
 
   @return $map;
+}
+
+@function rgba-mix($color, $value) {
+  @return color.scale($color, $alpha: $value * 100% - 100%);
+}
+
+@function unquote($value) {
+  @return string.unquote($value);
 }
